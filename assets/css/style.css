@@ -1,4 +1,8 @@
 
+* {
+    padding: 0;
+    margin: 0;
+}
 button {
 
     background-color: #000;
@@ -28,6 +32,7 @@ button:hover {
     align-items: center;
     justify-content: center;
     padding: 0.5rem;
+    height: 8rem;
 }
 
 #middle-area-text {
@@ -44,4 +49,27 @@ button:hover {
 
 #middle-area-logo{
     font-size: 400%;
+}
+
+.middle-area-main{
+    margin-top: 10rem;
+    height: 8rem;
+    width: 100%;
+    border: 0.6rem #000 solid;
+    border-radius: 1.6rem;
+    animation: expandMiddle 3s ease 0s 1 normal forwards;
+}
+
+@keyframes expandMiddle {
+	0% {
+        height: 8rem;
+        border: 0.6rem #000 solid;
+		width: 50%;
+	}
+
+	100% {
+        height: 3rem;
+        border: 0.3rem #000 solid;
+		width:100%;
+	}
 }

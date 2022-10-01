@@ -16,7 +16,13 @@ const addLoadingItem = (loadingArray, i) => {
             </div>`
             i++
             addLoadingItem(loadingArray, i)
-        }, 3000)
+        }, 2000)
+    } else {
+        document.getElementById('middle-area-logo').innerHTML=``
+        document.getElementById('middle-area-text').innerHTML = ``
+        const middleArea = document.getElementById('middle-area')
+        middleArea.classList.remove('start-message')
+        middleArea.classList.add('middle-area-main')
     }
 }
 
@@ -33,5 +39,8 @@ const prepareGame = () => {
     const loadingArray = ['Gathering Clues', 'Polishing Magnifying Glass', 'Sharpening Pencil', 'Interviewing Witnesses']
     let loadingText = ''
     addLoadingItem(loadingArray, 0)
+
+
+  
 
 }
