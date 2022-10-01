@@ -1,7 +1,17 @@
 
+/* Google Font Imports */
+@import url('https://fonts.googleapis.com/css2?family=Arvo&family=EB+Garamond&display=swap');
+
+
 * {
     padding: 0;
     margin: 0;
+    font-family: 'EB Garamond', serif;
+
+}
+
+h1, h2 {
+    font-family: 'Arvo', serif;
 }
 button {
 
@@ -24,7 +34,7 @@ button:hover {
 
 .start-message {
     margin-top: 10rem;
-    width: 50%;
+    width:70%;
     border: 0.6rem #000 solid;
     border-radius: 1.6rem;
     display: flex;
@@ -32,7 +42,7 @@ button:hover {
     align-items: center;
     justify-content: center;
     padding: 0.5rem;
-    height: 8rem;
+    height: 12rem;
 }
 
 #middle-area-text {
