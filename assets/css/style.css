@@ -1,9 +1,12 @@
 
 button {
+
     background-color: #000;
     color: #fff;
     border: 0.2rem solid #000;
     border-radius: 2.6rem;
+    height: 2rem;
+    width: 50%;
 }
 
 button:hover {
