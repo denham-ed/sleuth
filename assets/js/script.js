@@ -10,7 +10,7 @@ document.addEventListener("DOMContentLoaded", () => {
 const addLoadingItem = (loadingArray, i) => {
     if (i < loadingArray.length) {
         setTimeout(() => {
-            document.getElementById('middle-area').innerHTML = 
+            document.getElementById('middle-area-text').innerHTML = 
             `<div>
             ${loadingArray[i]}...
             </div>`
@@ -27,9 +27,11 @@ const addLoadingItem = (loadingArray, i) => {
  */
 const prepareGame = () => {
     // Add Loading Text to Screen in Sequence
+    document.getElementById('middle-area-text').innerHTML = `<div>The game is afoot...</div>`
+    document.getElementById('middle-area-logo').innerHTML =    `<i class="fa-solid fa-magnifying-glass"></i>`
+    
     const loadingArray = ['Gathering Clues', 'Polishing Magnifying Glass', 'Sharpening Pencil', 'Interviewing Witnesses']
     let loadingText = ''
-    console.log(loadingArray.length)
     addLoadingItem(loadingArray, 0)
 
 }
