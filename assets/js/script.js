@@ -1,7 +1,7 @@
 document.addEventListener("DOMContentLoaded", () => {
     const startButton = document.getElementById('start-button')
     startButton.addEventListener('click', prepareGame)
-
+    detectives.forEach((detective) => console.log(detective))
 })
 
 /** 
