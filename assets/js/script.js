@@ -16,7 +16,7 @@ const addLoadingItem = (loadingArray, i) => {
             </div>`
             i++
             addLoadingItem(loadingArray, i)
-        }, 2000)
+        }, 500)
     } else {
         document.getElementById('middle-area-logo').innerHTML=``
         document.getElementById('middle-area-text').innerHTML = ``
