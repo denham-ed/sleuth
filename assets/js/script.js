@@ -1,8 +1,6 @@
 document.addEventListener("DOMContentLoaded", () => {
     const startButton = document.getElementById('start-button')
-    startButton.addEventListener('click', prepareGame)
-    detectives.forEach((detective) => console.log(detective))
-    populatePlayerCard(detectives[Math.floor(Math.random() * 16)])
+    startButton.addEventListener('click', prepareGame)    
 })
 
 /** 
@@ -25,6 +23,10 @@ const addLoadingItem = (loadingArray, i) => {
         const middleArea = document.getElementById('middle-area')
         middleArea.classList.remove('start-message')
         middleArea.classList.add('middle-area-main')
+        setTimeout(()=>{
+            populatePlayerCard(detectives[Math.floor(Math.random() * 16)])
+            document.getElementById('card').style.display='flex'
+        },3000)
     }
 }
 
