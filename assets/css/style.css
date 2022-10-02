@@ -140,21 +140,59 @@ button:hover {
 	}
 }
 
+#player-area{
+    background-color: red;
+    width: 100%;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-flex-direction: row;
+    -ms-flex-direction: row;
+    flex-direction: row;
+    -webkit-flex-wrap: nowrap;
+    -ms-flex-wrap: nowrap;
+    flex-wrap: nowrap;
+    -webkit-justify-content: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-align-content: stretch;
+    -ms-flex-line-pack: stretch;
+    align-content: stretch;
+    -webkit-align-items: stretch;
+    -ms-flex-align: stretch;
+    align-items: stretch;
+}
+
+.player-containers{
+    display: flex;
+    width: 20%;
+    height: 50rem;
+    background-color: blue;
+    border: red 1px solid;
+    flex: 1 1 auto;
+    flex-direction: row;
+    align-self: auto;
+    justify-content: center;
+    align-items: stretch;
+
+}
+
 /* Player Card */
 
 #card {
     background-color: #fff;
     margin-top: 1rem;
-    display: none;
+    display: flex;
     width: 18rem;
     height: 30rem;
     border-radius: 2.6rem; 
     border: 0.4rem #000 solid;
     flex-direction: column;
     align-items: center;
+ 
 
     /* Box Shadow */
-    /* https://cssgenerator.org/box-shadow-css-generator.html */
+    /*  */
     box-shadow: 10px 10px 19px 2px rgba(0,0,0,0.75);
 -webkit-box-shadow: 10px 10px 19px 2px rgba(0,0,0,0.75);
 -moz-box-shadow: 10px 10px 19px 2px rgba(0,0,0,0.75);
@@ -170,6 +208,7 @@ button:hover {
 }
 
 #card-image {
+
     height: 14rem;
     width: 14rem;
     background-repeat: none;
@@ -203,4 +242,8 @@ td {
     background-color: inherit;
 
 }
+
+/* Player Deck */
+
+
 
