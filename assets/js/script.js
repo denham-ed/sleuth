@@ -2,6 +2,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const startButton = document.getElementById('start-button')
     startButton.addEventListener('click', prepareGame)
     detectives.forEach((detective) => console.log(detective))
+    populatePlayerCard(detectives[Math.floor(Math.random() * 16)])
 })
 
 /** 
@@ -41,7 +42,9 @@ const prepareGame = () => {
     let loadingText = ''
     addLoadingItem(loadingArray, 0)
 
+}
 
-  
-
+const populatePlayerCard = (detective) => {
+    document.getElementById('card-header').textContent = detective.name
+    document.getElementById('card-image').style.backgroundImage = `url(${detective.image})`
 }
