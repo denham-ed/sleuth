@@ -178,3 +178,23 @@ button:hover {
     width: 100%;
 }
 
+#stat-table{
+    height: 10rem;
+    width: 16rem;
+    border-collapse: collapse;
+    
+}
+
+.stat-row {
+    border-bottom:#0A122A 0.1rem solid;
+    border-collapse: collapse;
+    background-color: #fff;
+}
+
+td {
+    border: inherit;
+    border-collapse: inherit;
+    background-color: inherit;
+
+}
+

@@ -51,4 +51,21 @@ const prepareGame = () => {
 const populatePlayerCard = (detective) => {
     document.getElementById('card-header').textContent = detective.name
     document.getElementById('card-image').style.backgroundImage = `url(${detective.image})`
+// Stats
+    let statsHTML = ''
+    detective.facts.forEach((fact) => {
+        statsHTML += 
+        `    
+            <tr class="stat-row">
+                <td>${fact.stat}</td>
+                <td>${fact.result}</td>
+            </tr>
+        `
+    })
+    document.getElementById('card-stats').innerHTML = 
+    `
+    <table id="stat-table">
+    ${statsHTML}
+    </table>
+    `
 }
