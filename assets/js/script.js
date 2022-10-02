@@ -23,10 +23,10 @@ const addLoadingItem = (loadingArray, i) => {
         const middleArea = document.getElementById('middle-area')
         middleArea.classList.remove('start-message')
         middleArea.classList.add('middle-area-main')
+        // 
         setTimeout(()=>{
-            // populatePlayerCard(detectives[Math.floor(Math.random() * 16)])
-            populatePlayerCard(detectives[2])
-
+            populatePlayerCard(detectives[Math.floor(Math.random() * 16)])
+            // populatePlayerCard(detectives[2])
             document.getElementById('card').style.display='flex'
         },3000)
     }

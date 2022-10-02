@@ -145,7 +145,7 @@ button:hover {
 #card {
     background-color: #fff;
     margin-top: 1rem;
-    display: flex;
+    display: none;
     width: 18rem;
     height: 30rem;
     border-radius: 2.6rem; 
