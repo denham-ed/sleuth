@@ -19,10 +19,11 @@ const addLoadingItem = (loadingArray, i) => {
     } else {
         document.getElementById('middle-area-logo').innerHTML = ``
         document.getElementById('middle-area-text').innerHTML = ``
-        document.getElementById('main-logo').parentElement.removeChild(document.getElementById('main-logo'))
         const middleArea = document.getElementById('middle-area')
         middleArea.classList.remove('start-message')
         middleArea.classList.add('middle-area-main')
+        document.getElementById('main-logo').parentElement.removeChild(document.getElementById('main-logo'))
+
         // 
     }
 }
@@ -42,6 +43,10 @@ const prepareGame = () => {
         populatePlayerCard(playerDecks.userDeck[0])
         document.getElementById('card').style.display = 'flex'
         document.getElementById('player-deck').style.display = 'flex'
+        document.getElementById('opponent-card').style.display = 'flex'
+        document.getElementById('game-container').classList.add('zoom-out');
+        window.scrollTo(0, document.body.scrollHeight);
+
 
     }, 3000)
 }
