@@ -41,6 +41,8 @@ const prepareGame = () => {
         console.log(playerDecks)
         populatePlayerCard(playerDecks.userDeck[0])
         document.getElementById('card').style.display = 'flex'
+        document.getElementById('player-deck').style.display = 'flex'
+
     }, 3000)
 }
 
