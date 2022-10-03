@@ -19,7 +19,7 @@ const addLoadingItem = (loadingArray, i) => {
     } else {
         document.getElementById('middle-area-logo').innerHTML=``
         document.getElementById('middle-area-text').innerHTML = ``
-        document.getElementById('logo').parentElement.removeChild(document.getElementById('logo'))
+        document.getElementById('main-logo').parentElement.removeChild(document.getElementById('main-logo'))
         const middleArea = document.getElementById('middle-area')
         middleArea.classList.remove('start-message')
         middleArea.classList.add('middle-area-main')
