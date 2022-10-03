@@ -282,11 +282,14 @@ td {
     margin-top: 1rem;
     height: 20rem;
     width: 12rem;
-    background-color: red;
     border-radius: 1.6rem; 
     border: 0.4rem #000 solid;
     flex-direction: column;
     align-items: center;
+    background-image: url('../images/logo2.svg');
+    background-repeat: repeat;
+    background-size: 20.65%;
+    background-color: #8C2F39;
 }
 
 
