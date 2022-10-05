@@ -35,32 +35,33 @@ const prepareGame = () => {
     document.getElementById('middle-area-text').innerHTML = `<div>The game is afoot...</div>`
     document.getElementById('middle-area-logo').innerHTML = `<i class="fa-solid fa-magnifying-glass"></i>`
     const loadingArray = ['Gathering Clues', 'Polishing Magnifying Glass', 'Sharpening Pencil', 'Interviewing Witnesses']
-     addLoadingItem(loadingArray, 0)
+    addLoadingItem(loadingArray, 0)
     let playerDecks = assignCards(detectives)
     setTimeout(() => {
         console.log(playerDecks)
-        populatePlayerCard(playerDecks.userDeck[0])
+        populatePlayerCard(playerDecks, true)
         document.getElementById('card-count-container').innerHTML = `<span>You have ${playerDecks.userDeck.length} cards in your deck.</span>`
         document.getElementById('card').style.display = 'flex'
         document.getElementById('player-deck').style.display = 'flex'
         document.getElementById('opponent-card').style.display = 'flex'
         document.getElementById('game-container').classList.add('zoom-out');
         document.getElementById('middle-area-text').innerHTML = `<span>It's your turn - choose an attribute!`
-
         window.scrollTo(0, document.body.scrollHeight);
-
     }, 5000)
 }
 
-const populatePlayerCard = (detective) => {
+const populatePlayerCard = (playerDecks, playerTurn) => {
+    const detective = playerDecks.userDeck[0]
     document.getElementById('card-header').textContent = detective.name
     document.getElementById('card-image').style.backgroundImage = `url(${detective.image})`
     // Stats
     let statsHTML = ''
-    detective.facts.forEach((fact) => {
+    detective.facts.forEach((fact, index) => {
         statsHTML +=
             `    
-            <tr class="stat-row">
+            <tr 
+            data-stat = ${index} 
+            class="stat-row">
                 <td>${fact.stat}</td>
                 <td>${fact.result}</td>
             </tr>
@@ -72,6 +73,16 @@ const populatePlayerCard = (detective) => {
     ${statsHTML}
     </table>
     `
+
+    if (playerTurn){
+        const statRows = document.getElementsByClassName('stat-row')
+        for (let row of statRows){
+            row.addEventListener('click', ()=>{
+                console.log(row.dataset.stat)
+                compareCards(playerDecks, row.dataset.stat)
+            })
+        }
+    }
 }
 
 /**
@@ -98,5 +109,17 @@ const assignCards = (detectives) => {
     return {
         userDeck,
         opponentDeck
+    }
+}
+
+const compareCards = (playerDecks, statIndex) => {
+    const playerDetective = playerDecks.userDeck[0]
+    const opponentDetective = playerDecks.opponentDeck[0]
+    if (playerDetective.facts[statIndex].result > opponentDetective.facts[statIndex].result) {
+        alert('Player win')
+        console.log(playerDetective, opponentDetective)
+    } else {
+        alert('Opponent loss')
+        console.log(playerDetective, opponentDetective)
     }
 }
