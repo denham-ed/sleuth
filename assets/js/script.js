@@ -15,7 +15,7 @@ const addLoadingItem = (loadingArray, i) => {
             </div>`
             i++
             addLoadingItem(loadingArray, i)
-        }, 500)
+        }, 1000)
     } else {
         document.getElementById('middle-area-logo').innerHTML = ``
         document.getElementById('middle-area-text').innerHTML = ``
@@ -35,10 +35,9 @@ const prepareGame = () => {
     document.getElementById('middle-area-text').innerHTML = `<div>The game is afoot...</div>`
     document.getElementById('middle-area-logo').innerHTML = `<i class="fa-solid fa-magnifying-glass"></i>`
     const loadingArray = ['Gathering Clues', 'Polishing Magnifying Glass', 'Sharpening Pencil', 'Interviewing Witnesses']
-    addLoadingItem(loadingArray, 0)
+     addLoadingItem(loadingArray, 0)
     let playerDecks = assignCards(detectives)
     setTimeout(() => {
-        // populatePlayerCard(detectives[Math.floor(Math.random() * 16)])
         console.log(playerDecks)
         populatePlayerCard(playerDecks.userDeck[0])
         document.getElementById('card').style.display = 'flex'
@@ -47,8 +46,7 @@ const prepareGame = () => {
         document.getElementById('game-container').classList.add('zoom-out');
         window.scrollTo(0, document.body.scrollHeight);
 
-
-    }, 3000)
+    }, 5000)
 }
 
 const populatePlayerCard = (detective) => {
