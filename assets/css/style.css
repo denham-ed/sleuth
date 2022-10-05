@@ -109,6 +109,16 @@ button:hover {
     align-items: center;
     justify-content: center;
     width: 80%;
+    text-align: center;
+}
+
+#middle-area-text p {
+    text-align: center;
+}
+
+.confirmation{
+    font-weight: bold;
+    color: #8C2F39;
 }
 
 
@@ -121,6 +131,9 @@ button:hover {
 }
 
 .middle-area-main{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
     margin-top: 10rem;
     min-height: 8rem;
     width: 75%;

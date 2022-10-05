@@ -116,8 +116,6 @@ const compareCards = (playerDecks, statIndex) => {
     const playerDetective = playerDecks.userDeck[0]
     const opponentDetective = playerDecks.opponentDeck[0]
 
-    revealOpponentCard(opponentDetective)
-
 
     if (playerDetective.facts[statIndex].result > opponentDetective.facts[statIndex].result) {
         let message = `<p>${playerDetective.name} has ${playerDetective.facts[statIndex].result} ${playerDetective.facts[statIndex].stat.toLowerCase()}.</p>`
@@ -126,11 +124,17 @@ const compareCards = (playerDecks, statIndex) => {
         setTimeout(()=>{
             message += `<p>Your opponent has ${opponentDetective.name}.</p>`
             messageArea.innerHTML = message
+            revealOpponentCard(opponentDetective)
         },2000)
         setTimeout(()=>{
             message += `<p>${opponentDetective.name} has ${opponentDetective.facts[statIndex].result} ${opponentDetective.facts[statIndex].stat.toLowerCase()}.</p>`
             messageArea.innerHTML = message
         },4000)
+        setTimeout(()=>{
+            message += `<br><p class='confirmation'>You win ${opponentDetective.name}!</p>`
+            messageArea.innerHTML = message
+        },6000)
+
     
     } else {
         alert('Opponent Win - You Lose')
