@@ -122,7 +122,7 @@ button:hover {
 
 .middle-area-main{
     margin-top: 10rem;
-    height: 8rem;
+    min-height: 8rem;
     width: 75%;
     border: 0.4rem #000 solid;
     border-radius: 1.6rem;
@@ -138,7 +138,7 @@ button:hover {
 
 	100% {
         margin-top: 1rem;
-        height: 3rem;
+        min-height: 3rem;
 		width:90%;
 	}
 }
