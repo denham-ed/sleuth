@@ -307,6 +307,18 @@ td {
     background-color: #8C2F39;
 }
 
+#opponent-image{
+    display: none;
+    margin-top: 1.6rem;
+    height: 9rem;
+    width: 9rem;
+    background-repeat: none;
+    background-size: cover;
+    background-position: middle left;
+    border: #0A122A 0.2rem solid;
+
+}
+
 
 /* zoom experiment */
 

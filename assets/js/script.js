@@ -115,11 +115,20 @@ const assignCards = (detectives) => {
 const compareCards = (playerDecks, statIndex) => {
     const playerDetective = playerDecks.userDeck[0]
     const opponentDetective = playerDecks.opponentDeck[0]
+    document.getElementById('opponent-card').style.backgroundImage = 'none'
+
+    document.getElementById('opponent-card').style.backgroundColor = 'white'
+    document.getElementById('opponent-image').style.backgroundImage = `url(${opponentDetective.image})`
+    document.getElementById('opponent-image').style.display='block'
     if (playerDetective.facts[statIndex].result > opponentDetective.facts[statIndex].result) {
         alert('Player win')
-        console.log(playerDetective, opponentDetective)
     } else {
-        alert('Opponent loss')
-        console.log(playerDetective, opponentDetective)
+        alert('Opponent Win - You Lose')
+    }
+}
+
+const passCards = (playerWin) => {
+    if (playerWin){
+
     }
 }
