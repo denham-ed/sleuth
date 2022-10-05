@@ -271,7 +271,8 @@ td {
 
 #card-count-container > span {
     text-align: center;
-    background-color: transparent;
+    border-radius: 1.6rem;
+    background-color: rgba(0,0,0,0.4);
     color: #FBFAF8;
 }
 
