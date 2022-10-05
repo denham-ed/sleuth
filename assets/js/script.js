@@ -40,10 +40,13 @@ const prepareGame = () => {
     setTimeout(() => {
         console.log(playerDecks)
         populatePlayerCard(playerDecks.userDeck[0])
+        document.getElementById('card-count-container').innerHTML = `<span>You have ${playerDecks.userDeck.length} cards in your deck.</span>`
         document.getElementById('card').style.display = 'flex'
         document.getElementById('player-deck').style.display = 'flex'
         document.getElementById('opponent-card').style.display = 'flex'
         document.getElementById('game-container').classList.add('zoom-out');
+        document.getElementById('middle-area-text').innerHTML = `<span>It's your turn - choose an attribute!`
+
         window.scrollTo(0, document.body.scrollHeight);
 
     }, 5000)
