@@ -144,7 +144,6 @@ button:hover {
 }
 
 #player-area{
-    background-color: red;
     width: 100%;
     display: -ms-flexbox;
     display: -webkit-flex;
@@ -170,19 +169,17 @@ button:hover {
     display: flex;
     width: 20%;
     height: 30rem;
-    /* background-color: blue;
-    border: red 1px solid; */
     flex: 1 1 auto;
     flex-direction: row;
     align-self: auto;
     justify-content: center;
-    align-items: stretch;
-
+    align-items:stretch;
 }
 
 /* Player Card */
 
 #card {
+    z-index: 10000;
     background-color: #fff;
     margin-top: 1rem;
     display:none;
@@ -249,26 +246,32 @@ td {
 /* Player Deck */
 
 #player-deck {
-    background-color: #71816D;
     margin-top: 1rem;
     display: none;
-    width: 18rem;
-    height: 30rem;
-    border-radius: 2.6rem; 
-    border: 0.4rem #000 solid;
     flex-direction: column;
     align-items: center;
     justify-content: center;
 }
 
-.white-logo{
-    background-color: #71816D;
-    margin-top: 0rem;
-    justify-self: center;
+
+#player-deck:hover #card-count-container{
+        display: flex;
 }
 
-#card-count-container, #card-count-container span {
-    background-color: inherit;
+
+
+#card-count-container {
+    background-color: transparent;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    display: none;
+    width:80%;
+}
+
+#card-count-container > span {
+    text-align: center;
+    background-color: transparent;
     color: #FBFAF8;
 }
 
@@ -277,7 +280,8 @@ td {
 #opponent-area{
     display: flex;
 }
-#opponent-card {
+
+.small-reverse-card{
     display: none;
     margin-top: 1rem;
     height: 20rem;
