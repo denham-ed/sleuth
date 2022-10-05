@@ -307,9 +307,15 @@ td {
     background-color: #8C2F39;
 }
 
+#opponent-header{
+    font-family: 'Ultra', serif;
+    margin-top: 0.6rem;
+}
+
 #opponent-image{
     display: none;
-    margin-top: 1.6rem;
+    margin-top: 0.6rem;
+    margin-bottom: 1rem;
     height: 9rem;
     width: 9rem;
     background-repeat: none;
@@ -318,6 +324,19 @@ td {
     border: #0A122A 0.2rem solid;
 
 }
+
+.divider{
+    display: none;
+    height: 1.5rem;
+    width: 100%;
+    border-bottom: 1px solid black;
+}
+
+/* https://www.w3docs.com/snippets/css/how-to-create-a-blurry-text-in-css.html#:~:text=The%20first%20way%20of%20creating,a%20shadow%20to%20the%20text. */
+.blur {
+    filter: blur(5px);
+    -webkit-filter: blur(3px);
+  }
 
 
 /* zoom experiment */

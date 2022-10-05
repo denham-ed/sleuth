@@ -115,13 +115,13 @@ const assignCards = (detectives) => {
 const compareCards = (playerDecks, statIndex) => {
     const playerDetective = playerDecks.userDeck[0]
     const opponentDetective = playerDecks.opponentDeck[0]
-    document.getElementById('opponent-card').style.backgroundImage = 'none'
 
-    document.getElementById('opponent-card').style.backgroundColor = 'white'
-    document.getElementById('opponent-image').style.backgroundImage = `url(${opponentDetective.image})`
-    document.getElementById('opponent-image').style.display='block'
+    revealOpponentCard(opponentDetective)
+
+
     if (playerDetective.facts[statIndex].result > opponentDetective.facts[statIndex].result) {
-        alert('Player win')
+        const messageArea = document.getElementById('middle-area-text')
+        messageArea.textContent = `${playerDetective.name} has ${playerDetective.facts[statIndex].stat}`
     } else {
         alert('Opponent Win - You Lose')
     }
@@ -131,4 +131,17 @@ const passCards = (playerWin) => {
     if (playerWin){
 
     }
+}
+
+const revealOpponentCard = (opponentDetective)=>{
+    const dividers = document.getElementsByClassName('divider')
+    for (let divider of dividers){
+        divider.style.display = 'block'
+    }
+    document.getElementById('opponent-card').style.backgroundImage = 'none'
+    document.getElementById('opponent-card').style.backgroundColor = 'white'
+    document.getElementById('opponent-header').textContent = `${opponentDetective.name}`
+    document.getElementById('opponent-image').style.backgroundImage = `url(${opponentDetective.image})`
+    document.getElementById('opponent-image').style.display='block'
+
 }
