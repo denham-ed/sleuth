@@ -73,10 +73,10 @@ const populatePlayerCard = (playerDecks, playerTurn) => {
     </table>
     `
 
-    if (playerTurn){
+    if (playerTurn) {
         const statRows = document.getElementsByClassName('stat-row')
-        for (let row of statRows){
-            row.addEventListener('click', ()=>{
+        for (let row of statRows) {
+            row.addEventListener('click', () => {
                 compareCards(playerDecks, row.dataset.stat)
             })
         }
@@ -123,51 +123,54 @@ const compareCards = (playerDecks, statIndex) => {
         let message = `<p>${playerDetective.name} has ${playerDetective.facts[statIndex].result} ${playerDetective.facts[statIndex].stat.toLowerCase()}.</p>`
         const messageArea = document.getElementById('middle-area-text')
         messageArea.innerHTML = message
-        setTimeout(()=>{
+        setTimeout(() => {
             message += `<p>Your opponent has ${opponentDetective.name}.</p>`
             messageArea.innerHTML = message
             revealOpponentCard(opponentDetective)
-        },2000)
-        setTimeout(()=>{
+        }, 2000)
+        setTimeout(() => {
             message += `<p>${opponentDetective.name} has ${opponentDetective.facts[statIndex].result} ${opponentDetective.facts[statIndex].stat.toLowerCase()}.</p>`
             messageArea.innerHTML = message
-        },4000)
-        setTimeout(()=>{
+        }, 4000)
+        setTimeout(() => {
             message += `<br><p class='confirmation'>You win!</p>`
             messageArea.innerHTML = message
-        },6000)
-        setTimeout(()=>{
-            resetCards()
+        }, 6000)
+        setTimeout(() => {
+            resetCards(true)
             passCards(true, playerDecks)
 
-        },8000)
+        }, 8000)
 
 
-    
+
     } else {
         alert('Opponent Win - You Lose')
     }
 }
 
 const passCards = (playerWin, playerDecks) => {
-    const {userDeck, opponentDeck} = playerDecks
-    if (playerWin){
+    const {
+        userDeck,
+        opponentDeck
+    } = playerDecks
+    if (playerWin) {
         userDeck.push(userDeck.shift())
         userDeck.push(opponentDeck.shift())
         populatePlayerCard(playerDecks, true)
     }
 }
 
-const revealOpponentCard = (opponentDetective)=>{
+const revealOpponentCard = (opponentDetective) => {
     const dividers = document.getElementsByClassName('divider')
-    for (let divider of dividers){
+    for (let divider of dividers) {
         divider.style.display = 'block'
     }
     document.getElementById('opponent-card').style.backgroundImage = 'none'
     document.getElementById('opponent-card').style.backgroundColor = 'white'
     document.getElementById('opponent-header').textContent = `${opponentDetective.name}`
     document.getElementById('opponent-image').style.backgroundImage = `url(${opponentDetective.image})`
-    document.getElementById('opponent-image').style.display='block'
+    document.getElementById('opponent-image').style.display = 'block'
 
 }
 
@@ -175,14 +178,22 @@ const revealOpponentCard = (opponentDetective)=>{
  * Resets Opponent Card to Reverse Card Image and clears message box
  */
 
-const resetCards = () => {
+const resetCards = (playerTurn) => {
+    //Reset Opponent Card
     const dividers = document.getElementsByClassName('divider')
-    for (let divider of dividers){
+    for (let divider of dividers) {
         divider.style.display = 'none'
     }
     document.getElementById('opponent-card').style.backgroundImage = 'url("assets/images/logo2.svg")'
     document.getElementById('opponent-card').style.backgroundColor = '#8C2F39'
     document.getElementById('opponent-header').textContent = ''
-    document.getElementById('opponent-image').style.display='none'
+    document.getElementById('opponent-image').style.display = 'none'
+    // Reset message areas
+    const turnMessage = playerTurn ? `<p>It's your turn...</p>` : `<p>It's your opponent's turn...</p>`
+
+
+        document.getElementById('middle-area-text').innerHTML = turnMessage
+ 
+    
 
 }
