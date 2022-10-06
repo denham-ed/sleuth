@@ -137,6 +137,7 @@ const compareCards = (playerDecks, statIndex) => {
             messageArea.innerHTML = message
         },6000)
         setTimeout(()=>{
+            resetCards()
             passCards(true, playerDecks)
 
         },8000)
@@ -167,5 +168,21 @@ const revealOpponentCard = (opponentDetective)=>{
     document.getElementById('opponent-header').textContent = `${opponentDetective.name}`
     document.getElementById('opponent-image').style.backgroundImage = `url(${opponentDetective.image})`
     document.getElementById('opponent-image').style.display='block'
+
+}
+
+/**
+ * Resets Opponent Card to Reverse Card Image and clears message box
+ */
+
+const resetCards = () => {
+    const dividers = document.getElementsByClassName('divider')
+    for (let divider of dividers){
+        divider.style.display = 'none'
+    }
+    document.getElementById('opponent-card').style.backgroundImage = 'url("../images/logo2.svg")'
+    document.getElementById('opponent-card').style.backgroundColor = '#8C2F39'
+    document.getElementById('opponent-header').textContent = ''
+    document.getElementById('opponent-image').style.display='none'
 
 }
