@@ -77,7 +77,6 @@ const populatePlayerCard = (playerDecks, playerTurn) => {
         const statRows = document.getElementsByClassName('stat-row')
         for (let row of statRows){
             row.addEventListener('click', ()=>{
-                console.log(row.dataset.stat)
                 compareCards(playerDecks, row.dataset.stat)
             })
         }
@@ -153,6 +152,8 @@ const passCards = (playerWin, playerDecks) => {
         userDeck.push(userDeck.shift())
         console.log(userDeck)
         // Take Oppoennt Card [0] and put on bottom of deck.
+        userDeck.push(opponentDeck.shift())
+        console.log(playerDecks)
 
     }
 }
