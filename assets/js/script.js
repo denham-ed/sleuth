@@ -77,7 +77,7 @@ const populatePlayerCard = (playerDecks, playerTurn) => {
         const statRows = document.getElementsByClassName('stat-row')
         for (let row of statRows) {
             row.addEventListener('click', () => {
-                compareCards(playerDecks, row.dataset.stat)
+                compareCards(playerDecks, row.dataset.stat, true)
             })
         }
     }
@@ -114,23 +114,31 @@ const assignCards = (detectives) => {
  * Compares player and opponent cards and renders message to screen.
  */
 
-const compareCards = (playerDecks, statIndex) => {
+const compareCards = (playerDecks, statIndex,playerTurn) => {
     const playerDetective = playerDecks.userDeck[0]
     const opponentDetective = playerDecks.opponentDeck[0]
+
+    //Messages - Separated in order to change order of array
+    const playerDetectiveMessage = `<p>${playerDetective.name} has ${playerDetective.facts[statIndex].result} ${playerDetective.facts[statIndex].stat.toLowerCase()}.</p>`
+    const opponentMessage = `<p>Your opponent has ${opponentDetective.name}.</p>`
+    const opponentStatMessage = `<p>${opponentDetective.name} has ${opponentDetective.facts[statIndex].result} ${opponentDetective.facts[statIndex].stat.toLowerCase()}.</p>`
+    const messageArray = playerTurn ? [playerDetectiveMessage,opponentMessage,opponentStatMessage] : [opponentMessage,opponentStatMessage,playerDetectiveMessage]
+
     // Evaluate winner
     const playerWinner = playerDetective.facts[statIndex].result > opponentDetective.facts[statIndex].result ? true : false
     const winnerMessage = playerWinner ? `<br><p class='confirmation'>You win this hand!</p>` : `<br><p class='confirmation'>You lose this hand...</p>`
+
     // Display comparison messages
-    let message = `<p>${playerDetective.name} has ${playerDetective.facts[statIndex].result} ${playerDetective.facts[statIndex].stat.toLowerCase()}.</p>`
+    let message = messageArray[0]
     const messageArea = document.getElementById('middle-area-text')
     messageArea.innerHTML = message
     setTimeout(() => {
-        message += `<p>Your opponent has ${opponentDetective.name}.</p>`
+        message += messageArray[1]
         messageArea.innerHTML = message
         revealOpponentCard(opponentDetective)
     }, 2000)
     setTimeout(() => {
-        message += `<p>${opponentDetective.name} has ${opponentDetective.facts[statIndex].result} ${opponentDetective.facts[statIndex].stat.toLowerCase()}.</p>`
+        message += messageArray[2]
         messageArea.innerHTML = message
     }, 4000)
     setTimeout(() => {
@@ -202,5 +210,5 @@ const resetCards = (playerTurn) => {
 }
 
 const opponentTurn = (playerDecks) => {
-    compareCards(playerDecks, Math.floor(Math.random() * 3))
+    compareCards(playerDecks, Math.floor(Math.random() * 3),false)
 }
