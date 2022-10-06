@@ -143,7 +143,6 @@ const compareCards = (playerDecks, statIndex) => {
     setTimeout(() => {
         resetCards(playerWinner)
         passCards(playerWinner, playerDecks)
-
     }, 8000)
 
 }
@@ -162,6 +161,11 @@ const passCards = (playerWin, playerDecks) => {
         userDeck.push(userDeck.shift())
         userDeck.push(opponentDeck.shift())
         populatePlayerCard(playerDecks, true)
+    } else {
+        opponentDeck.push(opponentDeck.shift())
+        opponentDeck.push(userDeck.shift())
+        populatePlayerCard(playerDecks, false)
+
     }
 }
 
