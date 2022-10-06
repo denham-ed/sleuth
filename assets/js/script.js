@@ -180,7 +180,7 @@ const resetCards = () => {
     for (let divider of dividers){
         divider.style.display = 'none'
     }
-    document.getElementById('opponent-card').style.backgroundImage = 'url("../images/logo2.svg")'
+    document.getElementById('opponent-card').style.backgroundImage = 'url("assets/images/logo2.svg")'
     document.getElementById('opponent-card').style.backgroundColor = '#8C2F39'
     document.getElementById('opponent-header').textContent = ''
     document.getElementById('opponent-image').style.display='none'
