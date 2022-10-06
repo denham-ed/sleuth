@@ -45,7 +45,6 @@ header h1 {
 .stripe {
     width: 100%;
     height: 0.5rem;
-    background-color: #000;
 }
 
 .stripe-red{
@@ -328,7 +327,7 @@ td {
 #opponent-image{
     display: none;
     margin-top: 0.6rem;
-    margin-bottom: 1rem;
+    margin-bottom: 0.5rem;
     height: 9rem;
     width: 9rem;
     background-repeat: none;
@@ -338,7 +337,14 @@ td {
 
 }
 
+.small-stripe {
+    display: none;
+    width: 100%;
+    height: 0.25rem;
+}
+
 .divider{
+    margin-top: 0.3rem;
     display: none;
     height: 1.5rem;
     width: 100%;
