@@ -39,7 +39,6 @@ const prepareGame = () => {
     let playerDecks = assignCards(detectives)
     setTimeout(() => {
         populatePlayerCard(playerDecks, true)
-        document.getElementById('card-count-container').innerHTML = `<span>You have ${playerDecks.userDeck.length} cards in your deck.</span>`
         document.getElementById('card').style.display = 'flex'
         document.getElementById('player-deck').style.display = 'flex'
         document.getElementById('opponent-card').style.display = 'flex'
@@ -51,6 +50,7 @@ const prepareGame = () => {
 
 const populatePlayerCard = (playerDecks, playerTurn) => {
     const detective = playerDecks.userDeck[0]
+    document.getElementById('card-count-container').innerHTML = `<span>You have ${playerDecks.userDeck.length} cards in your deck.</span>`
     document.getElementById('card-header').textContent = detective.name
     document.getElementById('card-image').style.backgroundImage = `url(${detective.image})`
     // Stats
@@ -136,7 +136,11 @@ const compareCards = (playerDecks, statIndex) => {
             message += `<br><p class='confirmation'>You win!</p>`
             messageArea.innerHTML = message
         },6000)
-        passCards(true, playerDecks)
+        setTimeout(()=>{
+            passCards(true, playerDecks)
+
+        },8000)
+
 
     
     } else {
@@ -146,15 +150,10 @@ const compareCards = (playerDecks, statIndex) => {
 
 const passCards = (playerWin, playerDecks) => {
     const {userDeck, opponentDeck} = playerDecks
-    console.log(userDeck)
     if (playerWin){
-        // Take Player Card [0] and put on bottom of deck.
         userDeck.push(userDeck.shift())
-        console.log(userDeck)
-        // Take Oppoennt Card [0] and put on bottom of deck.
         userDeck.push(opponentDeck.shift())
-        console.log(playerDecks)
-
+        populatePlayerCard(playerDecks, true)
     }
 }
 
