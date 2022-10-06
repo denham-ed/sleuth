@@ -128,26 +128,23 @@ const compareCards = (playerDecks, statIndex,playerTurn) => {
     const messageArray = playerTurn ? [playerDetectiveMessage,opponentMessage,opponentStatMessage] : [opponentCallMessage,opponentMessage + opponentStatMessage,playerDetectiveMessage]
     // Evaluate winner
     const playerWinner = playerDetective.facts[statIndex].result > opponentDetective.facts[statIndex].result ? true : false
-    const winnerMessage = playerWinner ? `<br><p class='confirmation'>You win this hand!</p>` : `<br><p class='confirmation'>You lose this hand...</p>`
+    const winnerMessage = playerWinner ? `<p class='confirmation'>You win this hand!</p>` : `<p class='confirmation'>You lose this hand...</p>`
     const delay = playerTurn ? 0 : 2000
     // Display comparison messages
-    let message = messageArray[0]
     const messageArea = document.getElementById('middle-area-text')
     setTimeout(()=>{
-        messageArea.innerHTML = message
+        messageArea.innerHTML = messageArray[0]
     },delay)
-    setTimeout(() => {
-        message += messageArray[1]
-        messageArea.innerHTML = message
+    setTimeout(() => { 
+        messageArea.innerHTML = messageArray[1]
         revealOpponentCard(opponentDetective)
     }, delay + 2000)
-    setTimeout(() => {
-        message += messageArray[2]
-        messageArea.innerHTML = message
+    setTimeout(() => { 
+        messageArea.innerHTML = messageArray[2]
     }, delay + 4000)
     setTimeout(() => {
-        message += winnerMessage
-        messageArea.innerHTML = message
+
+        messageArea.innerHTML = winnerMessage
     }, delay + 6000)
     setTimeout(() => {
         resetCards(playerWinner)
@@ -177,8 +174,7 @@ const passCards = (playerWin, playerDecks) => {
         opponentDeck.push(opponentDeck.shift())
         opponentDeck.push(userDeck.shift())
         populatePlayerCard(playerDecks, false)
-        setTimeout(opponentTurn(playerDecks),12000)
-        
+        opponentTurn(playerDecks)
     }
 }
 
