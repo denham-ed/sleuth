@@ -118,36 +118,40 @@ const compareCards = (playerDecks, statIndex) => {
     const playerDetective = playerDecks.userDeck[0]
     const opponentDetective = playerDecks.opponentDeck[0]
 
-
-    if (playerDetective.facts[statIndex].result > opponentDetective.facts[statIndex].result) {
-        let message = `<p>${playerDetective.name} has ${playerDetective.facts[statIndex].result} ${playerDetective.facts[statIndex].stat.toLowerCase()}.</p>`
-        const messageArea = document.getElementById('middle-area-text')
+    // Display comparison messages
+    let message = `<p>${playerDetective.name} has ${playerDetective.facts[statIndex].result} ${playerDetective.facts[statIndex].stat.toLowerCase()}.</p>`
+    const messageArea = document.getElementById('middle-area-text')
+    messageArea.innerHTML = message
+    setTimeout(() => {
+        message += `<p>Your opponent has ${opponentDetective.name}.</p>`
         messageArea.innerHTML = message
-        setTimeout(() => {
-            message += `<p>Your opponent has ${opponentDetective.name}.</p>`
-            messageArea.innerHTML = message
-            revealOpponentCard(opponentDetective)
-        }, 2000)
-        setTimeout(() => {
-            message += `<p>${opponentDetective.name} has ${opponentDetective.facts[statIndex].result} ${opponentDetective.facts[statIndex].stat.toLowerCase()}.</p>`
-            messageArea.innerHTML = message
-        }, 4000)
-        setTimeout(() => {
-            message += `<br><p class='confirmation'>You win!</p>`
-            messageArea.innerHTML = message
-        }, 6000)
-        setTimeout(() => {
-            resetCards(true)
-            passCards(true, playerDecks)
+        revealOpponentCard(opponentDetective)
+    }, 2000)
+    setTimeout(() => {
+        message += `<p>${opponentDetective.name} has ${opponentDetective.facts[statIndex].result} ${opponentDetective.facts[statIndex].stat.toLowerCase()}.</p>`
+        messageArea.innerHTML = message
+    }, 4000)
 
-        }, 8000)
+    // Evaluate winner
+    const playerWinner = playerDetective.facts[statIndex].result > opponentDetective.facts[statIndex].result ? true : false
+    let winnerMessage = playerWinner ? `<br><p class='confirmation'>You win this hand!</p>` : `<br><p class='confirmation'>You lose this hand...</p>`
 
+    setTimeout(() => {
+        message += winnerMessage
+        messageArea.innerHTML = message
+    }, 6000)
+    setTimeout(() => {
+        resetCards(playerWinner)
+        passCards(playerWinner, playerDecks)
 
+    }, 8000)
 
-    } else {
-        alert('Opponent Win - You Lose')
-    }
 }
+
+/**
+ * Shift player and opponent arrays and push them to the end of the winner's deck (array)
+ * 
+ */
 
 const passCards = (playerWin, playerDecks) => {
     const {
@@ -161,6 +165,10 @@ const passCards = (playerWin, playerDecks) => {
     }
 }
 
+/**
+ * Reveal image and title of opponent's card.
+ */
+
 const revealOpponentCard = (opponentDetective) => {
     const dividers = document.getElementsByClassName('divider')
     for (let divider of dividers) {
@@ -171,7 +179,6 @@ const revealOpponentCard = (opponentDetective) => {
     document.getElementById('opponent-header').textContent = `${opponentDetective.name}`
     document.getElementById('opponent-image').style.backgroundImage = `url(${opponentDetective.image})`
     document.getElementById('opponent-image').style.display = 'block'
-
 }
 
 /**
@@ -188,12 +195,7 @@ const resetCards = (playerTurn) => {
     document.getElementById('opponent-card').style.backgroundColor = '#8C2F39'
     document.getElementById('opponent-header').textContent = ''
     document.getElementById('opponent-image').style.display = 'none'
-    // Reset message areas
+    // Reset Message Area
     const turnMessage = playerTurn ? `<p>It's your turn...</p>` : `<p>It's your opponent's turn...</p>`
-
-
-        document.getElementById('middle-area-text').innerHTML = turnMessage
- 
-    
-
+    document.getElementById('middle-area-text').innerHTML = turnMessage
 }
