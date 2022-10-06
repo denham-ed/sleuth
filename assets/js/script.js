@@ -38,7 +38,6 @@ const prepareGame = () => {
     addLoadingItem(loadingArray, 0)
     let playerDecks = assignCards(detectives)
     setTimeout(() => {
-        console.log(playerDecks)
         populatePlayerCard(playerDecks, true)
         document.getElementById('card-count-container').innerHTML = `<span>You have ${playerDecks.userDeck.length} cards in your deck.</span>`
         document.getElementById('card').style.display = 'flex'
@@ -112,6 +111,10 @@ const assignCards = (detectives) => {
     }
 }
 
+/**
+ * Compares player and opponent cards and renders message to screen.
+ */
+
 const compareCards = (playerDecks, statIndex) => {
     const playerDetective = playerDecks.userDeck[0]
     const opponentDetective = playerDecks.opponentDeck[0]
@@ -131,9 +134,10 @@ const compareCards = (playerDecks, statIndex) => {
             messageArea.innerHTML = message
         },4000)
         setTimeout(()=>{
-            message += `<br><p class='confirmation'>You win ${opponentDetective.name}!</p>`
+            message += `<br><p class='confirmation'>You win!</p>`
             messageArea.innerHTML = message
         },6000)
+        passCards(true, playerDecks)
 
     
     } else {
@@ -141,8 +145,14 @@ const compareCards = (playerDecks, statIndex) => {
     }
 }
 
-const passCards = (playerWin) => {
+const passCards = (playerWin, playerDecks) => {
+    const {userDeck, opponentDeck} = playerDecks
+    console.log(userDeck)
     if (playerWin){
+        // Take Player Card [0] and put on bottom of deck.
+        userDeck.push(userDeck.shift())
+        console.log(userDeck)
+        // Take Oppoennt Card [0] and put on bottom of deck.
 
     }
 }
