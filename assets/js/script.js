@@ -42,9 +42,7 @@ const prepareGame = () => {
         document.getElementById('card').style.display = 'flex'
         document.getElementById('player-deck').style.display = 'flex'
         document.getElementById('opponent-card').style.display = 'flex'
-        // document.getElementById('game-container').classList.add('zoom-out');
         document.getElementById('middle-area-text').innerHTML = `<span>It's your turn - choose an attribute to get started!`
-        // window.scrollTo(0, document.body.scrollHeight);
     }, 8000)
 }
 
@@ -75,8 +73,11 @@ const populatePlayerCard = (playerDecks, playerTurn) => {
     // Add Event Listener to Player Card
     if (playerTurn) {
         const statRows = document.getElementsByClassName('stat-row')
-        for (let row of statRows) {
+        //
+        for(let row of statRows){
             row.classList.add('active-row')
+        }
+        for (let row of statRows) {
             row.addEventListener('click', () => {
                 compareCards(playerDecks, row.dataset.stat, true)
             })
@@ -111,11 +112,24 @@ const assignCards = (detectives) => {
     }
 }
 
+const lockUserInput = () => {
+    let activeRows = document.getElementsByClassName('active-row')
+    console.log(activeRows)
+    for (let activeRow of activeRows) {
+        activeRow.classList.remove('active-row')
+    }
+}
+
 /**
  * Compares player and opponent cards and renders message to screen.
  */
 
+
 const compareCards = (playerDecks, statIndex,playerTurn) => {
+    //Prevent User Clicks on Options
+    lockUserInput()
+    //
+
     const playerDetective = playerDecks.userDeck[0]
     const opponentDetective = playerDecks.opponentDeck[0]
     //Messages - Separated in order to change order of array
