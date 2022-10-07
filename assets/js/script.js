@@ -170,11 +170,13 @@ const passCards = (playerWin, playerDecks) => {
         userDeck.push(userDeck.shift())
         userDeck.push(opponentDeck.shift())
         lastCardWarning(playerDecks)
+        checkEndGame(playerDecks)
         populatePlayerCard(playerDecks, true)
     } else {
         opponentDeck.push(opponentDeck.shift())
         opponentDeck.push(userDeck.shift())
         lastCardWarning(playerDecks)
+        checkEndGame(playerDecks)
         populatePlayerCard(playerDecks, false)
         opponentTurn(playerDecks)
     }
@@ -205,6 +207,11 @@ const revealOpponentCard = (opponentDetective) => {
  */
 
 const resetCards = (playerTurn) => {
+    //
+    document.getElementById('opponent-last-card-warning').style.display = 'none'
+    document.getElementById('player-last-card-warning').style.display = 'none'
+    document.getElementById('player-deck').classList.remove('deckFadeOut')
+    document.getElementById('player-deck').style.opacity = '1'
 
     //Reset Opponent Card
     const dividers = document.getElementsByClassName('divider')
@@ -246,6 +253,14 @@ const lastCardWarning = (playerDecks) => {
         document.getElementById('player-deck').classList.add('deckFadeOut')
 
     }
+}
 
-
+const checkEndGame = (playerDecks) => {
+    const {userDeck, opponentDeck} = playerDecks
+    if (userDeck.length === 0){
+       return alert('Bad luck - Moriarty wins this time!')
+    }
+    if (opponentDeck.length === 0){
+        return alert('Smashed it! You are the best detective ever!')
+    }
 }
