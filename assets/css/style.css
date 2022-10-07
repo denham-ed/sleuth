@@ -256,12 +256,12 @@ button:hover {
 }
 
 
-.stat-row:hover {
+.active-row:hover {
     cursor: pointer;
     /* background-color: rgba(0,0,0,0.1); */
 }
 
-.stat-row:hover td{
+.active-row:hover td{
     color: #8C2F39;
 }
 

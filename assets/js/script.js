@@ -76,7 +76,9 @@ const populatePlayerCard = (playerDecks, playerTurn) => {
     if (playerTurn) {
         const statRows = document.getElementsByClassName('stat-row')
         for (let row of statRows) {
+            row.classList.add('active-row')
             row.addEventListener('click', () => {
+                console.log('oh shit')
                 compareCards(playerDecks, row.dataset.stat, true)
             })
         }
@@ -265,7 +267,7 @@ const checkEndGame = (playerDecks) => {
         document.getElementById('middle-area').classList.add('end-message')
         gameOver = true
     }
-    if (opponentDeck.length === 7){
+    if (opponentDeck.length === 0){
         document.getElementById('opponent-card').classList.add('deckFadeOut')
         document.getElementById('card').classList.add('deckFadeOut')
         document.getElementById('opponent-last-card-warning').style.display = 'none'
