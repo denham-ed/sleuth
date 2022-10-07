@@ -53,6 +53,8 @@ const populatePlayerCard = (playerDecks, playerTurn) => {
     document.getElementById('card-count-container').innerHTML = `<span>You have ${playerDecks.userDeck.length} cards in your deck.</span>`
     document.getElementById('card-header').textContent = detective.name
     document.getElementById('card-image').style.backgroundImage = `url(${detective.image})`
+
+    
     // Stats
     let statsHTML = ''
     detective.facts.forEach((fact, index) => {
@@ -149,7 +151,7 @@ const compareCards = (playerDecks, statIndex,playerTurn) => {
     setTimeout(() => {
         resetCards(playerWinner)
         passCards(playerWinner, playerDecks)
-    }, delay + 8000)
+        }, delay + 8000)
 
 
 
@@ -170,13 +172,13 @@ const passCards = (playerWin, playerDecks) => {
         userDeck.push(userDeck.shift())
         userDeck.push(opponentDeck.shift())
         lastCardWarning(playerDecks)
-        checkEndGame(playerDecks)
+        if (checkEndGame(playerDecks)) return
         populatePlayerCard(playerDecks, true)
     } else {
         opponentDeck.push(opponentDeck.shift())
         opponentDeck.push(userDeck.shift())
         lastCardWarning(playerDecks)
-        checkEndGame(playerDecks)
+        if (checkEndGame(playerDecks)) return
         populatePlayerCard(playerDecks, false)
         opponentTurn(playerDecks)
     }
@@ -206,13 +208,8 @@ const revealOpponentCard = (opponentDetective) => {
  * Resets Opponent Card to Reverse Card Image and clears message box
  */
 
-const resetCards = (playerTurn) => {
-    //
-    document.getElementById('opponent-last-card-warning').style.display = 'none'
-    document.getElementById('player-last-card-warning').style.display = 'none'
-    document.getElementById('player-deck').classList.remove('deckFadeOut')
-    document.getElementById('player-deck').style.opacity = '1'
 
+const resetCards = (playerTurn) => {
     //Reset Opponent Card
     const dividers = document.getElementsByClassName('divider')
     for (let divider of dividers) {
@@ -245,22 +242,39 @@ const opponentTurn = (playerDecks) => {
 
 const lastCardWarning = (playerDecks) => {
     const {userDeck, opponentDeck} = playerDecks
+
     if (opponentDeck.length === 1){
-        return document.getElementById('opponent-last-card-warning').style.display = 'block'
+        document.getElementById('opponent-last-card-warning').style.display = 'block'
+    } else {
+    document.getElementById('opponent-last-card-warning').style.display = 'none'
     }
-    if (userDeck.length === 1){
+    if (userDeck.length < 8){
         document.getElementById('player-last-card-warning').style.display = 'block'
         document.getElementById('player-deck').classList.add('deckFadeOut')
+
+    } else {
+        document.getElementById('player-last-card-warning').style.display = 'none'
+        document.getElementById('player-deck').classList.remove('deckFadeOut')
+        document.getElementById('player-deck').style.opacity = '1'
 
     }
 }
 
 const checkEndGame = (playerDecks) => {
+    let gameOver = false
     const {userDeck, opponentDeck} = playerDecks
-    if (userDeck.length === 0){
-       return alert('Bad luck - Moriarty wins this time!')
+    if (userDeck.length === 6){
+        document.getElementById('opponent-card').classList.add('deckFadeOut')
+        document.getElementById('card').classList.add('deckFadeOut')
+        document.getElementById('middle-area-text').innerHTML = 
+        `
+        <p>Bad luck! Moriarty has bested you this time!</p>
+        <p>Try again!</p>
+        `
+        gameOver = true
     }
     if (opponentDeck.length === 0){
         return alert('Smashed it! You are the best detective ever!')
     }
+    return gameOver
 }
