@@ -134,26 +134,32 @@ button:hover {
     display: flex;
     flex-direction: row;
     justify-content: center;
-    margin-top: 10rem;
-    min-height: 8rem;
+    margin-top: 1rem;
+    /* margin-top: 10rem; */
+    min-height: 2rem;
     width: 75%;
     border: 0.3rem #000 solid;
     border-radius: 1.6rem;
-    animation: expandMiddle 3s ease 0s 1 normal forwards;
+    animation: expandMiddle 4s ease 0s 1 normal forwards;
 }
 
 @keyframes expandMiddle {
 	0% {
-        margin-top: 10rem;
-        height: 8rem;
+        /* margin-top: 50%; */
+        height: 16rem;
 		width: 50%;
 	}
-
-	100% {
+/* 
+	75% {
         margin-top: 1rem;
-        min-height: 3rem;
+
+	} */
+
+    100% {
+        min-height: 2rem;
 		width:90%;
-	}
+
+    }
 }
 
 #player-area{
@@ -253,11 +259,12 @@ button:hover {
 
 .stat-row:hover {
     cursor: pointer;
+
     background-color: rgba(0,0,0,0.1);
 }
 
 .stat-row:hover td{
-    color: #FBFAF8;
+    color: #0A122A;
 }
 
 td {
@@ -305,6 +312,7 @@ td {
 /* Opponent Card */
 
 #opponent-area{
+    min-height: 12rem;
     display: flex;
     flex-direction: column;
 }
