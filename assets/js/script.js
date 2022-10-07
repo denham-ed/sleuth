@@ -45,7 +45,7 @@ const prepareGame = () => {
         // document.getElementById('game-container').classList.add('zoom-out');
         document.getElementById('middle-area-text').innerHTML = `<span>It's your turn - choose an attribute to get started!`
         // window.scrollTo(0, document.body.scrollHeight);
-    }, 5000)
+    }, 8000)
 }
 
 const populatePlayerCard = (playerDecks, playerTurn) => {

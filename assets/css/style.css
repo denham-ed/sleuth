@@ -156,7 +156,7 @@ button:hover {
 	} */
 
     100% {
-        min-height: 2rem;
+        height: 2rem;
 		width:90%;
 
     }
@@ -312,7 +312,7 @@ td {
 /* Opponent Card */
 
 #opponent-area{
-    min-height: 12rem;
+    height: 18rem;
     display: flex;
     flex-direction: column;
 }
@@ -425,7 +425,7 @@ td {
 
   .end-message{
     margin-bottom: 30%;
-    animation: endMessageExpand 4s ease 0s 1 normal forwards;
+    animation: endMessageExpand 2s ease 0s 1 normal forwards;
   }
 
   @keyframes endMessageExpand {
