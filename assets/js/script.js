@@ -245,10 +245,10 @@ const opponentTurn = (playerDecks) => {
 
 const lastCardWarning = (playerDecks) => {
     const {userDeck, opponentDeck} = playerDecks
-    if (opponentDeck.length === 7){
+    if (opponentDeck.length === 1){
         return document.getElementById('opponent-last-card-warning').style.display = 'block'
     }
-    if (userDeck.length === 7){
+    if (userDeck.length === 1){
         document.getElementById('player-last-card-warning').style.display = 'block'
         document.getElementById('player-deck').classList.add('deckFadeOut')
 
