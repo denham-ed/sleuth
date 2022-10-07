@@ -10,6 +10,7 @@
     font-family: 'Montserrat', sans-serif;
     color: #0A122A;
     font-size: 102%;
+    user-select: none;
 }
 
 
@@ -296,13 +297,50 @@ td {
     border-radius: 1.6rem;
     background-color: rgba(0,0,0,0.4);
     color: #FBFAF8;
+    user-select: none;
 }
 
 /* Opponent Card */
 
 #opponent-area{
     display: flex;
+    flex-direction: column;
 }
+
+.last-card-warning{
+    font-size: 120%;
+    display: none;
+    text-align: center;
+    animation: warningFadeIn 4s ease 0s 1 normal forwards;
+}
+
+
+
+@keyframes warningFadeIn {
+	0% {
+		transform: scale(0);
+        opacity: 0.2;
+	}
+
+	25% {
+        transform: scale(1);
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0;
+    }
+
+	75% {
+		opacity: 1;
+	}
+
+	100% {
+        opacity: 1;
+	}
+}
+
+
 
 .small-reverse-card{
     display: none;

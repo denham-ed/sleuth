@@ -237,8 +237,8 @@ const opponentTurn = (playerDecks) => {
 
 const lastCardWarning = (playerDecks) => {
     const {userDeck,opponentDeck} = playerDecks
-    if (opponentDeck.length === 1){
-        document.getElementById('opponent-last-card-warning').innerHTML=`<p>Last card!</p>`
+    if (opponentDeck.length === 7){
+        document.getElementById('opponent-last-card-warning').style.display = 'block'
     }
 
 }
