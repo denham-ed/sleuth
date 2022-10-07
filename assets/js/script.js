@@ -78,7 +78,6 @@ const populatePlayerCard = (playerDecks, playerTurn) => {
         for (let row of statRows) {
             row.classList.add('active-row')
             row.addEventListener('click', () => {
-                console.log('oh shit')
                 compareCards(playerDecks, row.dataset.stat, true)
             })
         }
