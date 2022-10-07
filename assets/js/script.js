@@ -53,8 +53,6 @@ const populatePlayerCard = (playerDecks, playerTurn) => {
     document.getElementById('card-count-container').innerHTML = `<span>You have ${playerDecks.userDeck.length} cards in your deck.</span>`
     document.getElementById('card-header').textContent = detective.name
     document.getElementById('card-image').style.backgroundImage = `url(${detective.image})`
-
-    
     // Stats
     let statsHTML = ''
     detective.facts.forEach((fact, index) => {
@@ -119,9 +117,7 @@ const assignCards = (detectives) => {
 const compareCards = (playerDecks, statIndex,playerTurn) => {
     const playerDetective = playerDecks.userDeck[0]
     const opponentDetective = playerDecks.opponentDeck[0]
-
     //Messages - Separated in order to change order of array
-    
     const playerDetectiveMessage = `<p>${playerDetective.name} has ${playerDetective.facts[statIndex].result} ${playerDetective.facts[statIndex].stat.toLowerCase()}.</p>`
     const opponentCallMessage = `<p>Your opponent calls ${opponentDetective.facts[statIndex].stat}!</p>`
     const opponentMessage = `<p>Your opponent has ${opponentDetective.name}.</p>`
@@ -152,10 +148,6 @@ const compareCards = (playerDecks, statIndex,playerTurn) => {
         resetCards(playerWinner)
         passCards(playerWinner, playerDecks)
         }, delay + 8000)
-
-
-
-
 }
 
 /**
@@ -207,8 +199,6 @@ const revealOpponentCard = (opponentDetective) => {
 /**
  * Resets Opponent Card to Reverse Card Image and clears message box
  */
-
-
 const resetCards = (playerTurn) => {
     //Reset Opponent Card
     const dividers = document.getElementsByClassName('divider')
@@ -242,13 +232,12 @@ const opponentTurn = (playerDecks) => {
 
 const lastCardWarning = (playerDecks) => {
     const {userDeck, opponentDeck} = playerDecks
-
     if (opponentDeck.length === 1){
         document.getElementById('opponent-last-card-warning').style.display = 'block'
     } else {
     document.getElementById('opponent-last-card-warning').style.display = 'none'
     }
-    if (userDeck.length < 8){
+    if (userDeck.length < 2){
         document.getElementById('player-last-card-warning').style.display = 'block'
         document.getElementById('player-deck').classList.add('deckFadeOut')
 
@@ -263,7 +252,7 @@ const lastCardWarning = (playerDecks) => {
 const checkEndGame = (playerDecks) => {
     let gameOver = false
     const {userDeck, opponentDeck} = playerDecks
-    if (userDeck.length === 6){
+    if (userDeck.length === 0){
         document.getElementById('opponent-card').classList.add('deckFadeOut')
         document.getElementById('card').classList.add('deckFadeOut')
         document.getElementById('player-last-card-warning').style.display = 'none'
@@ -276,8 +265,18 @@ const checkEndGame = (playerDecks) => {
         document.getElementById('middle-area').classList.add('end-message')
         gameOver = true
     }
-    if (opponentDeck.length === 0){
-        return alert('Smashed it! You are the best detective ever!')
+    if (opponentDeck.length === 7){
+        document.getElementById('opponent-card').classList.add('deckFadeOut')
+        document.getElementById('card').classList.add('deckFadeOut')
+        document.getElementById('opponent-last-card-warning').style.display = 'none'
+        document.getElementById('player-deck').style.display='none'
+        document.getElementById('middle-area-text').innerHTML = 
+        `
+        <p>You win!</p>
+        <p>Try again!</p>
+        `
+        document.getElementById('middle-area').classList.add('end-message')
+        gameOver = true
     }
     return gameOver
 }
