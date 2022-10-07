@@ -205,6 +205,7 @@ const revealOpponentCard = (opponentDetective) => {
  */
 
 const resetCards = (playerTurn) => {
+
     //Reset Opponent Card
     const dividers = document.getElementsByClassName('divider')
     for (let divider of dividers) {
