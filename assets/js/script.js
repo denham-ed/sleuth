@@ -169,10 +169,12 @@ const passCards = (playerWin, playerDecks) => {
     if (playerWin) {
         userDeck.push(userDeck.shift())
         userDeck.push(opponentDeck.shift())
+        lastCardWarning(playerDecks)
         populatePlayerCard(playerDecks, true)
     } else {
         opponentDeck.push(opponentDeck.shift())
         opponentDeck.push(userDeck.shift())
+        lastCardWarning(playerDecks)
         populatePlayerCard(playerDecks, false)
         opponentTurn(playerDecks)
     }
@@ -221,6 +223,22 @@ const resetCards = (playerTurn) => {
     document.getElementById('middle-area-text').innerHTML = turnMessage
 }
 
+/**
+ * 
+ */
+
 const opponentTurn = (playerDecks) => {
     compareCards(playerDecks, Math.floor(Math.random() * 3),false)
+}
+
+/**
+ * 
+ */
+
+const lastCardWarning = (playerDecks) => {
+    const {userDeck,opponentDeck} = playerDecks
+    if (opponentDeck.length === 1){
+        document.getElementById('opponent-last-card-warning').innerHTML=`<p>Last card!</p>`
+    }
+
 }
