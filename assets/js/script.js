@@ -73,17 +73,16 @@ const populatePlayerCard = (playerDecks, playerTurn) => {
     // Add Event Listener to Player Card
     if (playerTurn) {
         const statRows = document.getElementsByClassName('stat-row')
-        //
-        for(let row of statRows){
-            row.classList.add('active-row')
-        }
         for (let row of statRows) {
-            row.addEventListener('click', () => {
-                compareCards(playerDecks, row.dataset.stat, true)
+            row.classList.add('active-row')
+            row.addEventListener('click', ()=>{
+                compareCards(playerDecks,row.dataset.stat,playerTurn)
             })
         }
     }
 }
+
+
 
 /**
  * Randomises order of detective cards
@@ -114,15 +113,17 @@ const assignCards = (detectives) => {
 
 const lockUserInput = () => {
     let activeRows = document.getElementsByClassName('active-row')
-    console.log(activeRows)
-    for (let activeRow of activeRows) {
-        activeRow.classList.remove('active-row')
+    for (var i = activeRows.length - 1; i >= 0; i--) {
+        activeRows[i].classList.add('locked')
+        activeRows[i].classList.remove('active-row')
+
     }
 }
 
 /**
  * Compares player and opponent cards and renders message to screen.
  */
+
 
 
 const compareCards = (playerDecks, statIndex,playerTurn) => {

@@ -465,3 +465,10 @@ td {
 
 
 
+/* Test */
+
+.locked{
+    pointer-events: none;
+}
+
+
