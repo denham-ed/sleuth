@@ -280,8 +280,6 @@ const opponentTurn = (playerDecks) => {
     //Select Stat Index
     let ranNum = Math.floor(Math.random() * 100)
     let index = difficultySpread.findIndex((i) => {return i > ranNum})
-    console.log(index)
-    console.log(sortedOpponentCardFacts[index].originalIndex)
     //Compare Cards
     compareCards(playerDecks, sortedOpponentCardFacts[index].originalIndex, false)
 }
@@ -322,7 +320,8 @@ const checkEndGame = (playerDecks) => {
         document.getElementById('opponent-card').classList.add('deckFadeOut')
         document.getElementById('card').classList.add('deckFadeOut')
         document.getElementById('player-last-card-warning').style.display = 'none'
-        document.getElementById('opponent-area').style.display = 'none'
+        document.getElementById('opponent-last-card-warning').style.display = 'none'
+        document.getElementById('player-deck').style.display = 'none'
         document.getElementById('middle-area-text').innerHTML =
             `
         <p>Bad luck! Moriarty has bested you this time!</p>
