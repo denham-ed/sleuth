@@ -75,8 +75,8 @@ const populatePlayerCard = (playerDecks, playerTurn) => {
         const statRows = document.getElementsByClassName('stat-row')
         for (let row of statRows) {
             row.classList.add('active-row')
-            row.addEventListener('click', ()=>{
-                compareCards(playerDecks,row.dataset.stat,playerTurn)
+            row.addEventListener('click', () => {
+                compareCards(playerDecks, row.dataset.stat, playerTurn)
             })
         }
     }
@@ -126,7 +126,7 @@ const lockUserInput = () => {
 
 
 
-const compareCards = (playerDecks, statIndex,playerTurn) => {
+const compareCards = (playerDecks, statIndex, playerTurn) => {
     //Prevent User Clicks on Options
     lockUserInput()
     //
@@ -138,22 +138,22 @@ const compareCards = (playerDecks, statIndex,playerTurn) => {
     const opponentCallMessage = `<p>Your opponent calls ${opponentDetective.facts[statIndex].stat}!</p>`
     const opponentMessage = `<p>Your opponent has ${opponentDetective.name}.</p>`
     const opponentStatMessage = `<p>${opponentDetective.name} has ${opponentDetective.facts[statIndex].result} ${opponentDetective.facts[statIndex].stat.toLowerCase()}.</p>`
-   // Define order of messages
-    const messageArray = playerTurn ? [playerDetectiveMessage,opponentMessage,opponentStatMessage] : [opponentCallMessage,opponentMessage + opponentStatMessage,playerDetectiveMessage]
+    // Define order of messages
+    const messageArray = playerTurn ? [playerDetectiveMessage, opponentMessage, opponentStatMessage] : [opponentCallMessage, opponentMessage + opponentStatMessage, playerDetectiveMessage]
     // Evaluate winner
     const playerWinner = playerDetective.facts[statIndex].result > opponentDetective.facts[statIndex].result ? true : false
     const winnerMessage = playerWinner ? `<p class='confirmation'>You win this hand!</p>` : `<p class='confirmation'>You lose this hand...</p>`
     const delay = playerTurn ? 0 : 2000
     // Display comparison messages
     const messageArea = document.getElementById('middle-area-text')
-    setTimeout(()=>{
+    setTimeout(() => {
         messageArea.innerHTML = messageArray[0]
-    },delay)
-    setTimeout(() => { 
+    }, delay)
+    setTimeout(() => {
         messageArea.innerHTML = messageArray[1]
         revealOpponentCard(opponentDetective)
     }, delay + 2000)
-    setTimeout(() => { 
+    setTimeout(() => {
         messageArea.innerHTML = messageArray[2]
     }, delay + 4000)
     setTimeout(() => {
@@ -163,7 +163,7 @@ const compareCards = (playerDecks, statIndex,playerTurn) => {
     setTimeout(() => {
         resetCards(playerWinner)
         passCards(playerWinner, playerDecks)
-        }, delay + 8000)
+    }, delay + 8000)
 }
 
 /**
@@ -240,7 +240,42 @@ const resetCards = (playerTurn) => {
  */
 
 const opponentTurn = (playerDecks) => {
-    compareCards(playerDecks, Math.floor(Math.random() * 3),false)
+    const difficulty = document.getElementById('difficulty').textContent
+    const {
+        opponentDeck
+    } = playerDecks
+    const opponentCard = opponentDeck[0]
+    //Sort Opponent Card Facts by Relative Strength
+    opponentCard.facts.sort((a, b) => {
+        return b.relStrength - a.relStrength
+    })
+    let difficultySpread = []
+    switch (difficulty) {
+        case 'Loser':
+            console.log('Loser')
+            break;
+        case 'Easy':
+            console.log('Easy')
+            break;
+
+        case 'Medium':
+            console.log('Medium')
+            break;
+
+        case 'Hard':
+            console.log('Hard')
+            break;
+
+        case 'Wild Card':
+            console.log('Wild Card')
+            break;
+
+        default:
+            // code block
+    }
+
+    //Compare
+    compareCards(playerDecks, Math.floor(Math.random() * 3), false)
 }
 
 /**
@@ -248,13 +283,16 @@ const opponentTurn = (playerDecks) => {
  */
 
 const lastCardWarning = (playerDecks) => {
-    const {userDeck, opponentDeck} = playerDecks
-    if (opponentDeck.length === 1){
+    const {
+        userDeck,
+        opponentDeck
+    } = playerDecks
+    if (opponentDeck.length === 1) {
         document.getElementById('opponent-last-card-warning').style.display = 'block'
     } else {
-    document.getElementById('opponent-last-card-warning').style.display = 'none'
+        document.getElementById('opponent-last-card-warning').style.display = 'none'
     }
-    if (userDeck.length < 2){
+    if (userDeck.length < 2) {
         document.getElementById('player-last-card-warning').style.display = 'block'
         document.getElementById('player-deck').classList.add('deckFadeOut')
 
@@ -268,27 +306,30 @@ const lastCardWarning = (playerDecks) => {
 
 const checkEndGame = (playerDecks) => {
     let gameOver = false
-    const {userDeck, opponentDeck} = playerDecks
-    if (userDeck.length === 0){
+    const {
+        userDeck,
+        opponentDeck
+    } = playerDecks
+    if (userDeck.length === 0) {
         document.getElementById('opponent-card').classList.add('deckFadeOut')
         document.getElementById('card').classList.add('deckFadeOut')
         document.getElementById('player-last-card-warning').style.display = 'none'
         document.getElementById('opponent-area').style.display = 'none'
-        document.getElementById('middle-area-text').innerHTML = 
-        `
+        document.getElementById('middle-area-text').innerHTML =
+            `
         <p>Bad luck! Moriarty has bested you this time!</p>
         <p>Try again!</p>
         `
         document.getElementById('middle-area').classList.add('end-message')
         gameOver = true
     }
-    if (opponentDeck.length === 0){
+    if (opponentDeck.length === 0) {
         document.getElementById('opponent-card').classList.add('deckFadeOut')
         document.getElementById('card').classList.add('deckFadeOut')
         document.getElementById('opponent-last-card-warning').style.display = 'none'
-        document.getElementById('player-deck').style.display='none'
-        document.getElementById('middle-area-text').innerHTML = 
-        `
+        document.getElementById('player-deck').style.display = 'none'
+        document.getElementById('middle-area-text').innerHTML =
+            `
         <p>You win!</p>
         `
         document.getElementById('middle-area').classList.add('end-message')
