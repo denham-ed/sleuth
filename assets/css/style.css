@@ -109,15 +109,17 @@ button:hover {
     justify-content: center;
     width: 80%;
     text-align: center;
+    background-color: inherit;
 }
 
 #middle-area-text p {
     text-align: center;
+    background-color: inherit;
 }
 
 .confirmation{
-    font-weight: bold;
-    color: #8C2F39;
+    color: #FBFAF8;
+    background-color: #8C2F39;
 }
 
 
@@ -469,6 +471,11 @@ td {
 
 .locked{
     pointer-events: none;
+}
+
+.highlight-message{
+    background-color: #8C2F39;
+    color: #E7DECD;
 }
 
 

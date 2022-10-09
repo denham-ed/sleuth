@@ -157,7 +157,7 @@ const compareCards = (playerDecks, statIndex,playerTurn) => {
         messageArea.innerHTML = messageArray[2]
     }, delay + 4000)
     setTimeout(() => {
-
+        document.getElementById('middle-area').classList.add('highlight-message')
         messageArea.innerHTML = winnerMessage
     }, delay + 6000)
     setTimeout(() => {
@@ -230,6 +230,7 @@ const resetCards = (playerTurn) => {
     document.getElementById('opponent-header').textContent = ''
     document.getElementById('opponent-image').style.display = 'none'
     // Reset Message Area
+    document.getElementById('middle-area').classList.remove('highlight-message')
     const turnMessage = playerTurn ? `<p>It's your turn...</p>` : `<p>It's your opponent's turn...</p>`
     document.getElementById('middle-area-text').innerHTML = turnMessage
 }
@@ -289,7 +290,6 @@ const checkEndGame = (playerDecks) => {
         document.getElementById('middle-area-text').innerHTML = 
         `
         <p>You win!</p>
-        <p>Try again!</p>
         `
         document.getElementById('middle-area').classList.add('end-message')
         gameOver = true
