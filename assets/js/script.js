@@ -1,6 +1,8 @@
 document.addEventListener("DOMContentLoaded", () => {
-    const startButton = document.getElementById('start-button')
-    startButton.addEventListener('click', prepareGame)
+    let startButtons = document.getElementsByClassName('difficulty-button')
+    for (let startButton of startButtons){
+        startButton.addEventListener('click', prepareGame)
+    }
 })
 
 /** 
@@ -30,7 +32,8 @@ const addLoadingItem = (loadingArray, i) => {
 
 
 
-const prepareGame = () => {
+const prepareGame = (event) => {
+    document.getElementById('difficulty').textContent = event.target.dataset.difficulty
     // Add Loading Text to Screen in Sequence
     document.getElementById('middle-area-text').innerHTML = `<div>The game is afoot...</div>`
     document.getElementById('middle-area-logo').innerHTML = `<i class="fa-solid fa-magnifying-glass"></i>`
