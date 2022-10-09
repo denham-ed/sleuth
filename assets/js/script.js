@@ -246,13 +246,20 @@ const opponentTurn = (playerDecks) => {
     } = playerDecks
     const opponentCard = opponentDeck[0]
     //Sort Opponent Card Facts by Relative Strength
-    opponentCard.facts.sort((a, b) => {
+    const sortedOpponentCardFacts = opponentCard.facts.map((fact,index) => {
+        return {
+            ...fact,
+            originalIndex:index
+        }
+    })
+    sortedOpponentCardFacts.sort((a, b) => {
         return b.relStrength - a.relStrength
     })
     let difficultySpread = []
+    //Set Spread of Probabilities Based on Difficulty
     switch (difficulty) {
-        case 'Loser':
-            console.log('Loser')
+        case 'Test':
+            difficultySpread=[0,1,2,100]
             break;
         case 'Easy':
             difficultySpread=[10,30,60,100]
@@ -263,17 +270,20 @@ const opponentTurn = (playerDecks) => {
             break;
 
         case 'Hard':
-            difficultySpread=[80,95,100]
+            difficultySpread=[80,95,99,100]
             break;
 
         case 'Wild Card':
             difficultySpread=[25,50,75,100]
             break;
-
     }
-
-    //Compare
-    compareCards(playerDecks, Math.floor(Math.random() * 3), false)
+    //Select Stat Index
+    let ranNum = Math.floor(Math.random() * 100)
+    let index = difficultySpread.findIndex((i) => {return i > ranNum})
+    console.log(index)
+    console.log(sortedOpponentCardFacts[index].originalIndex)
+    //Compare Cards
+    compareCards(playerDecks, sortedOpponentCardFacts[index].originalIndex, false)
 }
 
 /**
