@@ -310,7 +310,7 @@ td {
 /* Opponent Card */
 
 #opponent-area{
-    height: 18rem;
+    height: 19.5rem;
     display: flex;
     flex-direction: column;
 }
@@ -388,16 +388,16 @@ td {
 
 #opponent-header{
     font-family: 'Ultra', serif;
-    margin-top: 0.1rem;
-    font-size: 98%;
+    margin-top: 0.6rem;
+    font-size: 95%;
 }
 
 #opponent-image{
     display: none;
     margin-top: 0.3rem;
     margin-bottom: 0.5rem;
-    height: 6rem;
-    width: 6rem;
+    height: 8rem;
+    width: 8rem;
     background-repeat: none;
     background-size: cover;
     background-position: middle left;
