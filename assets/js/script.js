@@ -255,23 +255,21 @@ const opponentTurn = (playerDecks) => {
             console.log('Loser')
             break;
         case 'Easy':
-            console.log('Easy')
+            difficultySpread=[10,30,60,100]
             break;
 
         case 'Medium':
-            console.log('Medium')
+            difficultySpread=[50,75,90,100]
             break;
 
         case 'Hard':
-            console.log('Hard')
+            difficultySpread=[80,95,100]
             break;
 
         case 'Wild Card':
-            console.log('Wild Card')
+            difficultySpread=[25,50,75,100]
             break;
 
-        default:
-            // code block
     }
 
     //Compare
