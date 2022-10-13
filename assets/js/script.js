@@ -3,7 +3,10 @@ document.addEventListener("DOMContentLoaded", () => {
     for (let startButton of startButtons){
         startButton.addEventListener('click', prepareGame)
     }
+    
 })
+
+
 
 /** 
  * Recursive function to display mock loading text to user 
@@ -40,6 +43,16 @@ const prepareGame = (event) => {
     document.getElementById('middle-area-logo').innerHTML = `<i class="fa-solid fa-magnifying-glass"></i>`
     const loadingArray = ['Gathering Clues', 'Polishing Magnifying Glass', 'Sharpening Pencil', 'Interviewing Witnesses']
     addLoadingItem(loadingArray, 0)
+        // New Detective fro Draw Testing
+ detectives.forEach((detective) => {
+    detective.facts.push({
+        stat: "Draw",
+        result: 1,
+        relStrength: 2
+    })
+        })
+
+
     let playerDecks = assignCards(detectives)
     setTimeout(() => {
         populatePlayerCard(playerDecks, true)
@@ -361,6 +374,6 @@ const checkEndGame = (playerDecks) => {
     return gameOver
 }
 
-const handleDraw = () => {
-    
+const handleDraw = (playerTurn,playerDecks) => {
+    console.log(playerDecks)
 }
