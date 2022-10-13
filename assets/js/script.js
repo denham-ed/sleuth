@@ -128,12 +128,9 @@ const lockUserInput = () => {
  * Compares player and opponent cards and renders message to screen.
  */
 
-
-
 const compareCards = (playerDecks, statIndex, playerTurn) => {
     //Prevent User Clicks on Options
     lockUserInput()
-    //
 
     const playerDetective = playerDecks.userDeck[0]
     const opponentDetective = playerDecks.opponentDeck[0]
@@ -145,8 +142,17 @@ const compareCards = (playerDecks, statIndex, playerTurn) => {
     // Define order of messages
     const messageArray = playerTurn ? [playerDetectiveMessage, opponentMessage, opponentStatMessage] : [opponentCallMessage, opponentMessage + opponentStatMessage, playerDetectiveMessage]
     // Evaluate winner
-    const playerWinner = playerDetective.facts[statIndex].result > opponentDetective.facts[statIndex].result ? true : false
-    const winnerMessage = playerWinner ? `<p class='confirmation'>You win this hand!</p>` : `<p class='confirmation'>You lose this hand...</p>`
+    let playerWinner, draw, winnerMessage
+    if (playerDetective.facts[statIndex].result > opponentDetective.facts[statIndex].result){
+        playerWinner = true
+        winnerMessage = `<p class='confirmation'>You win this hand!</p>`
+    } else if (playerDetective.facts[statIndex].result < opponentDetective.facts[statIndex].result){
+        playerWinner = false
+        winnerMessage = `<p class='confirmation'>You lose this hand...</p>`
+    } else {
+        draw = true
+        winnerMessage = `<p class='confirmation'>It's a draw - noone knows what happens now...</p>`
+    }
     const delay = playerTurn ? 0 : 2000
     // Display comparison messages
     const messageArea = document.getElementById('middle-area-text')
@@ -164,10 +170,16 @@ const compareCards = (playerDecks, statIndex, playerTurn) => {
         document.getElementById('middle-area').classList.add('highlight-message')
         messageArea.innerHTML = winnerMessage
     }, delay + 6000)
-    setTimeout(() => {
-        resetCards(playerWinner)
-        passCards(playerWinner, playerDecks)
-    }, delay + 8000)
+    // Check for draw - finish this comment!!
+    if (!draw){
+        setTimeout(() => {
+            resetCards(playerWinner)
+            passCards(playerWinner, playerDecks)
+        }, delay + 8000)
+    } else {
+        handleDraw(playerTurn,playerDecks)
+    }
+
 }
 
 /**
@@ -347,4 +359,8 @@ const checkEndGame = (playerDecks) => {
         gameOver = true
     }
     return gameOver
+}
+
+const handleDraw = () => {
+    
 }
