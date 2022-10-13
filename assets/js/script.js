@@ -192,7 +192,9 @@ const compareCards = (playerDecks, statIndex, playerTurn) => {
             passCards(playerWinner, playerDecks)
         }, delay + 8000)
     } else {
-        handleDraw(playerTurn,playerDecks)
+        setTimeout(()=>{
+            handleDraw(playerTurn,playerDecks)
+        },8000)
     }
 
 }
@@ -377,7 +379,12 @@ const checkEndGame = (playerDecks) => {
 }
 
 const handleDraw = (playerTurn,playerDecks) => {
+    const {userDeck, opponentDeck} = playerDecks
+    let {drawPile} = playerDecks
+    drawPile.push(userDeck.shift(),opponentDeck.shift())
     console.log(playerDecks)
-    const {drawPile} = playerDecks
-    console.log(drawPile)
+    resetCards(playerTurn)
+    lastCardWarning(playerDecks)
+    if (checkEndGame(playerDecks)) return
+    populatePlayerCard(playerDecks, playerTurn)
 }
