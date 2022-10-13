@@ -122,9 +122,11 @@ const assignCards = (detectives) => {
     shuffleCards(detectives)
     let opponentDeck = detectives.slice(0, detectives.length / 2)
     let userDeck = detectives.slice(detectives.length / 2)
+    let drawPile = []
     return {
         userDeck,
-        opponentDeck
+        opponentDeck,
+        drawPile
     }
 }
 
@@ -376,4 +378,6 @@ const checkEndGame = (playerDecks) => {
 
 const handleDraw = (playerTurn,playerDecks) => {
     console.log(playerDecks)
+    const {drawPile} = playerDecks
+    console.log(drawPile)
 }
