@@ -1,9 +1,9 @@
 document.addEventListener("DOMContentLoaded", () => {
     let startButtons = document.getElementsByClassName('difficulty-button')
-    for (let startButton of startButtons){
+    for (let startButton of startButtons) {
         startButton.addEventListener('click', prepareGame)
     }
-    
+
 })
 
 
@@ -43,14 +43,14 @@ const prepareGame = (event) => {
     document.getElementById('middle-area-logo').innerHTML = `<i class="fa-solid fa-magnifying-glass"></i>`
     const loadingArray = ['Gathering Clues', 'Polishing Magnifying Glass', 'Sharpening Pencil', 'Interviewing Witnesses']
     addLoadingItem(loadingArray, 0)
-        // New Detective fro Draw Testing
- detectives.forEach((detective) => {
-    detective.facts.push({
-        stat: "Draw",
-        result: 1,
-        relStrength: 2
-    })
+    // New Detective fro Draw Testing
+    detectives.forEach((detective) => {
+        detective.facts.push({
+            stat: "Draw",
+            result: 1,
+            relStrength: 2
         })
+    })
 
 
     let playerDecks = assignCards(detectives)
@@ -158,10 +158,10 @@ const compareCards = (playerDecks, statIndex, playerTurn) => {
     const messageArray = playerTurn ? [playerDetectiveMessage, opponentMessage, opponentStatMessage] : [opponentCallMessage, opponentMessage + opponentStatMessage, playerDetectiveMessage]
     // Evaluate winner
     let playerWinner, draw, winnerMessage
-    if (playerDetective.facts[statIndex].result > opponentDetective.facts[statIndex].result){
+    if (playerDetective.facts[statIndex].result > opponentDetective.facts[statIndex].result) {
         playerWinner = true
         winnerMessage = `<p class='confirmation'>You win this hand!</p>`
-    } else if (playerDetective.facts[statIndex].result < opponentDetective.facts[statIndex].result){
+    } else if (playerDetective.facts[statIndex].result < opponentDetective.facts[statIndex].result) {
         playerWinner = false
         winnerMessage = `<p class='confirmation'>You lose this hand...</p>`
     } else {
@@ -186,15 +186,15 @@ const compareCards = (playerDecks, statIndex, playerTurn) => {
         messageArea.innerHTML = winnerMessage
     }, delay + 6000)
     // Check for draw - finish this comment!!
-    if (!draw){
+    if (!draw) {
         setTimeout(() => {
             resetCards(playerWinner)
             passCards(playerWinner, playerDecks)
         }, delay + 8000)
     } else {
-        setTimeout(()=>{
-            handleDraw(playerTurn,playerDecks)
-        },8000)
+        setTimeout(() => {
+            handleDraw(playerTurn, playerDecks)
+        }, 8000)
     }
 
 }
@@ -205,19 +205,38 @@ const compareCards = (playerDecks, statIndex, playerTurn) => {
  */
 
 const passCards = (playerWin, playerDecks) => {
-    const {
+    let {
         userDeck,
-        opponentDeck
+        opponentDeck,
+        drawPile
     } = playerDecks
     if (playerWin) {
         userDeck.push(userDeck.shift())
         userDeck.push(opponentDeck.shift())
+        userDeck = userDeck.concat(drawPile)
+        drawPile = []
+        //Redefine playerDecks
+        playerDecks = {
+            userDeck,
+            opponentDeck,
+            drawPile
+        }
+
         lastCardWarning(playerDecks)
         if (checkEndGame(playerDecks)) return
         populatePlayerCard(playerDecks, true)
+
     } else {
         opponentDeck.push(opponentDeck.shift())
         opponentDeck.push(userDeck.shift())
+        opponentDeck = opponentDeck.concat(drawPile)
+        drawPile = []
+        //Redefine playerDecks
+        playerDecks = {
+            userDeck,
+            opponentDeck,
+            drawPile
+        }
         lastCardWarning(playerDecks)
         if (checkEndGame(playerDecks)) return
         populatePlayerCard(playerDecks, false)
@@ -273,46 +292,49 @@ const resetCards = (playerTurn) => {
  */
 
 const opponentTurn = (playerDecks) => {
+    console.log('Opponent Turn Called')
     const difficulty = document.getElementById('difficulty').textContent
     const {
         opponentDeck
     } = playerDecks
     const opponentCard = opponentDeck[0]
-    //Sort Opponent Card Facts by Relative Strength
-    const sortedOpponentCardFacts = opponentCard.facts.map((fact,index) => {
+    //Sort Opponent Card Facts by Relative Strength, Whilst Retaining Original Index
+    const sortedOpponentCardFacts = opponentCard.facts.map((fact, index) => {
         return {
             ...fact,
-            originalIndex:index
+            originalIndex: index
         }
     })
     sortedOpponentCardFacts.sort((a, b) => {
         return b.relStrength - a.relStrength
     })
-    let difficultySpread = []
     //Set Spread of Probabilities Based on Difficulty
+    let difficultySpread = []
     switch (difficulty) {
         case 'Test':
-            difficultySpread=[0,1,2,100]
+            difficultySpread = [0, 1, 2, 100]
             break;
         case 'Easy':
-            difficultySpread=[10,30,60,100]
+            difficultySpread = [10, 30, 60, 100]
             break;
 
         case 'Medium':
-            difficultySpread=[50,75,90,100]
+            difficultySpread = [50, 75, 90, 100]
             break;
 
         case 'Hard':
-            difficultySpread=[80,95,99,100]
+            difficultySpread = [80, 95, 99, 100]
             break;
 
         case 'Wild Card':
-            difficultySpread=[25,50,75,100]
+            difficultySpread = [25, 50, 75, 100]
             break;
     }
     //Select Stat Index
     let ranNum = Math.floor(Math.random() * 100)
-    let index = difficultySpread.findIndex((i) => {return i > ranNum})
+    let index = difficultySpread.findIndex((i) => {
+        return i > ranNum
+    })
     //Compare Cards
     compareCards(playerDecks, sortedOpponentCardFacts[index].originalIndex, false)
 }
@@ -378,13 +400,20 @@ const checkEndGame = (playerDecks) => {
     return gameOver
 }
 
-const handleDraw = (playerTurn,playerDecks) => {
-    const {userDeck, opponentDeck} = playerDecks
-    let {drawPile} = playerDecks
-    drawPile.push(userDeck.shift(),opponentDeck.shift())
-    console.log(playerDecks)
+const handleDraw = (playerTurn, playerDecks) => {
+    const {
+        userDeck,
+        opponentDeck
+    } = playerDecks
+    let {
+        drawPile
+    } = playerDecks
+    drawPile.push(userDeck.shift(), opponentDeck.shift())
     resetCards(playerTurn)
     lastCardWarning(playerDecks)
     if (checkEndGame(playerDecks)) return
     populatePlayerCard(playerDecks, playerTurn)
+    if (!playerTurn){
+        opponentTurn(playerDecks)
+    }
 }
