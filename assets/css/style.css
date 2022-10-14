@@ -530,22 +530,26 @@ td {
     color: #E7DECD;
 }
 
+/* https://stackoverflow.com/questions/43919067/make-flex-items-overlap */
+
+
 #draw-pile-container{
     width: 80%;
     height: 16rem;
     border: 1px black solid;
-    display: flex;
-    flex-direction: column;
+    display: grid;
+    grid-template-columns: repeat(auto-fit,  minmax(4rem, 4rem)) ;
+
 }
 
-/* https://stackoverflow.com/questions/43919067/make-flex-items-overlap */
 
 .draw-pile-card {
     height: 12rem;
     width: 7rem;
     border-radius: 1.6rem; 
     border: 0.3rem #000 solid;
-    flex: 0 0 50px;
+    transform: rotate(3deg);  /*makes it easier to see the overlap*/
+
 }
 
 
