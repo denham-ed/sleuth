@@ -530,4 +530,14 @@ td {
     color: #E7DECD;
 }
 
+#draw-pile-container{
+    width: 80%;
+    height: 16rem;
+    border: 1px black solid;
+}
+
+.draw-pile-card {
+    
+}
+
 
