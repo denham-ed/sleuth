@@ -369,7 +369,7 @@ td {
     text-align: center;
     animation: warningFadeIn 4s ease 0s 1 normal forwards;
     margin-top: 4rem;
-    padding: 4rem;
+    padding: 2rem 4rem;
     border-radius: 1.6rem; 
     border: 0.3rem #000 solid;
     background-color: #8C2F39;
