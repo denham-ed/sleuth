@@ -409,6 +409,8 @@ const handleDraw = (playerTurn, playerDecks) => {
         drawPile
     } = playerDecks
     drawPile.push(userDeck.shift(), opponentDeck.shift())
+    //Render Draw Pile
+    renderDrawPile(playerDecks)
     resetCards(playerTurn)
     lastCardWarning(playerDecks)
     if (checkEndGame(playerDecks)) return
@@ -416,4 +418,11 @@ const handleDraw = (playerTurn, playerDecks) => {
     if (!playerTurn){
         opponentTurn(playerDecks)
     }
+}
+
+const renderDrawPile = (playerDecks) => {
+    const {drawPile} = playerDecks
+    document.getElementById('draw-pile-container').innerHTML=`<div class='draw-pile-card'>Magic is happening</div>`
+
+
 }
