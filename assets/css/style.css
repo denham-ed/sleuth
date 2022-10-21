@@ -549,7 +549,10 @@ td {
     border-radius: 1.6rem; 
     border: 0.3rem #000 solid;
     transform: rotate(3deg);  /*makes it easier to see the overlap*/
-
+    background-image: url('../images/logo2.svg');
+    background-repeat: repeat;
+    background-size: 20.65%;
+    background-color: #8C2F39;
 }
 
 
