@@ -107,7 +107,16 @@ header h1 {
 
 .difficulty-container{
     display: none;
+    background-color: inherit;
 }
+
+#difficulty {
+    background-color: inherit;
+}
+
+
+
+
 
 .button-container{
     width: 80%;
