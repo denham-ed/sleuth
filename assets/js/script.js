@@ -424,7 +424,7 @@ const renderDrawPile = (drawPile) => {
     let drawPileHTML = ''
     console.log(drawPile)
     drawPile.forEach((card) => {
-        drawPileHTML += `<div class='draw-pile-card'>Magic is happening</div>`
+        drawPileHTML += `<div class='draw-pile-card'></div>`
     })
     document.getElementById('draw-pile-container').innerHTML= drawPileHTML
 
