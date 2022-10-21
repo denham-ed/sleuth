@@ -425,15 +425,15 @@ const renderDrawPile = (drawPile) => {
     let drawPileHTML = ''
     drawPile.forEach((card) => {
         drawPileHTML += 
-        `<div class='draw-pile-card'><div class="blur">${card.name}</div>
+        `<div class='draw-pile-card'><div class="draw-pile-card-header blur">${card.name}</div>
         <div class='draw-pile-card-picture' style="background-image: url(${card.image})"></div>
         <div class="tiny-stripe stripe-red"></div>
         <div class="tiny-stripe stripe-green"></div>
         <div class="tiny-stripe stripe-blue"></div>
-        <div class="blur">Enemies</div>
-        <div class="blur">Cases</div>
-        <div class="blur">Style</div>
-        <div class="blur">Assistants</div>
+        <div class="tiny-stat blur">Enemies</div>
+        <div class="tiny-stat blur">Cases</div>
+        <div class="tiny-stat blur">Style</div>
+        <div class="tiny-stat blur">Assistants</div>
         </div>`
     })
     document.getElementById('draw-pile-container').innerHTML= drawPileHTML

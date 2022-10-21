@@ -576,7 +576,8 @@ td {
 }
 
 .draw-pile-card-picture{
-    margin-top: 0.5rem;
+    margin-top: 0.3rem;
+    margin-bottom: 0.2rem;
     height:5rem;
     width: 5rem;
     background-repeat: none;
@@ -585,4 +586,16 @@ td {
     border: 0.2rem black solid;
 }
 
+.draw-pile-card-header{
+    white-space: nowrap;
+    overflow: hidden;
+    width:85%;
+    font-size: 85%;
+    text-align: center;
+}
+.tiny-stat {
+    width: 85%;
+    text-align: left;
+    font-size: 85%;
+}
 
