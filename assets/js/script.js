@@ -39,7 +39,7 @@ const prepareGame = (event) => {
     document.getElementById('difficulty').textContent = event.target.dataset.difficulty
     document.getElementsByClassName('difficulty-container')[0].style.display = 'block'
     // Add Loading Text to Screen in Sequence
-    document.getElementById('middle-area-text').innerHTML = `<div>The game is afoot...</div>`
+    document.getElementById('middle-area-text').innerHTML = `<div>The Game Is Afoot...</div>`
     document.getElementById('middle-area-logo').innerHTML = `<i class="fa-solid fa-magnifying-glass"></i>`
     const loadingArray = ['Gathering Clues', 'Polishing Magnifying Glass', 'Sharpening Pencil', 'Interviewing Witnesses']
     addLoadingItem(loadingArray, 0)
