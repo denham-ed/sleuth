@@ -474,6 +474,12 @@ td {
     height: 0.2rem;
 }
 
+.tiny-stripe {
+    display: block;
+    width: 100%;
+    height: 0.2rem;
+}
+
 .divider{
     margin-top: 0.3rem;
     display: none;
@@ -481,6 +487,8 @@ td {
     width: 85%;
     border-bottom: 1px solid black;
 }
+
+
 
 /* https://www.w3docs.com/snippets/css/how-to-create-a-blurry-text-in-css.html#:~:text=The%20first%20way%20of%20creating,a%20shadow%20to%20the%20text. */
 .blur {
@@ -560,6 +568,7 @@ td {
     transform: rotate(3deg);  /*makes it easier to see the overlap*/
     display: flex;
     flex-direction: column;
+    align-items: center;
     /* background-image: url('../images/logo2.svg');
     background-repeat: repeat;
     background-size: 20.65%;
@@ -568,8 +577,8 @@ td {
 
 .draw-pile-card-picture{
     margin-top: 0.5rem;
-    height:4rem;
-    width: 4rem;
+    height:5rem;
+    width: 5rem;
     background-repeat: none;
     background-size: cover;
     background-position: middle left;
