@@ -293,7 +293,6 @@ const resetCards = (playerTurn) => {
  */
 
 const opponentTurn = (playerDecks) => {
-    console.log('Opponent Turn Called')
     const difficulty = document.getElementById('difficulty').textContent
     const {
         opponentDeck
@@ -327,7 +326,7 @@ const opponentTurn = (playerDecks) => {
             difficultySpread = [80, 95, 99, 100]
             break;
 
-        case 'Wild Card':
+        case 'Wild':
             difficultySpread = [25, 50, 75, 100]
             break;
     }
@@ -377,6 +376,8 @@ const checkEndGame = (playerDecks) => {
         document.getElementById('card').classList.add('deckFadeOut')
         document.getElementById('player-last-card-warning').style.display = 'none'
         document.getElementById('opponent-last-card-warning').style.display = 'none'
+        document.getElementById('draw-pile-container').style.display = 'none'
+
         document.getElementById('player-deck').style.display = 'none'
         document.getElementById('middle-area-text').innerHTML =
             `
@@ -390,11 +391,10 @@ const checkEndGame = (playerDecks) => {
         document.getElementById('opponent-card').classList.add('deckFadeOut')
         document.getElementById('card').classList.add('deckFadeOut')
         document.getElementById('opponent-last-card-warning').style.display = 'none'
+        document.getElementById('opponent-last-card-warning').style.display = 'none'
+        document.getElementById('draw-pile-container').style.display = 'none'
         document.getElementById('player-deck').style.display = 'none'
-        document.getElementById('middle-area-text').innerHTML =
-            `
-        <p>You win!</p>
-        `
+        document.getElementById('middle-area-text').innerHTML = `<p>You win!</p>`
         document.getElementById('middle-area').classList.add('end-message')
         gameOver = true
     }

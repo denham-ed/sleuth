@@ -374,7 +374,7 @@ td {
 
 .last-card-warning{
     font-size: 120%;
-    display: block;
+    display: none;
     text-align: center;
     animation: warningFadeIn 4s ease 0s 1 normal forwards;
     margin-top: 4rem;
