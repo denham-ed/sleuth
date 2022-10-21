@@ -321,10 +321,17 @@ button:hover {
     color: #8C2F39;
 }
 
+.selected-row{
+    background-color: #0A122A;
+    color:#FBFAF8;
+}
+
+
 td {
     border: inherit;
     border-collapse: inherit;
     background-color: inherit;
+    color: inherit;
 
 }
 
@@ -551,12 +558,12 @@ td {
 
 
 #draw-pile-container{
+    margin-top: 1rem;
     width: 80%;
     height: 16rem;
-    border: 1px black solid;
+    /* border: 1px black solid; */
     display: grid;
     grid-template-columns: repeat(auto-fit,  minmax(4rem, 4rem)) ;
-
 }
 
 

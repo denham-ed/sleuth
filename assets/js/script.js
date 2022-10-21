@@ -92,7 +92,8 @@ const populatePlayerCard = (playerDecks, playerTurn) => {
         const statRows = document.getElementsByClassName('stat-row')
         for (let row of statRows) {
             row.classList.add('active-row')
-            row.addEventListener('click', () => {
+            row.addEventListener('click', (e) => {
+                e.target.parentElement.classList.add('selected-row')
                 compareCards(playerDecks, row.dataset.stat, playerTurn)
             })
         }
