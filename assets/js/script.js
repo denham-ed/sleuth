@@ -188,6 +188,7 @@ const compareCards = (playerDecks, statIndex, playerTurn) => {
     // Check for draw - finish this comment!!
     if (!draw) {
         setTimeout(() => {
+            clearDrawPile()
             resetCards(playerWinner)
             passCards(playerWinner, playerDecks)
         }, delay + 8000)
@@ -422,11 +423,12 @@ const handleDraw = (playerTurn, playerDecks) => {
 
 const renderDrawPile = (drawPile) => {
     let drawPileHTML = ''
-    console.log(drawPile)
     drawPile.forEach((card) => {
         drawPileHTML += `<div class='draw-pile-card'></div>`
     })
     document.getElementById('draw-pile-container').innerHTML= drawPileHTML
+}
 
-
+const clearDrawPile = () => {
+    document.getElementById('draw-pile-container').innerHTML= ''
 }
