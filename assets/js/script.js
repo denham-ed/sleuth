@@ -424,7 +424,9 @@ const handleDraw = (playerTurn, playerDecks) => {
 const renderDrawPile = (drawPile) => {
     let drawPileHTML = ''
     drawPile.forEach((card) => {
-        drawPileHTML += `<div class='draw-pile-card'></div>`
+        drawPileHTML += `<div class='draw-pile-card'>
+        <div class='draw-pile-card-picture' style="background-image: url(${card.image})"></div>
+        </div>`
     })
     document.getElementById('draw-pile-container').innerHTML= drawPileHTML
 }

@@ -558,10 +558,22 @@ td {
     border-radius: 1.6rem; 
     border: 0.3rem #000 solid;
     transform: rotate(3deg);  /*makes it easier to see the overlap*/
-    background-image: url('../images/logo2.svg');
+    display: flex;
+    flex-direction: column;
+    /* background-image: url('../images/logo2.svg');
     background-repeat: repeat;
     background-size: 20.65%;
-    background-color: #8C2F39;
+    background-color: #8C2F39; */
+}
+
+.draw-pile-card-picture{
+    margin-top: 0.5rem;
+    height:4rem;
+    width: 4rem;
+    background-repeat: none;
+    background-size: cover;
+    background-position: middle left;
+    border: 0.2rem black solid;
 }
 
 
