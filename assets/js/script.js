@@ -67,9 +67,13 @@ const prepareGame = (event) => {
 
 const populatePlayerCard = (playerDecks, playerTurn) => {
     const detective = playerDecks.userDeck[0]
-    document.getElementById('card-count-container').innerHTML = `<span>You have ${playerDecks.userDeck.length} cards in your deck.</span>`
+    //Full Screen
+    document.getElementById('card-count-container').innerHTML = `<span>You have ${playerDecks.userDeck.length} cards.</span>`
     document.getElementById('card-header').textContent = detective.name
     document.getElementById('card-image').style.backgroundImage = `url(${detective.image})`
+    //Small Screen
+    document.getElementById('card-count').innerHTML = `${playerDecks.userDeck.length} cards`
+    document.getElementById('draw-count').innerHTML = `${playerDecks.drawPile.length} cards`
     // Stats
     let statsHTML = ''
     detective.facts.forEach((fact, index) => {

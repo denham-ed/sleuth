@@ -612,6 +612,7 @@ td {
     height:0rem;
 }
 
+/* Responsive Design */
 @media screen and (max-width: 905px) {
     #player-left, #player-right, #opponent-right, #opponent-left{
         display: none;
@@ -619,8 +620,10 @@ td {
 
     #game-stats{
         display: none;
-        width: 10rem;
-        height:10rem;
-        background-color: red;
+        width: 30rem;
+        height:4rem;
+        border: 1px solid black;    
     }
+
+    #
 }
