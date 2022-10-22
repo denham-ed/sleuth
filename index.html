@@ -13,7 +13,7 @@
 
 <body>
     <header>
-        <h1>Sleuth.</h1>
+        <h1>Sleuth!!.</h1>
         <div class="difficulty-container">Difficulty: <span id="difficulty"></span></div>
         <div class="stripe stripe-red"></div>
         <div class="stripe stripe-green"></div>
@@ -78,8 +78,8 @@
             <div id="circle">
                 <i id="info" class="fa-solid fa-magnifying-glass"></i>
               </div>
-            <p>Your Cards: <span id="card-count"></span></p>
-            <p>Cards in Draw Pile:<span id="draw-count"></span></p>
+            <!-- <p>Your Cards: <span id="card-count"></span></p>
+            <p>Cards in Draw Pile:<span id="draw-count"></span></p> -->
         </div>
         <section id="player-area">
             <div class="player-containers" id="player-left">
@@ -109,6 +109,13 @@
                 <div id="player-last-card-warning" class="last-card-warning">Last Card!</div>
 
             </div>
+        </section>
+        <section id="game-stats-modal">
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                <p>Your Cards: <span id="card-count"></span></p>
+                <p>Cards in Draw Pile:<span id="draw-count"></span></p>
+              </div>
         </section>
     </main>
     <script src="assets/js/detectives.js"></script>

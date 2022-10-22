@@ -39,6 +39,12 @@ const prepareGame = (event) => {
     document.getElementById('difficulty').textContent = event.target.dataset.difficulty
     document.getElementsByClassName('difficulty-container')[0].style.display = 'block'
     //Prepare Media Query Elements
+    document.getElementById("circle").addEventListener('mouseover', ()=>{
+        document.getElementById("game-stats-modal").style.display = 'block'
+    })
+    document.getElementById("circle").addEventListener("mouseleave", ()=>{
+        document.getElementById("game-stats-modal").style.display = 'none'
+    })
     document.getElementById("game-stats").style.display = "block"
     // Add Loading Text to Screen in Sequence
     document.getElementById('middle-area-text').innerHTML = `<div>The Game Is Afoot...</div>`
