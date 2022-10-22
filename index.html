@@ -10,6 +10,7 @@
     <script src="https://kit.fontawesome.com/32eb0f11a8.js" crossorigin="anonymous"></script>
     <title>Sleuth</title>
 </head>
+
 <body>
     <header>
         <h1>Sleuth.</h1>
@@ -25,24 +26,32 @@
                 <div id="opponent-last-card-warning" class="last-card-warning">Last Card!</div>
             </div>
             <div class="player-containers">
-                <img  id="main-logo" class='logo' src="assets/images/logo2.svg">
-            <div class="small-reverse-card" id="opponent-card">
-                <div id="opponent-header"></div>
-                <div id="opponent-image"></div>
-                <div class="small-stripe stripe-red"></div>
-                <div class="small-stripe stripe-green"></div>
-                <div class="small-stripe stripe-blue"></div>
-                <div class="divider blur">Enemies</div>
-                <div class="divider blur">Cases</div>
-                <div class="divider blur">Style</div>
-                <div class="divider blur"> Assistants</div>
-            </div>
+                <img id="main-logo" class='logo' src="assets/images/logo2.svg">
+                <div class="small-reverse-card" id="opponent-card">
+                    <div class="opponent-header-container">
+                        <div id="opponent-header"></div>
+                    </div>
+                    <div class="opponent-body">
+                        <div id="opponent-image"></div>
+                        <div class="stripe-container">
+                            <div class="small-stripe stripe-red"></div>
+                            <div class="small-stripe stripe-green"></div>
+                            <div class="small-stripe stripe-blue"></div>
+                        </div>
+                        <div class="dividers">
+                            <div class="divider blur">Enemies</div>
+                            <div class="divider blur">Cases</div>
+                            <div class="divider blur">Style</div>
+                            <div class="divider blur"> Assistants</div>
+                        </div>
+                    </div>
+                </div>
             </div>
             <div class="player-containers" id="opponent-right">
                 <!-- <h2>Draw Card Holding Pen</h2> -->
                 <div id="draw-pile-container"></div>
             </div>
-            
+
         </section>
         <section id="middle-area" class="start-message">
             <div id="middle-area-logo"></div>
@@ -57,10 +66,10 @@
                     collect all 16 crime-solvers.</p><br>
                 <h2>Start Sleuthing!</h2>
                 <div class="button-container">
-                <button class="difficulty-button blue-button" data-difficulty="Easy"></button>
-                <button class="difficulty-button green-button" data-difficulty="Medium"></button>
-                <button class="difficulty-button red-button" data-difficulty="Hard"></button>
-                <button class="difficulty-button wild-button" data-difficulty="Wild"></button>
+                    <button class="difficulty-button blue-button" data-difficulty="Easy"></button>
+                    <button class="difficulty-button green-button" data-difficulty="Medium"></button>
+                    <button class="difficulty-button red-button" data-difficulty="Hard"></button>
+                    <button class="difficulty-button wild-button" data-difficulty="Wild"></button>
                 </div>
             </div>
 
@@ -78,13 +87,11 @@
                 </div>
             </div>
             <div class="player-containers">
-  
                 <div id="card">
                     <div id="card-header-container">
                         <div id="card-header">Detective Name</div>
                     </div>
                     <div class="card-body-container">
-
                         <div id="card-image"></div>
                         <div class="card-stripes">
                             <div class="stripe stripe-red"></div>
@@ -93,9 +100,6 @@
                         </div>
                         <div id="card-stats"></div>
                     </div>
-
-
-
                 </div>
             </div>
             <div class="player-containers" id="player-right">

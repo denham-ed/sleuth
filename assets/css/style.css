@@ -639,10 +639,6 @@ td {
     }
 
 
-    /* #card-header{
-        width: 80%;
-    } */
-
     .card-stripes{
         display:none;
     }
@@ -658,6 +654,25 @@ td {
         height: 8rem;
         width: 8rem;
         margin-right: 1rem;
+    }
+
+    /* Opponent Card */
+    .small-reverse-card{
+        height: 10rem;
+        width: 18.5rem;
+        background-size: 10.5%;
+
+    }
+
+    .opponent-body{
+        display:flex;   
+        flex-direction: row;
+    }
+
+
+    #opponent-image{
+        height: 5rem;
+        width: 5rem;
     }
 
 
@@ -677,6 +692,9 @@ td {
         display: none;
 
     }
+
+    /* Opponent Card */
+
 
 
 }
