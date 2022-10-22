@@ -495,6 +495,7 @@ td {
 
 .divider{
     margin-top: 0.3rem;
+    background-color: #fff;
     display: none;
     height: 1rem;
     width: 85%;
@@ -620,9 +621,23 @@ td {
 
 /* Responsive Design */
 @media screen and (max-width: 905px) {
+
+    /* General */
     #player-left, #player-right, #opponent-right, #opponent-left{
         display: none;
     }
+
+    #opponent-area{
+        width: 100%;
+        height: unset;
+    }
+
+    .player-containers{
+        height:16rem;
+    }
+    
+
+    
 
     #game-stats{
         display: none;
@@ -664,9 +679,17 @@ td {
 
     }
 
+    .dividers{
+        width: 60%;
+        background-color: #fff;
+    }
+
     .opponent-body{
+        margin-top: 0.5rem;
         display:flex;   
         flex-direction: row;
+        width: 80%;
+        justify-content: space-around;
     }
 
 
