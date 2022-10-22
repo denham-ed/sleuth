@@ -637,6 +637,10 @@ td {
         width: 100%;
     }
 
+    .card-stripes{
+        display:none;
+    }
+
     #card-header-container{
         width: 100%;
     }
@@ -653,8 +657,6 @@ td {
         margin-right: 1rem;
     }
 
-/* https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Flexible_Box_Layout/Ordering_Flex_Items */
-.box :nth-child(1) { order: 2; }
 
 
 }
