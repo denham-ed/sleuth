@@ -46,13 +46,13 @@ const prepareGame = (event) => {
     const loadingArray = ['Gathering Clues', 'Polishing Magnifying Glass', 'Sharpening Pencil', 'Interviewing Witnesses']
     addLoadingItem(loadingArray, 0)
     // New Detective fro Draw Testing
-    detectives.forEach((detective) => {
-        detective.facts.push({
-            stat: "Draw",
-            result: 1,
-            relStrength: 2
-        })
-    })
+    // detectives.forEach((detective) => {
+    //     detective.facts.push({
+    //         stat: "Draw",
+    //         result: 1,
+    //         relStrength: 2
+    //     })
+    // })
 
 
     let playerDecks = assignCards(detectives)

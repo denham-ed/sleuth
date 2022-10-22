@@ -663,7 +663,8 @@ td {
 /* Very small screen */
 @media screen and (max-width: 400px) {
     #card{
-        height: 9rem;
+        /* height: 9rem; */
+        height: 16.7rem;
         width: 16.7rem;
         flex-direction: column;
         justify-content: flex-start;
