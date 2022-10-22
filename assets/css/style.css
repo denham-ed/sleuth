@@ -601,10 +601,8 @@ td {
     display: flex;
     flex-direction: column;
     align-items: center;
-    /* background-image: url('../images/logo2.svg');
-    background-repeat: repeat;
-    background-size: 20.65%;
-    background-color: #8C2F39; */
+    background-color: #fff;
+
 }
 
 .draw-pile-card-picture{
@@ -632,7 +630,7 @@ td {
 }
 
 #circle{
-    display:flex;
+    display:none;
     flex-direction: column;
     justify-content: center;
     align-items:center;

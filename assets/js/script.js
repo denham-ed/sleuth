@@ -66,6 +66,7 @@ const prepareGame = (event) => {
         document.getElementById('card').style.display = 'flex'
         document.getElementById('player-deck').style.display = 'flex'
         document.getElementById('opponent-card').style.display = 'flex'
+        document.getElementById('circle').style.display='flex'
         document.getElementById('middle-area-text').innerHTML = `<span>It's your turn - choose an attribute to get started!`
     }, 8000)
 }
