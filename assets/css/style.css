@@ -626,6 +626,22 @@ td {
     font-size: 85%;
 }
 
+#circle{
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items:center;
+    height: 3rem;
+    width: 3rem;
+    border-radius:100%;
+    background-color: #0A122A;
+  }
+
+  #info{
+    color: #FBFAF8;
+    text-align: center;
+  }
+
 #game-stats{
     display: none;
     width: 0rem;
