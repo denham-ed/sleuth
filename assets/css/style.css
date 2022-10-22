@@ -159,6 +159,14 @@ button:hover {
     min-width: 30rem;
    }
 
+   #middle-centre{
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+
+   }
+
    #middle-left, #middle-right{
     width: 10%;
    }
