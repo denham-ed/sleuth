@@ -618,7 +618,7 @@ td {
     }
 
     #game-stats{
-        display: block;
+        display: none;
         width: 10rem;
         height:10rem;
         background-color: red;
