@@ -637,9 +637,8 @@ td {
     background-color: #0A122A;
   }
 
-  #circle :hover, #game-stats-modal{
+  #circle :hover{
     cursor: pointer;
-    display: block;
   }
 
   #info{
