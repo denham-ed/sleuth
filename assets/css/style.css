@@ -633,8 +633,9 @@ td {
         justify-content: flex-start;
     }
 
+
     #card-header{
-        width: 100%;
+        width: 80%;
     }
 
     .card-stripes{
