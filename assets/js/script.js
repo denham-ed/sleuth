@@ -173,7 +173,7 @@ const compareCards = (playerDecks, statIndex, playerTurn) => {
         winnerMessage = `<p class='confirmation'>You lose this hand...</p>`
     } else {
         draw = true
-        winnerMessage = `<p class='confirmation'>It's a draw - noone knows what happens now...</p>`
+        winnerMessage = `<p class='confirmation'>It's a draw - the cards are put to one side for now...</p>`
     }
     const delay = playerTurn ? 0 : 2000
     // Display comparison messages
