@@ -606,3 +606,21 @@ td {
     font-size: 85%;
 }
 
+#game-stats{
+    display: none;
+    width: 0rem;
+    height:0rem;
+}
+
+@media screen and (max-width: 905px) {
+    #player-left, #player-right, #opponent-right, #opponent-left{
+        display: none;
+    }
+
+    #game-stats{
+        display: block;
+        width: 10rem;
+        height:10rem;
+        background-color: red;
+    }
+}
