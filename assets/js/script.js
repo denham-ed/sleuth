@@ -37,7 +37,6 @@ const addLoadingItem = (loadingArray, i) => {
 
 const prepareGame = (event) => {
     document.getElementById('difficulty').textContent = event.target.dataset.difficulty
-    document.getElementsByClassName('difficulty-container')[0].style.display = 'block'
     //Prepare Media Query Elements
     document.getElementById("circle").addEventListener('mouseover', ()=>{
         document.getElementById("game-stats-modal").style.display = 'block'

@@ -119,14 +119,7 @@ header h1 {
     margin-top: 1rem;
 }
 
-.difficulty-container{
-    display: none;
-    background-color: inherit;
-}
 
-#difficulty {
-    background-color: inherit;
-}
 
 
 
@@ -693,7 +686,12 @@ td {
     background-color: #fefefe;
     margin: 20rem auto; /* 15% from the top and centered */
     padding: 20px;
-    width: 50%; /* Could be more or less, depending on screen size */
+    width: 18rem; /* Could be more or less, depending on screen size */
+  }
+
+  .game-stat{
+    font-weight: bold;
+    color: red;
   }
 
 /* Responsive Design */
