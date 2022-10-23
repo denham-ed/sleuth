@@ -323,6 +323,7 @@ button:hover {
     background-size: cover;
     background-position: middle left;
     border: #0A122A 0.2rem solid;
+    margin-bottom: 0.2rem;
 
 }
 
@@ -368,6 +369,7 @@ td {
     border-collapse: inherit;
     background-color: inherit;
     color: inherit;
+    padding: 0.2rem;
 
 }
 
@@ -690,8 +692,9 @@ td {
   }
 
   .game-stat{
-    font-weight: bold;
-    color: red;
+    padding: 0.4rem 0;
+    color: #8C2F39;
+    border-bottom: 1px solid black;
   }
 
 /* Responsive Design */
