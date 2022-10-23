@@ -180,7 +180,6 @@ button:hover {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    width: 20rem;
     text-align: center;
     background-color: inherit;
 }
@@ -777,6 +776,18 @@ td {
 
     #middle-area{
         min-width: unset;
+    }
+
+    .button-container{
+        width: 80%;
+        margin-top: 1.5rem;
+        display: flex;
+        flex-direction: column;
+        justify-content:space-around;
+    }
+
+    .difficulty-button{
+        margin: 0.5rem 0;
     }
 
 
