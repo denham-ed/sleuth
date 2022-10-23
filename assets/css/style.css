@@ -220,7 +220,7 @@ button:hover {
 @keyframes expandMiddle {
 	0% {
         /* margin-top: 50%; */
-        height: 16rem;
+        min-height: 16rem;
 		width: 50%;
 	}
 /* 
@@ -230,7 +230,7 @@ button:hover {
 	} */
 
     100% {
-        height: 3rem;
+        min-height: 3rem;
 		width:90%;
 
     }
