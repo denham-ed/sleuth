@@ -775,6 +775,10 @@ td {
         width: 5rem;
     }
 
+    #middle-area{
+        min-width: unset;
+    }
+
 
 
 }
