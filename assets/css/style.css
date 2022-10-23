@@ -688,13 +688,12 @@ td {
 }
 
 .modal-content {
-    border: 1.6rem solid black;
+    border: 0.4rem #000 solid;
     border-radius: 1.6rem;
     background-color: #fefefe;
-    margin: 15% auto; /* 15% from the top and centered */
+    margin: 20rem auto; /* 15% from the top and centered */
     padding: 20px;
-    border: 1px solid #0A122A;
-    width: 25%; /* Could be more or less, depending on screen size */
+    width: 50%; /* Could be more or less, depending on screen size */
   }
 
 /* Responsive Design */
