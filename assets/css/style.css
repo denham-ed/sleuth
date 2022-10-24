@@ -720,7 +720,7 @@ td {
 
     #card{
         height: 14rem;
-        width: 26rem;
+        width: 24rem;
         flex-direction: column;
         justify-content: flex-start;
     }
