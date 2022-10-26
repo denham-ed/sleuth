@@ -78,11 +78,12 @@ const prepareGame = (event) => {
 
 const populatePlayerCard = (playerDecks, playerTurn) => {
     const detective = playerDecks.userDeck[0]
-    //Full Screen
+    //Full Screen - is this right??
     document.getElementById('card-count-container').innerHTML = `<span>You have ${playerDecks.userDeck.length} cards.</span>`
     document.getElementById('card-header').textContent = detective.name
     document.getElementById('card-image').style.backgroundImage = `url(${detective.image})`
-    //Small Screen
+    document.getElementById('card-image').style.display = "block"
+    //Small Screen - is this right??
     document.getElementById('card-count').innerHTML = `${playerDecks.userDeck.length} cards`
     document.getElementById('draw-count').innerHTML = `${playerDecks.drawPile.length} cards`
     // Stats
@@ -104,6 +105,10 @@ const populatePlayerCard = (playerDecks, playerTurn) => {
             ${statsHTML}
             </table>
         `
+
+    setTimeout(()=>{
+        document.getElementById('card-image').classList.add('image-fade-out')
+    },2000)
     // Add Event Listener to Player Card
     if (playerTurn) {
         const statRows = document.getElementsByClassName('stat-row')
@@ -115,6 +120,8 @@ const populatePlayerCard = (playerDecks, playerTurn) => {
             })
         }
     }
+
+
 }
 
 
@@ -153,8 +160,10 @@ const lockUserInput = () => {
     for (var i = activeRows.length - 1; i >= 0; i--) {
         activeRows[i].classList.add('locked')
         activeRows[i].classList.remove('active-row')
-
     }
+    // Stop Image Appearing
+    document.getElementById('card-image').style.display='none'
+    document.getElementById('card-image').classList.remove('image-fade-out')
 }
 
 /**
@@ -459,4 +468,8 @@ const renderDrawPile = (drawPile) => {
 
 const clearDrawPile = () => {
     document.getElementById('draw-pile-container').innerHTML= ''
+}
+
+const handleTinyCard = () => {
+    alert('tiny card in play')
 }
