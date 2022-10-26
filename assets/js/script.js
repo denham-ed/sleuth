@@ -37,13 +37,19 @@ const addLoadingItem = (loadingArray, i) => {
 
 const prepareGame = (event) => {
     document.getElementById('difficulty').textContent = event.target.dataset.difficulty
-    //Prepare Media Query Elements
-    document.getElementById("circle").addEventListener('mouseover', ()=>{
-        document.getElementById("game-stats-modal").style.display = 'block'
+    //Prepare Modal Event Listeners
+    const modal = document.getElementById("game-stats-modal")
+    document.getElementById("circle").addEventListener('click', ()=>{
+        modal.style.display = 'block'
     })
-    document.getElementById("circle").addEventListener("mouseleave", ()=>{
-        document.getElementById("game-stats-modal").style.display = 'none'
-    })
+    window.onclick = function(e) {
+        if (e.target == modal) {
+          modal.style.display = "none";
+        }
+      }
+    // document.getElementById("circle").addEventListener("mouseleave", ()=>{
+    //     document.getElementById("game-stats-modal").style.display = 'none'
+    // })
     // Add Loading Text to Screen in Sequence
     document.getElementById('middle-area-text').innerHTML = `<div>The Game Is Afoot...</div>`
     document.getElementById('middle-area-logo').innerHTML = `<i class="fa-solid fa-magnifying-glass"></i>`
