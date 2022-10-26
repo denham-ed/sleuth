@@ -868,6 +868,10 @@ td {
         width: 8rem;
     }
 
+    /* Modal */
+    .modal-content{
+        width: 13rem;
+    }
 
   
 
