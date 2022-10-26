@@ -659,7 +659,7 @@ td {
     color: #fff;
   }
 
-  #circle :hover{
+  #circle:hover{
     cursor: pointer;
   }
 
@@ -690,7 +690,7 @@ td {
     border-radius: 1.6rem;
     background-color: #fefefe;
     margin: 20rem auto; /* 15% from the top and centered */
-    padding: 20px;
+    padding: 0.2rem 1rem 1rem 1rem;    
     width: 18rem; /* Could be more or less, depending on screen size */
   }
 
@@ -699,6 +699,15 @@ td {
     color: #8C2F39;
     border-bottom: 1px solid black;
   }
+
+  .exit-modal {
+    text-align: right;
+    font-size: 150%;
+}
+
+.exit-modal:hover{
+    cursor: pointer;
+}
 
 /* Responsive Design */
 @media screen and (max-width: 905px) {
