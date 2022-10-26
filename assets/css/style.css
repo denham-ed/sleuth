@@ -46,7 +46,7 @@ header {
     justify-content: center;
     align-items: center;
     background-color: #E7DECD;
-
+    height: 6.5rem;
 }
 
 header h1 {
@@ -58,6 +58,7 @@ header h1 {
 .header-buttons {
     width: 100%;
     margin-bottom: 0.5rem;
+    height: 2rem;
 }
 
 
@@ -149,6 +150,8 @@ button:hover {
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
+    /* background-color: rgba(10, 18, 42, 0.2);
+    margin: 1rem; */
 }
 
 .start-message {
