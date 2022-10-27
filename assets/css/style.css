@@ -918,3 +918,12 @@ td {
 
 
 }
+
+
+/* Detective Listing Page */
+
+.detective-listing {
+    height: 6rem;
+    width: 75%;
+    border: 1px solid black;
+}
