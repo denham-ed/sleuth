@@ -162,8 +162,11 @@ const lockUserInput = () => {
         activeRows[i].classList.remove('active-row')
     }
     // Stop Image Appearing
-    document.getElementById('card-image').style.display='none'
-    document.getElementById('card-image').classList.remove('image-fade-out')
+    // document.getElementById('card-image').style.display='none'
+    setTimeout(()=>{
+        document.getElementById('card-image').classList.remove('image-fade-out')
+
+    },2000)
 }
 
 /**
