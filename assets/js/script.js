@@ -105,7 +105,7 @@ const populatePlayerCard = (playerDecks, playerTurn) => {
             ${statsHTML}
             </table>
         `
-
+        // Hide Player Image on Tiny Screen
     setTimeout(()=>{
         document.getElementById('card-image').classList.add('image-fade-out')
     },2000)
@@ -161,12 +161,11 @@ const lockUserInput = () => {
         activeRows[i].classList.add('locked')
         activeRows[i].classList.remove('active-row')
     }
-    // Stop Image Appearing
-    // document.getElementById('card-image').style.display='none'
+    // Reset Image
     setTimeout(()=>{
         document.getElementById('card-image').classList.remove('image-fade-out')
 
-    },2000)
+    },4000)
 }
 
 /**
@@ -323,6 +322,10 @@ const resetCards = (playerTurn) => {
  */
 
 const opponentTurn = (playerDecks) => {
+    setTimeout(()=>{
+        document.getElementById('card-image').classList.add('image-fade-out')
+    },1000)
+    
     const difficulty = document.getElementById('difficulty').textContent
     const {
         opponentDeck
