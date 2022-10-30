@@ -3,7 +3,7 @@ const renderDetectives = ()=>{
     detectives.forEach((detective) => {
         detectiveListing += `<div class='detective-listing'>
         <div class="listing-left">
-            <div class=listing-image></div>
+            <div class=listing-image style="background-image: url(${detective.image});"></div>
         </div>
         <div class="listing-middle">
             <div>${detective.name}</div>

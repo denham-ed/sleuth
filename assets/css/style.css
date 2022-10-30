@@ -923,7 +923,31 @@ td {
 /* Detective Listing Page */
 
 .detective-listing {
+    display: flex;
     height: 6rem;
+    flex-direction: row;
+    justify-content: space-around;
     width: 75%;
-    border: 1px solid black;
+    border: 0.2rem solid black;
+    padding: 0.5rem;
+    margin-top: 1rem;
+    margin-left: 1rem;
+    border-radius: 1.6rem;
+}
+
+.listing-left {
+    margin-left: 1rem;
+}
+
+.listing-middle {
+    width: 50%;
+    margin-left: 2rem;
+}
+
+.listing-image {
+    height: 6rem;
+    aspect-ratio: 1 / 1;
+    border: 0.2rem solid black;
+    box-sizing: border-box;
+    background-size: cover;
 }
