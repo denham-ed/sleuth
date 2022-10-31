@@ -905,14 +905,36 @@ td {
     /* Opponent Card */
     .small-reverse-card{
         /* height: 9rem; */
+        flex-direction: column;
+        display: none;
         height: 12rem;
         width: 12rem;
         flex-direction: column;
         justify-content: flex-start;
     }
 
+    .opponent-body{
+        position: relative;
+    }
+
     #opponent-image{
         display: none;
+        z-index: 300;
+        height: 8rem;
+        aspect-ratio: 1/1;
+        position: absolute;
+        top: 0;
+        left: 3rem;
+
+    }
+
+    .dividers{
+            z-index: 2;
+            position: absolute;
+            top: 0;
+            left: 3rem;
+            display: block;
+            margin: 0.2rem;
     }
 
 
