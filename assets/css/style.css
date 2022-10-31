@@ -941,6 +941,16 @@ td {
 
 }
 
+/* Footer */
+
+footer {
+    color: #FBFAF8;
+}
+
+footer img{
+    height: 3rem;
+}
+
 
 /* Detective Listing Page */
 
