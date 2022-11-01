@@ -416,7 +416,7 @@ const checkEndGame = (playerDecks) => {
             `
         <p>Bad luck - you've lost this time.</p><br><br>
         <p>Remember - it takes time to work out your strengths and your opponent's weaknesses.</p>
-        <button type="button" class="refresh-button" onClick="window.location.reload();">Try Again!</button>
+        <button type="button" class="refresh-button" onClick="window.location.reload();">Try Again</button>
 
         `
         document.getElementById('middle-area').classList.add('end-message')
@@ -429,7 +429,11 @@ const checkEndGame = (playerDecks) => {
         document.getElementById('opponent-last-card-warning').style.display = 'none'
         document.getElementById('draw-pile-container').style.display = 'none'
         document.getElementById('player-deck').style.display = 'none'
-        document.getElementById('middle-area-text').innerHTML = `<p>You win!</p>`
+        document.getElementById('middle-area-text').innerHTML = 
+        `<p>Congratulations - You win!</p><br><br>
+        <p>For a different challenge, try changing the difficulty level!</p>
+        <button type="button" class="refresh-button" onClick="window.location.reload();">Play Again</button>
+        `
         document.getElementById('middle-area').classList.add('end-message')
         gameOver = true
     }
@@ -478,6 +482,3 @@ const clearDrawPile = () => {
     document.getElementById('draw-pile-container').innerHTML= ''
 }
 
-const handleTinyCard = () => {
-    alert('tiny card in play')
-}
