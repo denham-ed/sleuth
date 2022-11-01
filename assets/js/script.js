@@ -224,7 +224,7 @@ const compareCards = (playerDecks, statIndex, playerTurn) => {
     } else {
         setTimeout(() => {
             handleDraw(playerTurn, playerDecks)
-        }, 8000)
+        }, delay + 8000)
     }
 
 }
