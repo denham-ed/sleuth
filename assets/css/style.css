@@ -915,10 +915,10 @@ td {
         display: none;
         z-index: 300;
         height: 8rem;
-        aspect-ratio: 1/1;
+        width: 8rem;
         position: absolute;
         top: 0;
-        left: 3rem;
+        left: 0.5rem;
 
     }
 
