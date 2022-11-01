@@ -422,7 +422,7 @@ const checkEndGame = (playerDecks) => {
         document.getElementById('middle-area').classList.add('end-message')
         gameOver = true
     }
-    if (opponentDeck.length === 9) {
+    if (opponentDeck.length === 0) {
         document.getElementById('opponent-card').classList.add('deckFadeOut')
         document.getElementById('card').classList.add('deckFadeOut')
         document.getElementById('opponent-last-card-warning').style.display = 'none'
