@@ -404,7 +404,7 @@ const checkEndGame = (playerDecks) => {
         userDeck,
         opponentDeck
     } = playerDecks
-    if (userDeck.length === 9) {
+    if (userDeck.length === 0) {
         document.getElementById('opponent-card').classList.add('deckFadeOut')
         document.getElementById('card').classList.add('deckFadeOut')
         document.getElementById('player-last-card-warning').style.display = 'none'
@@ -414,15 +414,15 @@ const checkEndGame = (playerDecks) => {
         document.getElementById('player-deck').style.display = 'none'
         document.getElementById('middle-area-text').innerHTML =
             `
-        <p>Bad luck - you've lost this time.</p>
-        <p>Remember - it takes time to work out your strengths and your opponent's weaknesses.</p><br><br>
+        <p>Bad luck - you've lost this time.</p><br><br>
+        <p>Remember - it takes time to work out your strengths and your opponent's weaknesses.</p>
         <button type="button" class="refresh-button" onClick="window.location.reload();">Try Again!</button>
 
         `
         document.getElementById('middle-area').classList.add('end-message')
         gameOver = true
     }
-    if (opponentDeck.length === 0) {
+    if (opponentDeck.length === 9) {
         document.getElementById('opponent-card').classList.add('deckFadeOut')
         document.getElementById('card').classList.add('deckFadeOut')
         document.getElementById('opponent-last-card-warning').style.display = 'none'
