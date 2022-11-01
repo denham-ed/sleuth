@@ -85,6 +85,15 @@ header h1 {
     min-height: 2rem;
 } */
 
+button {
+    border: 0.2rem solid #000;
+    border-radius: 2.6rem;
+    min-height: 2rem;
+    min-width: 6rem;
+    color: #E7DECD;
+    margin: 0 1rem;
+}
+
 .difficulty-button{
     border: 0.2rem solid #000;
     border-radius: 2.6rem;
@@ -112,6 +121,11 @@ header h1 {
 
 .wild-button{
     color: black;
+}
+
+.refresh-button{
+    background-color: #71816D;
+    margin-top: 2rem;
 }
 
 #start-button {
