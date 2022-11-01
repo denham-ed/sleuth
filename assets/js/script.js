@@ -164,7 +164,6 @@ const lockUserInput = () => {
     // Reset Image
     setTimeout(()=>{
         document.getElementById('card-image').classList.remove('image-fade-out')
-
     },4000)
 }
 
