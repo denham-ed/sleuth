@@ -677,6 +677,7 @@ td {
 
   .home-button{
     display: none;
+    width: 3rem;
     font-size: 140%;
   }
 
