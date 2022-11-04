@@ -76,15 +76,6 @@ header h1 {
     margin: 25% 0;
 }
 
-/* button {
-    font-size: inherit;
-    background-color: #8C2F39;
-    color: #fff;
-    border: 0.2rem solid #8C2F39;
-    border-radius: 2.6rem;
-    min-height: 2rem;
-} */
-
 button {
     border: 0.2rem solid #000;
     border-radius: 2.6rem;
@@ -120,7 +111,7 @@ button {
 }
 
 .wild-button{
-    color: black;
+    color: #000;
 }
 
 .refresh-button{
@@ -286,7 +277,6 @@ button:hover {
     flex-direction: column;
     align-self: auto;
     align-items:center;
-    /* border: 1px solid black; */
 }
 
 /* Player Card */
@@ -550,7 +540,7 @@ td {
     display: none;
     height: 1rem;
     width: 85%;
-    border-bottom: 1px solid black;
+    border-bottom: 1px solid #000;
 }
 
 
@@ -619,7 +609,6 @@ td {
     margin-top: 1rem;
     width: 80%;
     height: 16rem;
-    /* border: 1px black solid; */
     display: grid;
     grid-template-columns: repeat(auto-fit,  minmax(4rem, 4rem)) ;
 }
@@ -646,7 +635,7 @@ td {
     background-repeat: none;
     background-size: cover;
     background-position: middle left;
-    border: 0.2rem black solid;
+    border: 0.2rem #000 solid;
 }
 
 .draw-pile-card-header{
@@ -704,7 +693,7 @@ td {
 .modal-content {
     border: 0.4rem #000 solid;
     border-radius: 1.6rem;
-    background-color: #fefefe;
+    background-color: #fff;
     margin: 20rem auto; /* 15% from the top and centered */
     padding: 0.2rem 1rem 1rem 1rem;    
     width: 18rem; /* Could be more or less, depending on screen size */
@@ -713,7 +702,7 @@ td {
   .game-stat{
     padding: 0.4rem 0;
     color: #8C2F39;
-    border-bottom: 1px solid black;
+    border-bottom: 1px solid #000;
   }
 
   .exit-modal {
@@ -991,7 +980,7 @@ footer div {
     flex-direction: row;
     justify-content: space-around;
     width: 75%;
-    border: 0.2rem solid black;
+    border: 0.2rem solid #000;
     padding: 0.5rem;
     margin-top: 1rem;
     margin-left: 1rem;
@@ -1010,7 +999,7 @@ footer div {
 .listing-image {
     height: 6rem;
     aspect-ratio: 1 / 1;
-    border: 0.2rem solid black;
+    border: 0.2rem solid #000;
     box-sizing: border-box;
     background-size: cover;
 }
