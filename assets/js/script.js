@@ -510,6 +510,6 @@ const showInstructions = () => {
     <li>If either play is on their last card, they must win that hand; a draw will result in the loss of the game</li>
     <li>You can see how many cards you have at any time by clicking the ? button at the top of the screen.</li>
   </ul>
-  <button type="button" class="refresh-button" onClick="window.location.reload();">Back to Game</button>
+  <button type="button" class="refresh-button" onClick="window.location.reload();">Back</button>
   `
 }
