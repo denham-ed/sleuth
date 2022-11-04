@@ -1,3 +1,9 @@
+const showButtons = () => {
+    const button = document.getElementsByClassName('home-button')[0]
+    button.style.display = 'block'
+}
+
+
 const renderDetectives = ()=>{
     let detectiveListing = ''
     detectives.forEach((detective) => {
@@ -15,4 +21,5 @@ const renderDetectives = ()=>{
     document.getElementById('detectives-listing').innerHTML = detectiveListing
 }
 
+showButtons()
 renderDetectives()

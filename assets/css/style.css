@@ -53,6 +53,7 @@ header h1 {
     width: 100%;
     margin-bottom: 0.5rem;
     height: 2rem;
+    padding-left: 2rem;
 }
 
 
@@ -671,6 +672,11 @@ td {
   #info{
     color: #FBFAF8;
     text-align: center;
+  }
+
+  .home-button{
+    display: none;
+    font-size: 140%;
   }
 
 
