@@ -1,6 +1,8 @@
 
 
 document.addEventListener("DOMContentLoaded", () => {
+    const instructionsButton = document.getElementById("instructions-button")
+    instructionsButton.addEventListener('click',showInstructions)
     let startButtons = document.getElementsByClassName("difficulty-button")
     for (let startButton of startButtons) {
         startButton.addEventListener("click", prepareGame)
@@ -478,4 +480,32 @@ const renderDrawPile = (drawPile) => {
 
 const clearDrawPile = () => {
     document.getElementById("draw-pile-container").innerHTML = ""
+}
+
+// Show Instructions
+const showInstructions = () => {
+    document.getElementById("middle-area-text").innerHTML =
+    `    <h2>How to Play</h2>
+    <p>
+    <ol>
+        <li>Select a Difficulty Mode</li>
+        <li>When prompted, select an attribute for your detective; this attribute will be compared to your opponent's card.</li>
+      <ul>
+        <li>If you have the highest number, you win your opponent's card and get to select an attribute for the next card. Both cards are placed at the bottom of your deck,</li>
+        <li>If you have a lower number, your opponent wins your card and keeps their own. They then get to choose the next attribute</li>
+        <li>If there is a draw, the cards are placed in a separate pile and the player who selected the attribute chooses again for the next hand. The winner of the subsequent hands wins all the cards in the draw pile.</li>
+      </ul>
+      <li>The game ends when one player has all 16 cards.</li>
+    </ol>
+    </p>
+
+<h3>
+  Keep an eye out for...
+
+</h3>
+  <ul>
+    <li>Enemies make the detective... The more enemies the better! </li>
+    <li>If either play is on their last card, they must win that hand; a draw will result in the loss of the game</li>
+    <li>You can see how many cards you have at any time by clicking the ? button at the top of the screen.</li>
+  </ul>`
 }
