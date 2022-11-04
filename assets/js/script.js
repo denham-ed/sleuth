@@ -467,9 +467,6 @@ const renderDrawPile = (drawPile) => {
         drawPileHTML +=
             `<div class="draw-pile-card"><div class="draw-pile-card-header blur">${card.name}</div>
         <div class="draw-pile-card-picture" style="background-image: url(${card.image})"></div>
-        <div class="tiny-stripe stripe-red"></div>
-        <div class="tiny-stripe stripe-green"></div>
-        <div class="tiny-stripe stripe-blue"></div>
         <div class="tiny-stat blur">Enemies</div>
         <div class="tiny-stat blur">Cases</div>
         <div class="tiny-stat blur">Style</div>
