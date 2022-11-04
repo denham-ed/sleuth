@@ -20,13 +20,14 @@ body{
 
 }
 
+a{
+    text-decoration: none;
+}
 
 
 h1, h2 {
     font-family: 'Ultra', serif;
     color: #0A122A;
-
-        /* letter-spacing: 0.1rem; */
 }
 
 h1 {
