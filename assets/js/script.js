@@ -74,7 +74,7 @@ const prepareGame = (event) => {
         document.getElementById("player-deck").style.display = "flex"
         document.getElementById("opponent-card").style.display = "flex"
         document.getElementById("circle").style.display = "flex"
-        document.getElementById("middle-area-text").innerHTML = `<span>It"s your turn - choose an attribute to get started!`
+        document.getElementById("middle-area-text").innerHTML = `<span>It's your turn - choose an attribute to get started!`
     }, 8000)
 }
 
@@ -196,7 +196,7 @@ const compareCards = (playerDecks, statIndex, playerTurn) => {
         winnerMessage = `<p class="confirmation">You lose this hand...</p>`
     } else {
         draw = true
-        winnerMessage = `<p class="confirmation">It"s a draw - the cards are put to one side for now...</p>`
+        winnerMessage = `<p class="confirmation">It's a draw - the cards are put to one side for now...</p>`
     }
     const delay = playerTurn ? 0 : 2000
     // Display comparison messages
@@ -415,8 +415,8 @@ const checkEndGame = (playerDecks) => {
         document.getElementById("player-deck").style.display = "none"
         document.getElementById("middle-area-text").innerHTML =
             `
-        <p>Bad luck - you"ve lost this time.</p><br><br>
-        <p>Remember - it takes time to work out your strengths and your opponent"s weaknesses.</p>
+        <p>Bad luck - you've lost this time.</p><br><br>
+        <p>Remember - it takes time to work out your strengths and your opponent's weaknesses.</p>
         <button type="button" class="refresh-button" onClick="window.location.reload();">Try Again</button>
 
         `
