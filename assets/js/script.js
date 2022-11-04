@@ -484,7 +484,10 @@ const clearDrawPile = () => {
 
 // Show Instructions
 const showInstructions = () => {
-    document.getElementById("middle-area-text").innerHTML =
+    const middleArea = document.getElementById("middle-area-text")
+    const instructions = document.getElementById("instructions")
+    middleArea.innerHTML = ""
+    instructions.innerHTML =
     `    <h2>How to Play</h2>
     <p>
     <ol>
@@ -499,13 +502,14 @@ const showInstructions = () => {
     </ol>
     </p>
 
-<h3>
+<h2>
   Keep an eye out for...
-
-</h3>
+</h2>
   <ul>
     <li>Enemies make the detective... The more enemies the better! </li>
     <li>If either play is on their last card, they must win that hand; a draw will result in the loss of the game</li>
     <li>You can see how many cards you have at any time by clicking the ? button at the top of the screen.</li>
-  </ul>`
+  </ul>
+  <button type="button" class="refresh-button" onClick="window.location.reload();">Start Sleuthing!</button>
+  `
 }

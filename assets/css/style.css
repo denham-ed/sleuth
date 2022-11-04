@@ -35,6 +35,10 @@ h1 {
 
 }
 
+ul, ol {
+    margin-left: 1rem;
+}
+
 header {
     display: flex;
     flex-direction: column;
@@ -197,9 +201,21 @@ button:hover {
     background-color: inherit;
 }
 
+
+
 #middle-area-text p {
     text-align: center;
     background-color: inherit;
+}
+
+#instructions {
+    padding: 0 1rem;
+    line-height: 150%;
+}
+
+#instructions h2 {
+    text-align: center;
+margin-top: 0.5rem;
 }
 
 .confirmation{
@@ -824,6 +840,11 @@ td {
 }
 /* Very small screen */
 @media screen and (max-width: 400px) {
+
+    #instructions {
+        padding: 0;
+        line-height: 150%;
+    }
     #card{
         /* height: 9rem; */
         height: 14rem;
