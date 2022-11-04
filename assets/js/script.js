@@ -284,10 +284,10 @@ const revealOpponentCard = (opponentDetective) => {
     for (let divider of dividers) {
         divider.style.display = "block"
     }
-    const stripes = document.getElementsByClassName("small-stripe")
-    for (let stripe of stripes) {
-        stripe.style.display = "block"
-    }
+    // const stripes = document.getElementsByClassName("small-stripe")
+    // for (let stripe of stripes) {
+    //     stripe.style.display = "block"
+    // }
     document.getElementById("opponent-card").style.backgroundImage = "none"
     document.getElementById("opponent-card").style.backgroundColor = "white"
     document.getElementById("opponent-header").textContent = `${opponentDetective.name}`
@@ -304,10 +304,10 @@ const resetCards = (playerTurn) => {
     for (let divider of dividers) {
         divider.style.display = "none"
     }
-    const stripes = document.getElementsByClassName("small-stripe")
-    for (let stripe of stripes) {
-        stripe.style.display = "none"
-    }
+    // const stripes = document.getElementsByClassName("small-stripe")
+    // for (let stripe of stripes) {
+    //     stripe.style.display = "none"
+    // }
     document.getElementById("opponent-card").style.backgroundImage = "url('assets/media/logos/logo2.svg')"
     document.getElementById("opponent-card").style.backgroundColor = "#8C2F39"
     document.getElementById("opponent-header").textContent = ""
