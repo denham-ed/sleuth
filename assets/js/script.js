@@ -308,13 +308,13 @@ const resetCards = (playerTurn) => {
     for (let stripe of stripes) {
         stripe.style.display = "none"
     }
-    document.getElementById("opponent-card").style.backgroundImage = "url('assets/images/logo2.svg')"
+    document.getElementById("opponent-card").style.backgroundImage = "url('assets/media/logos/logo2.svg')"
     document.getElementById("opponent-card").style.backgroundColor = "#8C2F39"
     document.getElementById("opponent-header").textContent = ""
     document.getElementById("opponent-image").style.display = "none"
     // Reset Message Area
     document.getElementById("middle-area").classList.remove("highlight-message")
-    const turnMessage = playerTurn ? `<p>It"s your turn...</p>` : `<p>It"s your opponent"s turn...</p>`
+    const turnMessage = playerTurn ? `<p>It's your turn...</p>` : `<p>It"s your opponent"s turn...</p>`
     document.getElementById("middle-area-text").innerHTML = turnMessage
 }
 
