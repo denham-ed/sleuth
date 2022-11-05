@@ -520,7 +520,7 @@ const showInstructions = () => {
             <li>Select a Difficulty Mode</li>
             <li>When prompted, select an attribute for your detective; this attribute will be compared to your opponent's card.</li>
                 <ul>
-                    <li>If you have the highest number, you win your opponent's card and get to select an attribute for the next card. Both cards are placed at the bottom of your deck,</li>
+                    <li>If you have the highest number, you win your opponent's card and get to select an attribute for the next card. Both cards are placed at the bottom of your deck</li>
                     <li>If you have a lower number, your opponent wins your card and keeps their own. They then get to choose the next attribute</li>
                     <li>If there is a draw, the cards are placed in a separate pile and the player who selected the attribute chooses again for the next hand. The winner of the subsequent hands wins all the cards in the draw pile.</li>
                 </ul>

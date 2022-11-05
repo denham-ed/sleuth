@@ -9,8 +9,7 @@ Pit each sleuth against one another; use their strengths and weakness to gather 
 
 So assemble your team and use your wits…the game is afoot!
 
-
-!!!!! SHOW MOCKUP
+![Multi-device mockup](assets/media/readme_assets/multi-device-mockup.png)
 
 [View deployed website here](https://denham-ed.github.io/sleuth/ "Link to open deployed website")
 
@@ -30,6 +29,15 @@ As a user I want to experience an enjoyable, easy-to-learn game featuring favour
 
 
 ## Rules of the Game
+git
+1. Select a difficulty mode to start
+2. When prompted, select an attribute for your detecive
+    - If you have the highest number, you win your opponent's card and get to select an attribute for the next card. Both cards are placed at the bottom of your deck
+    - If you have a lower number, your opponent wins your card and keeps their own. They then get to choose the next attribute
+    - If there is a draw, the cards are placed in a separate pile and the player who selected the attribute chooses again for the next hand. The winner of the subsequent hands wins all the cards in the draw pile.
+3. The game ends when one player has all 16 cards.
+
+
 
 ## Data Structure
 The most important information for the game is the information for each detective. This is stored as an array of objections with the following structure - the example shown below is for Sherlock Homes
