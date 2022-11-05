@@ -1,8 +1,7 @@
-
 /* Google Font Imports */
 @import url('https://fonts.googleapis.com/css2?family=Montserrat&family=Ultra&display=swap');
 
-
+/* General & Tags*/
 * {
     padding: 0;
     margin: 0;
@@ -12,20 +11,20 @@
     user-select: none;
 }
 
-body{
+body {
     background-color: #FBFAF8;
     min-height: 100vh;
     display: flex;
     flex-direction: column;
-
 }
 
-a{
+a {
     text-decoration: none;
 }
 
 
-h1, h2 {
+h1,
+h2 {
     font-family: 'Ultra', serif;
     color: #0A122A;
 }
@@ -35,10 +34,33 @@ h1 {
 
 }
 
-ul, ol {
+ul,
+ol {
     margin-left: 1rem;
 }
 
+button {
+    border: 0.2rem solid #000;
+    border-radius: 2.6rem;
+    min-height: 2rem;
+    min-width: 6rem;
+    color: #E7DECD;
+    margin: 0 1rem;
+}
+
+button:hover {
+    cursor: pointer;
+}
+
+td {
+    border: inherit;
+    border-collapse: inherit;
+    background-color: inherit;
+    color: inherit;
+    padding: 0.2rem;
+}
+
+/* Header */
 header {
     display: flex;
     flex-direction: column;
@@ -51,7 +73,6 @@ header {
 header h1 {
     margin-top: 0.5rem;
     background-color: #E7DECD;
-    /* padding-bottom: 0.5rem; */
 }
 
 .header-buttons {
@@ -62,28 +83,52 @@ header h1 {
     padding-left: 1rem;
 }
 
-
 .stripe {
     width: 100%;
     height: 0.3rem;
 }
 
-.stripe-red{
+.stripe-red {
     background-color: #8C2F39;
 }
-.stripe-blue{
+
+.stripe-blue {
     background-color: #0A122A;
 }
-.stripe-green{
+
+.stripe-green {
     background-color: #71816D;
 }
 
-.logo {
-    height: 10rem;
-    margin: 25% 0;
+#circle {
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 2rem;
+    width: 2rem;
+    border-radius: 100%;
+    background-color: #0A122A;
+    color: #fff;
 }
 
-button {
+#circle:hover {
+    cursor: pointer;
+}
+
+#info {
+    color: #FBFAF8;
+    text-align: center;
+}
+
+.home-button {
+    display: none;
+    width: 3rem;
+    font-size: 140%;
+}
+
+/* Buttons */
+.difficulty-button {
     border: 0.2rem solid #000;
     border-radius: 2.6rem;
     min-height: 2rem;
@@ -92,41 +137,32 @@ button {
     margin: 0 1rem;
 }
 
-.difficulty-button{
-    border: 0.2rem solid #000;
-    border-radius: 2.6rem;
-    min-height: 2rem;
-    min-width: 6rem;
-    color: #E7DECD;
-    margin: 0 1rem;
-}
-
-.difficulty-button::after{
+.difficulty-button::after {
     content: attr(data-difficulty);
 }
 
-.red-button{
+.red-button {
     background-color: #8C2F39;
 }
 
-.blue-button{
+.blue-button {
     background-color: #0A122A;
 }
 
-.green-button{
+.green-button {
     background-color: #71816D;
 }
 
-.wild-button{
+.wild-button {
     color: #000;
 }
 
-.refresh-button{
+.refresh-button {
     background-color: #71816D;
     margin-top: 2rem;
 }
 
-.more-info-button{
+.more-info-button {
     background-color: #E7DECD;
     color: #000;
 }
@@ -135,38 +171,27 @@ button {
     margin-top: 1rem;
 }
 
-
-
-
-
-
-
-.button-container{
+.button-container {
     width: 80%;
     margin-top: 1.5rem;
     display: flex;
     flex-direction: row;
-    justify-content:space-around;
+    justify-content: space-around;
 }
 
 
-button:hover {
-    cursor: pointer;
-}
 
+/* Game Containers */
 #game-container {
-    /* border: #000 1rem solid;
-    border-radius: 2.6rem; */
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
-    /* background-color: rgba(10, 18, 42, 0.2);
-    margin: 1rem; */
 }
 
+/* Middle Section */
 .start-message {
-    width:70%;
+    width: 70%;
     border: 0.4rem #000 solid;
     border-radius: 1.6rem;
     display: flex;
@@ -177,21 +202,13 @@ button:hover {
     min-height: 12rem;
 }
 
-   #middle-area{
+.start-message p {
+    text-align: center;
+}
+
+#middle-area {
     min-width: 30rem;
-   }
-
-   #middle-centre{
-    align-items: center;
-    justify-content: center;
-    display: flex;
-    flex-direction: column;
-
-   }
-
-   #middle-left, #middle-right{
-    width: 10%;
-   }
+}
 
 #middle-area-text {
     display: flex;
@@ -202,11 +219,21 @@ button:hover {
     background-color: inherit;
 }
 
-
-
 #middle-area-text p {
     text-align: center;
     background-color: inherit;
+}
+
+#middle-centre {
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+}
+
+#middle-left,
+#middle-right {
+    width: 10%;
 }
 
 #instructions {
@@ -216,111 +243,91 @@ button:hover {
 
 #instructions h2 {
     text-align: center;
-margin-top: 0.5rem;
+    margin-top: 0.5rem;
 }
 
-.confirmation{
+.confirmation {
     color: #FBFAF8;
     background-color: #8C2F39;
 }
 
-
-.start-message p{
-    text-align: center;
-}
-
-#middle-area-logo{
+#middle-area-logo {
     font-size: 400%;
 }
 
-.middle-area-main{
+.logo {
+    height: 10rem;
+    margin: 25% 0;
+}
+
+.middle-area-main {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     margin-top: 1rem;
     align-items: center;
-    /* margin-top: 10rem; */
     min-height: 2rem;
-    min-width:20rem;
+    min-width: 20rem;
     border: 0.3rem #000 solid;
     border-radius: 1.6rem;
     animation: expandMiddle 4s ease 0s 1 normal forwards;
 }
 
 @keyframes expandMiddle {
-	0% {
-        /* margin-top: 50%; */
+    0% {
         min-height: 16rem;
-		width: 50%;
-	}
-/* 
-	75% {
-        margin-top: 1rem;
-
-	} */
+        width: 50%;
+    }
 
     100% {
         min-height: 3rem;
-		width:90%;
-
+        width: 90%;
     }
 }
 
-#player-area{
+.highlight-message {
+    background-color: #8C2F39;
+    color: #E7DECD;
+}
+
+/* Player Area */
+#player-area {
     width: 100%;
-    display: -ms-flexbox;
-    display: -webkit-flex;
     display: flex;
-    -webkit-flex-direction: row;
-    -ms-flex-direction: row;
     flex-direction: row;
-    -webkit-flex-wrap: nowrap;
-    -ms-flex-wrap: nowrap;
     flex-wrap: nowrap;
-    -webkit-justify-content: center;
-    -ms-flex-pack: center;
     justify-content: center;
-    -webkit-align-content: stretch;
-    -ms-flex-line-pack: stretch;
     align-content: stretch;
-    -webkit-align-items: stretch;
-    -ms-flex-align: stretch;
     align-items: stretch;
 }
 
-.player-containers{
+.player-containers {
     display: flex;
     width: 20%;
     height: 30rem;
     flex: 1 1 auto;
     flex-direction: column;
     align-self: auto;
-    align-items:center;
+    align-items: center;
 }
 
 /* Player Card */
-
 #card {
     z-index: 2;
     background-color: #fff;
     margin: auto;
     margin-top: 1rem;
-    display:none;
+    display: none;
     width: 14rem;
     height: 26rem;
-    border-radius: 2.6rem; 
+    border-radius: 2.6rem;
     border: 0.4rem #000 solid;
     flex-direction: column;
-    /* justify-content:space-between; */
     align-items: center;
- 
-
-    /* Box Shadow */
-    /*  */
-    box-shadow: 10px 10px 19px 2px rgba(0,0,0,0.75);
-    -webkit-box-shadow: 10px 10px 19px 2px rgba(0,0,0,0.75);
-    -moz-box-shadow: 10px 10px 19px 2px rgba(0,0,0,0.75);
+    box-shadow: 10px 10px 19px 2px rgba(0, 0, 0, 0.75);
+    /* Box Shadow - credit https://tinyurl.com/35rmd9s2  */
 }
+
 #card-header {
     font-family: 'Ultra', serif;
     font-size: 110%;
@@ -330,21 +337,20 @@ margin-top: 0.5rem;
     margin-top: 0.2rem;
 }
 
-#card-header-container{
+#card-header-container {
     margin-top: 0.5rem;
-    width:80%;
+    width: 80%;
     background-color: #fff;
 }
 
-.card-body-container{
-    width:100%;
+.card-body-container {
+    width: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
 #card-image {
-
     height: 12rem;
     width: 12rem;
     background-repeat: none;
@@ -352,57 +358,42 @@ margin-top: 0.5rem;
     background-position: middle left;
     border: #0A122A 0.2rem solid;
     margin-bottom: 0.2rem;
-
 }
 
-.card-stripes {
-    margin-top: 0.5rem;
-    width: 100%;
-}
-
-#stat-table{
+#stat-table {
     height: 8rem;
     width: 12rem;
     border-collapse: collapse;
 }
 
-#card-stats{
+#card-stats {
     background-color: #fff;
 }
 
 .stat-row {
-    border-bottom:#0A122A 0.1rem solid;
+    border-bottom: #0A122A 0.1rem solid;
     border-collapse: collapse;
     background-color: #fff;
 }
 
-
 .active-row:hover {
     cursor: pointer;
-    /* background-color: rgba(0,0,0,0.1); */
 }
 
-.active-row:hover td{
+.active-row:hover td {
     color: #8C2F39;
 }
 
-.selected-row{
+.selected-row {
     background-color: #0A122A;
-    color:#FBFAF8;
+    color: #FBFAF8;
 }
 
-
-td {
-    border: inherit;
-    border-collapse: inherit;
-    background-color: inherit;
-    color: inherit;
-    padding: 0.2rem;
-
+.locked {
+    pointer-events: none;
 }
 
 /* Player Deck */
-
 #player-deck {
     margin-left: 40%;
     margin-top: 1rem;
@@ -412,12 +403,9 @@ td {
     justify-content: center;
 }
 
-
-#player-deck:hover #card-count-container{
-        display: flex;
+#player-deck:hover #card-count-container {
+    display: flex;
 }
-
-
 
 #card-count-container {
     background-color: transparent;
@@ -425,94 +413,31 @@ td {
     align-items: center;
     justify-content: center;
     display: none;
-    width:80%;
+    width: 80%;
 }
 
-#card-count-container > span {
+#card-count-container>span {
     text-align: center;
     border-radius: 1.6rem;
-    background-color: rgba(0,0,0,0.4);
+    background-color: rgba(0, 0, 0, 0.4);
     color: #FBFAF8;
     user-select: none;
 }
 
-/* Opponent Card */
-
-#opponent-area{
+/* Opponent Area & Card */
+#opponent-area {
     width: 100%;
     height: 19.5rem;
     display: flex;
     flex-direction: row;
 }
 
-.last-card-warning{
-    font-size: 120%;
-    display: none;
-    text-align: center;
-    animation: warningFadeIn 4s ease 0s 1 normal forwards;
-    margin-top: 4rem;
-    padding: 2rem 4rem;
-    border-radius: 1.6rem; 
-    border: 0.3rem #000 solid;
-    background-color: #8C2F39;
-    color: #FBFAF8;
-}
-
-
-
-
-
-@keyframes warningFadeIn {
-	0% {
-		transform: scale(0);
-        opacity: 0.2;
-	}
-
-	25% {
-        transform: scale(1);
-        opacity: 1;
-    }
-
-    50% {
-        opacity: 0;
-    }
-
-	75% {
-		opacity: 1;
-	}
-
-	100% {
-        opacity: 1;
-	}
-}
-
-.deckFadeOut{
-    animation: deckFadeOut 2s ease-out 0s 1 normal forwards;
-}
-
-@keyframes deckFadeOut {
-	0% {
-		opacity: 1;
-	}
-
-    99% {
-        display: flex;
-    }
-
-	100% {
-        display: none;
-		opacity: 0;
-	}
-}
-
-
-
-.small-reverse-card{
+.small-reverse-card {
     display: none;
     margin-top: 1rem;
     height: 18.5rem;
     width: 10rem;
-    border-radius: 1.6rem; 
+    border-radius: 1.6rem;
     border: 0.3rem #000 solid;
     flex-direction: column;
     align-items: center;
@@ -522,13 +447,13 @@ td {
     background-color: #8C2F39;
 }
 
-#opponent-header{
+#opponent-header {
     font-family: 'Ultra', serif;
     margin-top: 0.6rem;
     font-size: 95%;
 }
 
-#opponent-image{
+#opponent-image {
     display: none;
     margin-top: 0.3rem;
     margin-bottom: 0.5rem;
@@ -538,22 +463,9 @@ td {
     background-size: cover;
     background-position: middle left;
     border: #0A122A 0.2rem solid;
-
 }
 
-.small-stripe {
-    display: none;
-    width: 100%;
-    height: 0.2rem;
-}
-
-.tiny-stripe {
-    display: block;
-    width: 100%;
-    height: 0.2rem;
-}
-
-.divider{
+.divider {
     margin-top: 0.3rem;
     background-color: #fff;
     display: none;
@@ -562,83 +474,106 @@ td {
     border-bottom: 1px solid #000;
 }
 
-
-
-/* https://www.w3docs.com/snippets/css/how-to-create-a-blurry-text-in-css.html#:~:text=The%20first%20way%20of%20creating,a%20shadow%20to%20the%20text. */
+/* Blur- Credit https://tinyurl.com/yuprww3x */
 .blur {
     filter: blur(5px);
     -webkit-filter: blur(3px);
-  }
+}
 
-  /* End Message */
 
-  .end-message{
+/* Warnings */
+.last-card-warning {
+    font-size: 120%;
+    display: none;
+    text-align: center;
+    animation: warningFadeIn 4s ease 0s 1 normal forwards;
+    margin-top: 4rem;
+    padding: 2rem 4rem;
+    border-radius: 1.6rem;
+    border: 0.3rem #000 solid;
+    background-color: #8C2F39;
+    color: #FBFAF8;
+}
+
+@keyframes warningFadeIn {
+    0% {
+        transform: scale(0);
+        opacity: 0.2;
+    }
+
+    25% {
+        transform: scale(1);
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0;
+    }
+
+    75% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+/* Fade Out */
+.deckFadeOut {
+    animation: deckFadeOut 2s ease-out 0s 1 normal forwards;
+}
+
+@keyframes deckFadeOut {
+    0% {
+        opacity: 1;
+    }
+
+    99% {
+        display: flex;
+    }
+
+    100% {
+        display: none;
+        opacity: 0;
+    }
+}
+
+
+/* End Message */
+.end-message {
     margin-bottom: 30%;
     animation: endMessageExpand 2s ease 0s 1 normal forwards;
-  }
+}
 
-  @keyframes endMessageExpand {
-	0% {
-
+@keyframes endMessageExpand {
+    0% {
         height: 3rem;
-		width: 90%;
-	}
+        width: 90%;
+    }
 
-	100% {
+    100% {
         height: 16rem;
-		width:50%;
-	}
+        width: 50%;
+    }
 }
 
-
-
-/* zoom experiment */
-
-.zoom-out{
-    animation: zoomOut 3s ease 0s 1 normal forwards;
-}
-
-@keyframes zoomOut {
-	0% {
-		transform: scale(1);
-	}
-
-	100% {
-		transform: scale(0.9);
-	}
-}
-
-
-
-/* Test */
-
-.locked{
-    pointer-events: none;
-}
-
-.highlight-message{
-    background-color: #8C2F39;
-    color: #E7DECD;
-}
-
-/* https://stackoverflow.com/questions/43919067/make-flex-items-overlap */
-
-
-#draw-pile-container{
+/* Draw Pile */
+/* Overlapping draw pile - credit https://tinyurl.com/56m756s3 */
+#draw-pile-container {
     margin-top: 1rem;
     width: 80%;
     height: 16rem;
     display: grid;
-    grid-template-columns: repeat(auto-fit,  minmax(4rem, 4rem)) ;
+    grid-template-columns: repeat(auto-fit, minmax(4rem, 4rem));
 }
-
 
 .draw-pile-card {
     height: 12rem;
     width: 7rem;
-    border-radius: 1.6rem; 
+    border-radius: 1.6rem;
     border: 0.3rem #000 solid;
-    transform: rotate(3deg);  /*makes it easier to see the overlap*/
+    transform: rotate(3deg);
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -646,10 +581,10 @@ td {
 
 }
 
-.draw-pile-card-picture{
+.draw-pile-card-picture {
     margin-top: 0.3rem;
     margin-bottom: 0.2rem;
-    height:5rem;
+    height: 5rem;
     width: 5rem;
     background-repeat: none;
     background-size: cover;
@@ -657,91 +592,61 @@ td {
     border: 0.2rem #000 solid;
 }
 
-.draw-pile-card-header{
+.draw-pile-card-header {
     white-space: nowrap;
     overflow: hidden;
-    width:85%;
+    width: 85%;
     font-size: 85%;
     text-align: center;
 }
+
 .tiny-stat {
     width: 85%;
     text-align: left;
     font-size: 85%;
 }
 
-#circle{
-    display:none;
-    flex-direction: column;
-    justify-content: center;
-    align-items:center;
-    /* margin-left: 1rem; */
-    height: 2rem;
-    width: 2rem;
-    border-radius:100%;
-    background-color: #0A122A;
-    color: #fff;
-  }
 
-  #circle:hover{
-    cursor: pointer;
-  }
-
-  #info{
-    color: #FBFAF8;
-    text-align: center;
-  }
-
-  .home-button{
-    display: none;
-    width: 3rem;
-    font-size: 140%;
-  }
-
-
-
-/* https://www.w3schools.com/howto/howto_css_modals.asp */
 /* Game Stats Modal */
+/* Credit - https://tinyurl.com/mpz8ctmt */
 #game-stats-modal {
-    display: none; /* Hidden by default */
-    position: fixed; /* Stay in place */
-    z-index: 3; /* Sit on top */
+    display: none;
+    position: fixed;
+    z-index: 3;
     left: 0;
     top: 0;
-    width: 100%; /* Full width */
-    height: 100%; /* Full height */
-    overflow: auto; /* Enable scroll if needed */
-    background-color: rgb(0,0,0); /* Fallback color */
-    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgb(0, 0, 0);
+    background-color: rgba(0, 0, 0, 0.4);
 }
 
 .modal-content {
     border: 0.4rem #000 solid;
     border-radius: 1.6rem;
     background-color: #fff;
-    margin: 20rem auto; /* 15% from the top and centered */
-    padding: 0.2rem 1rem 1rem 1rem;    
-    width: 18rem; /* Could be more or less, depending on screen size */
-  }
+    margin: 20rem auto;
+    padding: 0.2rem 1rem 1rem 1rem;
+    width: 18rem;
+}
 
-  .game-stat{
+.game-stat {
     padding: 0.4rem 0;
     color: #8C2F39;
     border-bottom: 1px solid #000;
-  }
+}
 
-  .exit-modal {
+.exit-modal {
     text-align: right;
     font-size: 150%;
 }
 
-.exit-modal:hover{
+.exit-modal:hover {
     cursor: pointer;
 }
 
 /* Footer */
-
-
 footer {
     margin-top: auto;
     width: 100%;
@@ -766,8 +671,6 @@ footer div {
 
 
 /* Detective Listing Page */
-
-
 .detective-listing {
     display: flex;
     min-height: 6rem;
@@ -803,44 +706,43 @@ footer div {
 
 
 /* Responsive Design */
+/* Break point at 905px */
 @media screen and (max-width: 905px) {
 
     /* General */
-    #player-left, #player-right, #opponent-right, #opponent-left{
+    #player-left,
+    #player-right,
+    #opponent-right,
+    #opponent-left {
         display: none;
     }
 
-    #opponent-area{
+    #opponent-area {
         width: 100%;
         height: unset;
     }
 
-    .player-containers{
-        height:16rem;
+    .player-containers {
+        height: 16rem;
         justify-content: center;
     }
 
-    .more-info-button{
+    .more-info-button {
         margin-top: 0.5rem;
     }
 
-    
-
-
-    #card{
+    #card {
         height: 14rem;
         width: 24rem;
         flex-direction: column;
         justify-content: flex-start;
     }
 
-
-    .card-stripes{
-        display:none;
+    .card-stripes {
+        display: none;
     }
 
-
-    .card-body-container{
+    .card-body-container {
         width: 100%;
         margin-top: 1rem;
         display: flex;
@@ -856,105 +758,99 @@ footer div {
     }
 
     /* Opponent Card */
-    .small-reverse-card{
+    .small-reverse-card {
         height: 10rem;
         width: 17.5rem;
         background-size: 10.5%;
-
     }
 
-    .dividers{
+    .dividers {
         width: 60%;
         background-color: #fff;
     }
 
-    .opponent-body{
+    .opponent-body {
         margin-top: 0.5rem;
-        display:flex;   
+        display: flex;
         flex-direction: row;
         width: 80%;
         justify-content: space-around;
         background-color: #fff;
     }
 
-
-    #opponent-image{
+    #opponent-image {
         height: 5rem;
         width: 5rem;
     }
 
-    #middle-area{
+    #middle-area {
         min-width: unset;
     }
 
-    .button-container{
+    .button-container {
         width: 80%;
         margin-top: 1.5rem;
         display: flex;
         flex-direction: column;
-        justify-content:space-around;
+        justify-content: space-around;
     }
 
-    .difficulty-button{
+    .difficulty-button {
         margin: 0.5rem 0;
     }
 
     /* Listing Page */
-
-    .detective-listing{
+    .detective-listing {
         flex-direction: column;
         width: 85%;
         min-height: 14rem;
     }
 
-    .detective-listing div{
-margin-top: 0.5rem;
+    .detective-listing div {
+        margin-top: 0.5rem;
     }
 
-    .listing-left{
+    .listing-left {
         display: flex;
         flex-direction: row;
         justify-content: end;
     }
 
-    .listing-image{
+    .listing-image {
         margin-right: 1rem;
     }
 
-    .listing-middle{
+    .listing-middle {
         min-width: unset;
         margin-left: 0;
     }
 
 
 }
-/* Very small screen */
+
+/* Break Point at 400px */
 @media screen and (max-width: 400px) {
 
+    /* Landing Screen */
     #instructions {
         padding: 0;
         line-height: 150%;
     }
-    #card{
-        /* height: 9rem; */
+
+    /* Player Area and Card */
+    #card {
         height: 14rem;
         width: 14rem;
         flex-direction: column;
         justify-content: flex-start;
     }
 
-    /* #card-image {
-        display: none;
-
-    } */
-
     .card-body-container {
         position: relative;
         margin-top: 0;
     }
 
-    /* https://webcode.tools/generators/css/keyframe-animation */
-    #card-image{
+    #card-image {
         display: block;
         z-index: 300;
         position: absolute;
@@ -962,49 +858,35 @@ margin-top: 0.5rem;
         left: 3rem;
     }
 
-    .image-fade-out{
+    /* Remove image - credit https://tinyurl.com/bdf87sak */
+    .image-fade-out {
         backface-visibility: visible !important;
         animation-name: flipOutY;
         animation-duration: .75s;
         animation-duration: 1s;
-        animation-fill-mode: both;    }
+        animation-fill-mode: both;
+    }
 
-
-        /* https://www.theappguruz.com/tag-tools/web/CSSAnimations/ */
-        @keyframes flipOutY {
-            0% {
+    @keyframes flipOutY {
+        0% {
             -webkit-transform: perspective(400px);
             transform: perspective(400px);
-            }
-            
-            30% {
+        }
+
+        30% {
             -webkit-transform: perspective(400px) rotate3d(0, 1, 0, -15deg);
             transform: perspective(400px) rotate3d(0, 1, 0, -15deg);
             opacity: 1;
-            }
-            
-            100% {
+        }
+
+        100% {
             -webkit-transform: perspective(400px) rotate3d(0, 1, 0, 90deg);
             transform: perspective(400px) rotate3d(0, 1, 0, 90deg);
             opacity: 0;
-            }
-            }
-
-    @keyframes cardImageFadeOut {
-        0% {
-            opacity: 1;
-            z-index: 300;
-        }
-    
-        100% {
-            opacity: 0;
-            z-index: 1;
         }
     }
 
-
-
-    #card-stats{
+    #card-stats {
         z-index: 2;
         position: absolute;
         top: 0;
@@ -1013,22 +895,12 @@ margin-top: 0.5rem;
         margin: 0.2rem;
     }
 
-    #stat-table{
+    #stat-table {
         width: 8rem;
     }
 
-    /* Modal */
-    .modal-content{
-        width: 13rem;
-    }
-
-  
-
-
-
-    /* Opponent Card */
-    .small-reverse-card{
-        /* height: 9rem; */
+    /* Opponent Area and Card */
+    .small-reverse-card {
         flex-direction: column;
         display: none;
         height: 12rem;
@@ -1037,11 +909,11 @@ margin-top: 0.5rem;
         justify-content: flex-start;
     }
 
-    .opponent-body{
+    .opponent-body {
         position: relative;
     }
 
-    #opponent-image{
+    #opponent-image {
         display: none;
         z-index: 300;
         height: 8rem;
@@ -1049,19 +921,19 @@ margin-top: 0.5rem;
         position: absolute;
         top: 0;
         left: 0.5rem;
-
     }
 
-    .dividers{
-            z-index: 2;
-            position: absolute;
-            top: 0;
-            left: 3rem;
-            display: block;
-            margin: 0.2rem;
+    .dividers {
+        z-index: 2;
+        position: absolute;
+        top: 0;
+        left: 3rem;
+        display: block;
+        margin: 0.2rem;
     }
 
-
-
+    /* Modal */
+    .modal-content {
+        width: 13rem;
+    }
 }
-
