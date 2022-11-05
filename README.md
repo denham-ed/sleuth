@@ -117,6 +117,7 @@ Blurred text is used on both the opponent card and draw-pile card to prevent the
 ## Testing
 ### User Testing
 ### Validation Testing
+CSS THE W3C Validation with no errors.
 ### Fixed Bugs
 ### Unfixed Bugs
 
