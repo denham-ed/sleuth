@@ -836,6 +836,18 @@ td {
         margin: 0.5rem 0;
     }
 
+    /* Listing Page */
+
+    .detective-listing{
+        flex-direction: column;
+        width: 85%;
+        min-height: 14rem;
+    }
+
+    .listing-middle{
+        min-width: none;
+        margin-left: 0;
+    }
 
 
 }
