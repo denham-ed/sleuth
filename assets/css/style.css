@@ -1004,9 +1004,10 @@ footer div {
 
 /* Detective Listing Page */
 
+
 .detective-listing {
     display: flex;
-    height: 6rem;
+    min-height: 6rem;
     flex-direction: row;
     justify-content: space-around;
     width: 75%;
@@ -1017,12 +1018,16 @@ footer div {
     border-radius: 1.6rem;
 }
 
+.red {
+    color: #8C2F39;
+}
+
 .listing-left {
     margin-left: 1rem;
 }
 
 .listing-middle {
-    width: 50%;
+    min-width: 16rem;
     margin-left: 2rem;
 }
 

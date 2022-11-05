@@ -12,8 +12,8 @@ const renderDetectives = ()=>{
             <div class=listing-image style="background-image: url(${detective.image});"></div>
         </div>
         <div class="listing-middle">
-            <div>${detective.name}</div>
-            <div>Created by: ${detective.creator}</div>
+            <h2>${detective.name}</h2>
+            <div><span class="red">Created by:</span> ${detective.creator}</div>
         </div>
         <div class="listing-right">${detective.biography}</div>
         </div>`
