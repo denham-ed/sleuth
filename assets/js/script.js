@@ -4,7 +4,7 @@
 document.addEventListener("DOMContentLoaded", () => {
     // Instruction Button
     const instructionsButton = document.getElementById("instructions-button")
-    instructionsButton.addEventListener('click',showInstructions)
+    instructionsButton.addEventListener('click', showInstructions)
     // Difficulty Selection Buttons
     let startButtons = document.getElementsByClassName("difficulty-button")
     for (let startButton of startButtons) {
@@ -77,7 +77,7 @@ const prepareGame = (event) => {
 /**
  * Prepares player's current card with image, attributes and event listeners
  * @param {Object} playerDecks - Object containing player deck, opponent deck, and draw pile
- * @param {boolean} playerTurn - Indicated if it is player or opponent turn
+ * @param {boolean} playerTurn - Indicates if it is player or opponent turn
  */
 const populatePlayerCard = (playerDecks, playerTurn) => {
     //Selects first card in the player deck as the current card
@@ -102,7 +102,7 @@ const populatePlayerCard = (playerDecks, playerTurn) => {
                 <td>${fact.result}</td>
             </tr>`
     })
-    document.getElementById("card-stats").innerHTML =`<table id="stat-table">${statsHTML} </table>`
+    document.getElementById("card-stats").innerHTML = `<table id="stat-table">${statsHTML} </table>`
     // Hides detective image on very small screen
     setTimeout(() => {
         document.getElementById("card-image").classList.add("image-fade-out")
@@ -145,7 +145,11 @@ const assignCards = (detectives) => {
     let opponentDeck = detectives.slice(0, detectives.length / 2)
     let userDeck = detectives.slice(detectives.length / 2)
     let drawPile = []
-    return {userDeck, opponentDeck,drawPile}
+    return {
+        userDeck,
+        opponentDeck,
+        drawPile
+    }
 }
 
 /**
@@ -163,7 +167,6 @@ const lockUserInput = () => {
         document.getElementById("card-image").classList.remove("image-fade-out")
     }, 4000)
 }
-
 
 /**
  * Compares player and opponent cards and renders messages to screen.
@@ -228,8 +231,6 @@ const compareCards = (playerDecks, statIndex, playerTurn) => {
     }
 }
 
-
-
 /**
  * Move top cards of player and opponent decks and add them to the end of the winner's deck
  * @param {boolean} playerWin - Indicates if player or opponent won the previous hand
@@ -243,7 +244,7 @@ const passCards = (playerWin, playerDecks) => {
         opponentDeck,
         drawPile
     } = playerDecks
-    // 
+    // Check winner and take cards from top of deck and place them at end of winner's deck
     if (playerWin) {
         userDeck.push(userDeck.shift())
         userDeck.push(opponentDeck.shift())
@@ -255,11 +256,12 @@ const passCards = (playerWin, playerDecks) => {
             opponentDeck,
             drawPile
         }
-
+        // Check if either player is on their last card
         lastCardWarning(playerDecks)
+        // Check if game is over
         if (checkEndGame(playerDecks)) return
+        // Update cards for next turn
         populatePlayerCard(playerDecks, true)
-
     } else {
         opponentDeck.push(opponentDeck.shift())
         opponentDeck.push(userDeck.shift())
@@ -271,26 +273,26 @@ const passCards = (playerWin, playerDecks) => {
             opponentDeck,
             drawPile
         }
+        // Check if either player is on their last card
         lastCardWarning(playerDecks)
+        // Check if game is over
         if (checkEndGame(playerDecks)) return
+        // Update cards for next turn
         populatePlayerCard(playerDecks, false)
         opponentTurn(playerDecks)
     }
 }
 
 /**
- * Reveal image and title of opponent"s card.
+ * Reveals image and title of opponent's cards
+ * @param {Object} opponentDetective - The opponent's detective ie. the top card of their deck
  */
-
 const revealOpponentCard = (opponentDetective) => {
     const dividers = document.getElementsByClassName("divider")
     for (let divider of dividers) {
         divider.style.display = "block"
     }
-    // const stripes = document.getElementsByClassName("small-stripe")
-    // for (let stripe of stripes) {
-    //     stripe.style.display = "block"
-    // }
+    // Reveal image and name of opponent detective
     document.getElementById("opponent-card").style.backgroundImage = "none"
     document.getElementById("opponent-card").style.backgroundColor = "white"
     document.getElementById("opponent-header").textContent = `${opponentDetective.name}`
@@ -299,43 +301,41 @@ const revealOpponentCard = (opponentDetective) => {
 }
 
 /**
- * Resets Opponent Card to Reverse Card Image and clears message box
+ * Displays opponent card as the reverse card image and resets the central message box
+ * @param {boolean} playerTurn - Indicates if it is player or opponent turn
  */
 const resetCards = (playerTurn) => {
-    //Reset Opponent Card
+    //Resets opponent card
     const dividers = document.getElementsByClassName("divider")
     for (let divider of dividers) {
         divider.style.display = "none"
     }
-    // const stripes = document.getElementsByClassName("small-stripe")
-    // for (let stripe of stripes) {
-    //     stripe.style.display = "none"
-    // }
     document.getElementById("opponent-card").style.backgroundImage = "url('assets/media/logos/logo2.svg')"
     document.getElementById("opponent-card").style.backgroundColor = "#8C2F39"
     document.getElementById("opponent-header").textContent = ""
     document.getElementById("opponent-image").style.display = "none"
-    // Reset Message Area
+    // Resets message area
     document.getElementById("middle-area").classList.remove("highlight-message")
-    const turnMessage = playerTurn ? `<p>It's your turn...</p>` : `<p>It"s your opponent"s turn...</p>`
+    const turnMessage = playerTurn ? `<p>It's your turn...</p>` : `<p>It's your opponent's turn...</p>`
     document.getElementById("middle-area-text").innerHTML = turnMessage
 }
 
 /**
- * 
+ * Discovers difficulty setting from DOM & selects an attribute for comparison
+ * @param {Object} playerDecks - Object containing player deck, opponent deck, and draw pile
  */
-
 const opponentTurn = (playerDecks) => {
+    // Hides detective imade on very small devices
     setTimeout(() => {
         document.getElementById("card-image").classList.add("image-fade-out")
     }, 1000)
-
+    // Discovers difficulty level from DOM
     const difficulty = document.getElementById("difficulty").textContent
     const {
         opponentDeck
     } = playerDecks
     const opponentCard = opponentDeck[0]
-    //Sort Opponent Card Facts by Relative Strength, Whilst Retaining Original Index
+    // Sorts opponents attributes by relative strenght, whilst retaining original index
     const sortedOpponentCardFacts = opponentCard.facts.map((fact, index) => {
         return {
             ...fact,
@@ -345,7 +345,7 @@ const opponentTurn = (playerDecks) => {
     sortedOpponentCardFacts.sort((a, b) => {
         return b.relStrength - a.relStrength
     })
-    //Set Spread of Probabilities Based on Difficulty
+    //Sets spread of probabilities based on difficulty setting
     let difficultySpread = []
     switch (difficulty) {
         case "Test":
@@ -364,83 +364,97 @@ const opponentTurn = (playerDecks) => {
             difficultySpread = [25, 50, 75, 100]
             break;
     }
-    //Select Stat Index
+    //Selects attribute using random number and probabilities
     let ranNum = Math.floor(Math.random() * 100)
     let index = difficultySpread.findIndex((i) => {
         return i > ranNum
     })
-    //Compare Cards
+    //Compare cards using selected attribute
     compareCards(playerDecks, sortedOpponentCardFacts[index].originalIndex, false)
 }
 
 /**
- * 
+ * Checks if either player is on their last card and displays or hides a warning message
+ * @param {Object} playerDecks - Object containing player deck, opponent deck, and draw pile
  */
-
 const lastCardWarning = (playerDecks) => {
     const {
         userDeck,
         opponentDeck
     } = playerDecks
-    if (opponentDeck.length === 1) {
+    // Check if opponent is on last card (or has no cards)
+    if (opponentDeck.length < 2) {
         document.getElementById("opponent-last-card-warning").style.display = "block"
     } else {
         document.getElementById("opponent-last-card-warning").style.display = "none"
     }
+    // Check if player is on last card (or has no cards)
     if (userDeck.length < 2) {
         document.getElementById("player-last-card-warning").style.display = "block"
         document.getElementById("player-deck").classList.add("deckFadeOut")
-
     } else {
         document.getElementById("player-last-card-warning").style.display = "none"
         document.getElementById("player-deck").classList.remove("deckFadeOut")
         document.getElementById("player-deck").style.opacity = "1"
-
     }
 }
 
+/**
+ * Checks if either player has no remaining cards, clears remaining card images and displays a winning or losing message
+ * @param {Object} playerDecks - Object containing player deck, opponent deck, and draw pile
+ * @returns gameOver - a boolean indicating that the game is ending. If true, it stops the cycle of turns.
+ */
 const checkEndGame = (playerDecks) => {
+    // Assumes the game will continue
     let gameOver = false
     const {
         userDeck,
         opponentDeck
     } = playerDecks
+    // Checks if player has zero cards (and has lost)
     if (userDeck.length === 0) {
+        // Hides game ephemera (decks, warning, draw pile etc)
         document.getElementById("opponent-card").classList.add("deckFadeOut")
         document.getElementById("card").classList.add("deckFadeOut")
         document.getElementById("player-last-card-warning").style.display = "none"
         document.getElementById("opponent-last-card-warning").style.display = "none"
         document.getElementById("draw-pile-container").style.display = "none"
-
         document.getElementById("player-deck").style.display = "none"
+        // Displayes losing message with try again buttons
         document.getElementById("middle-area-text").innerHTML =
-            `
-        <p>Bad luck - you've lost this time.</p><br><br>
-        <p>Remember - it takes time to work out your strengths and your opponent's weaknesses.</p>
-        <button type="button" class="refresh-button" onClick="window.location.reload();">Try Again</button>
-
-        `
+            `<p>Bad luck - you've lost this time.</p><br><br>
+            <p>Remember - it takes time to work out your strengths and your opponent's weaknesses.</p>
+            <button type="button" class="refresh-button" onClick="window.location.reload();">Try Again</button>`
         document.getElementById("middle-area").classList.add("end-message")
+        // Sets gameOver
         gameOver = true
     }
     if (opponentDeck.length === 0) {
+        // Hides game ephemera (decks, warning, draw pile etc)
         document.getElementById("opponent-card").classList.add("deckFadeOut")
         document.getElementById("card").classList.add("deckFadeOut")
         document.getElementById("opponent-last-card-warning").style.display = "none"
         document.getElementById("opponent-last-card-warning").style.display = "none"
         document.getElementById("draw-pile-container").style.display = "none"
         document.getElementById("player-deck").style.display = "none"
+        // Displayes winning message with try again buttons
         document.getElementById("middle-area-text").innerHTML =
             `<p>Congratulations - You win!</p><br><br>
-        <p>For a different challenge, try changing the difficulty level!</p>
-        <button type="button" class="refresh-button" onClick="window.location.reload();">Play Again</button>
-        `
+            <p>For a different challenge, try changing the difficulty level!</p>
+            <button type="button" class="refresh-button" onClick="window.location.reload();">Play Again</button>`
         document.getElementById("middle-area").classList.add("end-message")
+        // Sets gameOver
         gameOver = true
     }
     return gameOver
 }
 
+/**
+ * Places player and opponent card into separate pile, renders pile to screen and triggers next turn
+ * @param {boolean} playerTurn - Indicates if it is player or opponent turn
+ * @param {Object} playerDecks - Object containing player deck, opponent deck, and draw pile
+ * @returns Returns gameOver value to check for end of game
+ */
 const handleDraw = (playerTurn, playerDecks) => {
     const {
         userDeck,
@@ -450,19 +464,27 @@ const handleDraw = (playerTurn, playerDecks) => {
         drawPile
     } = playerDecks
     drawPile.push(userDeck.shift(), opponentDeck.shift())
-    //Render Draw Pile
+    // Renders draw pile to screen in large devices
     renderDrawPile(drawPile)
+    // Draws next cards
     resetCards(playerTurn)
+    // Checks for last card and end of game
     lastCardWarning(playerDecks)
     if (checkEndGame(playerDecks)) return
     populatePlayerCard(playerDecks, playerTurn)
+    // Triggers opponents turn as necessary
     if (!playerTurn) {
         opponentTurn(playerDecks)
     }
 }
 
+/**
+ * Renders cards in drawpile on large devices, showing detective image
+ * @param {*} drawPile 
+ */
 const renderDrawPile = (drawPile) => {
     let drawPileHTML = ""
+    // Loop through each card
     drawPile.forEach((card) => {
         drawPileHTML +=
             `<div class="draw-pile-card"><div class="draw-pile-card-header blur">${card.name}</div>
@@ -473,41 +495,46 @@ const renderDrawPile = (drawPile) => {
         <div class="tiny-stat blur">Assistants</div>
         </div>`
     })
+    // Display pile
     document.getElementById("draw-pile-container").innerHTML = drawPileHTML
 }
 
+/**
+ * Resets the rendered draw pile
+ */
 const clearDrawPile = () => {
     document.getElementById("draw-pile-container").innerHTML = ""
 }
 
-// Show Instructions
+/**
+ * Displays instruction to user in central message area
+ */
 const showInstructions = () => {
     const middleArea = document.getElementById("middle-area-text")
     const instructions = document.getElementById("instructions")
     middleArea.innerHTML = ""
     instructions.innerHTML =
-    `    <h2>How to Play</h2>
-    <p>
-    <ol>
-        <li>Select a Difficulty Mode</li>
-        <li>When prompted, select an attribute for your detective; this attribute will be compared to your opponent's card.</li>
-      <ul>
-        <li>If you have the highest number, you win your opponent's card and get to select an attribute for the next card. Both cards are placed at the bottom of your deck,</li>
-        <li>If you have a lower number, your opponent wins your card and keeps their own. They then get to choose the next attribute</li>
-        <li>If there is a draw, the cards are placed in a separate pile and the player who selected the attribute chooses again for the next hand. The winner of the subsequent hands wins all the cards in the draw pile.</li>
-      </ul>
-      <li>The game ends when one player has all 16 cards.</li>
-    </ol>
-    </p>
+        `<h2>How to Play</h2>
+        <p>
+        <ol>
+            <li>Select a Difficulty Mode</li>
+            <li>When prompted, select an attribute for your detective; this attribute will be compared to your opponent's card.</li>
+                <ul>
+                    <li>If you have the highest number, you win your opponent's card and get to select an attribute for the next card. Both cards are placed at the bottom of your deck,</li>
+                    <li>If you have a lower number, your opponent wins your card and keeps their own. They then get to choose the next attribute</li>
+                    <li>If there is a draw, the cards are placed in a separate pile and the player who selected the attribute chooses again for the next hand. The winner of the subsequent hands wins all the cards in the draw pile.</li>
+                </ul>
+            <li>The game ends when one player has all 16 cards.</li>
+        </ol>
+        </p>
 
-<h2>
-  Keep an eye out for...
-</h2>
-  <ul>
-    <li>Enemies make the detective... The more enemies the better! </li>
-    <li>If either play is on their last card, they must win that hand; a draw will result in the loss of the game</li>
-    <li>You can see how many cards you have at any time by clicking the ? button at the top of the screen.</li>
-  </ul>
-  <button type="button" class="refresh-button" onClick="window.location.reload();">Back</button>
-  `
+        <h2>
+        Keep an eye out for...
+        </h2>
+        <ul>
+            <li>Enemies make the detective... The more enemies the better! </li>
+            <li>If either play is on their last card, they must win that hand; a draw will result in the loss of the game</li>
+            <li>You can see how many cards you have at any time by clicking the ? button at the top of the screen.</li>
+        </ul>
+        <button type="button" class="refresh-button" onClick="window.location.reload();">Back</button>`
 }
