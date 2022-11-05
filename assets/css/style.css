@@ -776,8 +776,7 @@ footer div {
     width: 75%;
     border: 0.2rem solid #000;
     padding: 0.5rem;
-    margin-top: 1rem;
-    margin-left: 1rem;
+    margin: 0.5rem 0 0.5rem 1rem;
     border-radius: 1.6rem;
 }
 
@@ -908,8 +907,22 @@ footer div {
         min-height: 14rem;
     }
 
+    .detective-listing div{
+margin-top: 0.5rem;
+    }
+
+    .listing-left{
+        display: flex;
+        flex-direction: row;
+        justify-content: end;
+    }
+
+    .listing-image{
+        margin-right: 1rem;
+    }
+
     .listing-middle{
-        min-width: none;
+        min-width: unset;
         margin-left: 0;
     }
 
