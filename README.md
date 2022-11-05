@@ -35,13 +35,28 @@ As a user I want to experience an enjoyable, easy-to-learn game featuring favour
 The most important information for the game is the information for each detective. This is stored as an array of objections with the following structure - the example shown below is for Sherlock Homes
 
 ```
-    {
-        name: 'Sherlock Holmes',
-        image: 'assets/images/sherlock_holmes.jpeg',
-        facts: [{stat: 'Enemies', result: 4, relStrength: 1.01587301587302},
-                {stat: 'Cases', result: 145, relStrength: 1.59889731219848},
-                {stat: 'Style', result: 10, relStrength: 0.909090909090909},
-                {stat: 'Assistants', result: 2, relStrength: 0.8}]
+{
+        name: "Sherlock Holmes",
+        image: "assets/media/detectives/sherlock_holmes.jpeg",
+        facts: [{
+            stat: "Enemies",
+            result: 4,
+            relStrength: 1.01587301587302
+        }, {
+            stat: "Cases",
+            result: 145,
+            relStrength: 1.59889731219848
+        }, {
+            stat: "Style",
+            result: 10,
+            relStrength: 0.909090909090909
+        }, {
+            stat: "Assistants",
+            result: 2,
+            relStrength: 0.8
+        }],
+        biography: "Sherlock Holmes, the worlds first consulting detective, epitomises the fictional detective. Known for his powers of deduction and logical reasoning, first appeared in 1887. A century later there are over 25,000 stage adaptiions, films, television shows and publications featuring the occupant of 221B Baker Street",
+        creator: "Arthur Conan Doyle"
     }
 ```
 
