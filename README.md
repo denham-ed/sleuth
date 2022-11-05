@@ -29,7 +29,7 @@ As a user I want to experience an enjoyable, easy-to-learn game featuring favour
 
 
 ## Rules of the Game
-git
+
 1. Select a difficulty mode to start
 2. When prompted, select an attribute for your detecive
     - If you have the highest number, you win your opponent's card and get to select an attribute for the next card. Both cards are placed at the bottom of your deck
@@ -122,10 +122,21 @@ Blurred text is used on both the opponent card and draw-pile card to prevent the
 
 ## Upcoming Features
 
-## Testing
-### User Testing
+### Change Speed of Game
+A simple toggle in the header will allow the player to speed up and slow down the game play by setting a multiplier for the baseline interval for the messages during the card comparison phase of the game
+
+### Hand Count
+Players will be able to see how many rounds they have played. This will add another metric to measuring success in the game; how quickly can the player defeat their opponent.
+
+### More Detectives
+The code is designed to make the addition of further detectives easy - the listing page is rendered dynamically from the array of detectives and the assignment of cards will function as long as the total number of cards remains even.
+
+## Testing & Performance
 ### Validation Testing
 CSS THE W3C Validation with no errors.
+
+### User Testing
+
 ### Fixed Bugs
 ### Unfixed Bugs
 
