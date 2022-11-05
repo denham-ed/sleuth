@@ -353,9 +353,9 @@ header h1 {
 #card-image {
     height: 12rem;
     width: 12rem;
-    background-repeat: none;
+    background-repeat: no-repeat;
     background-size: cover;
-    background-position: middle left;
+    background-position: center left;
     border: #0A122A 0.2rem solid;
     margin-bottom: 0.2rem;
 }
@@ -459,9 +459,9 @@ header h1 {
     margin-bottom: 0.5rem;
     height: 8rem;
     width: 8rem;
-    background-repeat: none;
+    background-repeat: no-repeat;
     background-size: cover;
-    background-position: middle left;
+    background-position: center left;
     border: #0A122A 0.2rem solid;
 }
 
@@ -477,7 +477,6 @@ header h1 {
 /* Blur- Credit https://tinyurl.com/yuprww3x */
 .blur {
     filter: blur(5px);
-    -webkit-filter: blur(3px);
 }
 
 
@@ -586,9 +585,9 @@ header h1 {
     margin-bottom: 0.2rem;
     height: 5rem;
     width: 5rem;
-    background-repeat: none;
+    background-repeat: no-repeat;
     background-size: cover;
-    background-position: middle left;
+    background-position: center left;
     border: 0.2rem #000 solid;
 }
 
@@ -821,11 +820,9 @@ footer div {
     }
 
     .listing-middle {
-        min-width: unset;
+        min-width: auto;
         margin-left: 0;
     }
-
-
 }
 
 /* Break Point at 400px */
@@ -869,18 +866,15 @@ footer div {
 
     @keyframes flipOutY {
         0% {
-            -webkit-transform: perspective(400px);
             transform: perspective(400px);
         }
 
         30% {
-            -webkit-transform: perspective(400px) rotate3d(0, 1, 0, -15deg);
             transform: perspective(400px) rotate3d(0, 1, 0, -15deg);
             opacity: 1;
         }
 
         100% {
-            -webkit-transform: perspective(400px) rotate3d(0, 1, 0, 90deg);
             transform: perspective(400px) rotate3d(0, 1, 0, 90deg);
             opacity: 0;
         }
