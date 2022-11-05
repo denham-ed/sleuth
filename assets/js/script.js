@@ -39,9 +39,12 @@ const addLoadingItem = (loadingArray, i) => {
     }
 }
 
-
-
+/**
+ * Adds difficulty setting to DOM, calls addLoadingItem, calls assignDetectives and prepares game container space for start of game
+ * @param {*} event - Mouse click on button
+ */
 const prepareGame = (event) => {
+    //Add Difficulty Level to DOM
     document.getElementById("difficulty").textContent = event.target.dataset.difficulty
     //Prepare Modal Event Listeners
     const modal = document.getElementById("game-stats-modal")
@@ -53,13 +56,14 @@ const prepareGame = (event) => {
             modal.style.display = "none";
         }
     }
-
     // Add Loading Text to Screen in Sequence
     document.getElementById("middle-area-text").innerHTML = `<div>The Game Is Afoot...</div>`
     document.getElementById("middle-area-logo").innerHTML = `<i class="fa-solid fa-magnifying-glass"></i>`
     const loadingArray = ["Gathering Clues", "Polishing Magnifying Glass", "Sharpening Pencil", "Interviewing Witnesses"]
     addLoadingItem(loadingArray, 0)
+    //Calls assignCards and split sets hand for each player
     let playerDecks = assignCards(detectives)
+    //Prepares Game Space
     setTimeout(() => {
         populatePlayerCard(playerDecks, true)
         document.getElementById("card").style.display = "flex"
@@ -70,40 +74,40 @@ const prepareGame = (event) => {
     }, 8000)
 }
 
+/**
+ * Prepares player's current card with image, attributes and event listeners
+ * @param {Object} playerDecks - Object containing player deck, opponent deck, and draw pile
+ * @param {boolean} playerTurn - Indicated if it is player or opponent turn
+ */
 const populatePlayerCard = (playerDecks, playerTurn) => {
+    //Selects first card in the player deck as the current card
     const detective = playerDecks.userDeck[0]
-    //Full Screen - is this right??
+    //Updates text on player deck 
     document.getElementById("card-count-container").innerHTML = `<span>You have ${playerDecks.userDeck.length} cards.</span>`
+    // Adds image and name to card
     document.getElementById("card-header").textContent = detective.name
     document.getElementById("card-image").style.backgroundImage = `url(${detective.image})`
     document.getElementById("card-image").style.display = "block"
-    //Small Screen - is this right??
+    //Adds infromation to Game Stats modal
     document.getElementById("card-count").innerHTML = `${playerDecks.userDeck.length} cards`
     document.getElementById("draw-count").innerHTML = `${playerDecks.drawPile.length} cards`
-    // Stats
+    // Compiles and renders dective attributes table
     let statsHTML = ""
     detective.facts.forEach((fact, index) => {
         statsHTML +=
-            `    
-            <tr 
+            `<tr 
             data-stat = ${index} 
             class="stat-row">
                 <td>${fact.stat}</td>
                 <td>${fact.result}</td>
-            </tr>
-        `
+            </tr>`
     })
-    document.getElementById("card-stats").innerHTML =
-        `
-            <table id="stat-table">
-            ${statsHTML}
-            </table>
-        `
-    // Hide Player Image on Tiny Screen
+    document.getElementById("card-stats").innerHTML =`<table id="stat-table">${statsHTML} </table>`
+    // Hides detective image on very small screen
     setTimeout(() => {
         document.getElementById("card-image").classList.add("image-fade-out")
     }, 2000)
-    // Add Event Listener to Player Card
+    // If player's turn, adds click event listener to detective attributes
     if (playerTurn) {
         const statRows = document.getElementsByClassName("stat-row")
         for (let row of statRows) {
@@ -114,17 +118,14 @@ const populatePlayerCard = (playerDecks, playerTurn) => {
             })
         }
     }
-
-
 }
 
-
-
 /**
- * Randomises order of detective cards
+ * Sorts array into a random order
+ * @param {Array} array - Any array
  * 
+ * Credit: https://tinyurl.com/mr5vhup5
  */
-// https://stackoverflow.com/questions/2450954/how-to-randomize-shuffle-a-javascript-array
 const shuffleCards = (array) => {
     for (let i = array.length - 1; i > 0; i--) {
         const j = Math.floor(Math.random() * (i + 1));
@@ -133,52 +134,57 @@ const shuffleCards = (array) => {
 }
 
 /**
- * Shuffles 16 cards and assigns them evenly to the player and opponent.
- * Return an object with userDeck and opponentDeck. 
- *
+ * Shuffles 16 cards and assigns the evenly to the player and opponent
+ * @param {Array} detectives - Array of all 16 detectives
+ * @returns {Object} - Object containing player deck array, opponent deck array and empty array for the starting draw pile
  */
 const assignCards = (detectives) => {
+    //Shuffle cards into random order
     shuffleCards(detectives)
+    // Divide cards into two piles and initiate empty array for draw pile
     let opponentDeck = detectives.slice(0, detectives.length / 2)
     let userDeck = detectives.slice(detectives.length / 2)
     let drawPile = []
-    return {
-        userDeck,
-        opponentDeck,
-        drawPile
-    }
+    return {userDeck, opponentDeck,drawPile}
 }
 
+/**
+ * Prevents further clicks from user after selection of attribute
+ */
 const lockUserInput = () => {
+    // Prevent clicks and remove formatting
     let activeRows = document.getElementsByClassName("active-row")
     for (var i = activeRows.length - 1; i >= 0; i--) {
         activeRows[i].classList.add("locked")
         activeRows[i].classList.remove("active-row")
     }
-    // Reset Image
+    // Resets image on very small device
     setTimeout(() => {
         document.getElementById("card-image").classList.remove("image-fade-out")
     }, 4000)
 }
 
-/**
- * Compares player and opponent cards and renders message to screen.
- */
 
+/**
+ * Compares player and opponent cards and renders messages to screen.
+ * @param {Object} playerDecks - Object containing player deck, opponent deck, and draw pile
+ * @param {number} statIndex - Number representing index of chosen attribute
+ * @param {boolean} playerTurn - Indicated if it is player or opponent turn
+ */
 const compareCards = (playerDecks, statIndex, playerTurn) => {
     //Prevent User Clicks on Options
     lockUserInput()
-
+    // Select top cards of each deck
     const playerDetective = playerDecks.userDeck[0]
     const opponentDetective = playerDecks.opponentDeck[0]
-    //Messages - Separated in order to change order of array
+    //Define messages 
     const playerDetectiveMessage = `<p>${playerDetective.name} has ${playerDetective.facts[statIndex].result} ${playerDetective.facts[statIndex].stat.toLowerCase()}.</p>`
     const opponentCallMessage = `<p>Your opponent calls ${opponentDetective.facts[statIndex].stat}!</p>`
     const opponentMessage = `<p>Your opponent has ${opponentDetective.name}.</p>`
     const opponentStatMessage = `<p>${opponentDetective.name} has ${opponentDetective.facts[statIndex].result} ${opponentDetective.facts[statIndex].stat.toLowerCase()}.</p>`
     // Define order of messages
     const messageArray = playerTurn ? [playerDetectiveMessage, opponentMessage, opponentStatMessage] : [opponentCallMessage, opponentMessage + opponentStatMessage, playerDetectiveMessage]
-    // Evaluate winner
+    // Evaluate winner and define outcome message
     let playerWinner, draw, winnerMessage
     if (playerDetective.facts[statIndex].result > opponentDetective.facts[statIndex].result) {
         playerWinner = true
@@ -190,6 +196,7 @@ const compareCards = (playerDecks, statIndex, playerTurn) => {
         draw = true
         winnerMessage = `<p class="confirmation">It's a draw - the cards are put to one side for now...</p>`
     }
+    // Set delay based on player turn
     const delay = playerTurn ? 0 : 2000
     // Display comparison messages
     const messageArea = document.getElementById("middle-area-text")
@@ -207,7 +214,7 @@ const compareCards = (playerDecks, statIndex, playerTurn) => {
         document.getElementById("middle-area").classList.add("highlight-message")
         messageArea.innerHTML = winnerMessage
     }, delay + 6000)
-    // Check for draw - finish this comment!!
+    // Check for draw and call appropriate function
     if (!draw) {
         setTimeout(() => {
             clearDrawPile()
@@ -219,20 +226,24 @@ const compareCards = (playerDecks, statIndex, playerTurn) => {
             handleDraw(playerTurn, playerDecks)
         }, delay + 8000)
     }
-
 }
 
-/**
- * Shift player and opponent arrays and push them to the end of the winner"s deck (array)
- * 
- */
 
+
+/**
+ * Move top cards of player and opponent decks and add them to the end of the winner's deck
+ * @param {boolean} playerWin - Indicates if player or opponent won the previous hand
+ * @param {Object} playerDecks - Object containing player deck, opponent deck, and draw pile
+ * @returns 
+ */
 const passCards = (playerWin, playerDecks) => {
+    // Destructure decks
     let {
         userDeck,
         opponentDeck,
         drawPile
     } = playerDecks
+    // 
     if (playerWin) {
         userDeck.push(userDeck.shift())
         userDeck.push(opponentDeck.shift())
@@ -343,15 +354,12 @@ const opponentTurn = (playerDecks) => {
         case "Easy":
             difficultySpread = [10, 30, 60, 100]
             break;
-
         case "Medium":
             difficultySpread = [50, 75, 90, 100]
             break;
-
         case "Hard":
             difficultySpread = [80, 95, 99, 100]
             break;
-
         case "Wild":
             difficultySpread = [25, 50, 75, 100]
             break;
