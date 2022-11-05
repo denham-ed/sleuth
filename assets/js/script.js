@@ -1,22 +1,27 @@
 
-
+/**
+ * Adds event listeners for game initiating buttons and instructions button when the DOM content has loaded
+ */
 document.addEventListener("DOMContentLoaded", () => {
+    // Instruction Button
     const instructionsButton = document.getElementById("instructions-button")
     instructionsButton.addEventListener('click',showInstructions)
+    // Difficulty Selection Buttons
     let startButtons = document.getElementsByClassName("difficulty-button")
     for (let startButton of startButtons) {
         startButton.addEventListener("click", prepareGame)
     }
-
 })
 
 
-
-/** 
- * Recursive function to display mock loading text to user 
- * */
+/**
+ * Recursive function render faux loading text to user on game initiation
+ * @param {Array} loadingArray - Array of strings of loading text
+ * @param {...number} i - Counter for for loop
+ */
 const addLoadingItem = (loadingArray, i) => {
     if (i < loadingArray.length) {
+        // Render Loading Messages to User
         setTimeout(() => {
             document.getElementById("middle-area-text").innerHTML =
                 `<div>
@@ -26,14 +31,13 @@ const addLoadingItem = (loadingArray, i) => {
             addLoadingItem(loadingArray, i)
         }, 1000)
     } else {
+        // Prepare Areas for Main Game Play
         document.getElementById("middle-area-logo").innerHTML = ``
         document.getElementById("middle-area-text").innerHTML = ``
         const middleArea = document.getElementById("middle-area")
         middleArea.classList.remove("start-message")
         middleArea.classList.add("middle-area-main")
         document.getElementById("main-logo").parentElement.removeChild(document.getElementById("main-logo"))
-
-        // 
     }
 }
 
@@ -51,24 +55,12 @@ const prepareGame = (event) => {
             modal.style.display = "none";
         }
     }
-    // document.getElementById("circle").addEventListener("mouseleave", ()=>{
-    //     document.getElementById("game-stats-modal").style.display = "none"
-    // })
+
     // Add Loading Text to Screen in Sequence
     document.getElementById("middle-area-text").innerHTML = `<div>The Game Is Afoot...</div>`
     document.getElementById("middle-area-logo").innerHTML = `<i class="fa-solid fa-magnifying-glass"></i>`
     const loadingArray = ["Gathering Clues", "Polishing Magnifying Glass", "Sharpening Pencil", "Interviewing Witnesses"]
     addLoadingItem(loadingArray, 0)
-    // New Detective fro Draw Testing
-    // detectives.forEach((detective) => {
-    //     detective.facts.push({
-    //         stat: "Draw",
-    //         result: 1,
-    //         relStrength: 2
-    //     })
-    // })
-
-
     let playerDecks = assignCards(detectives)
     setTimeout(() => {
         populatePlayerCard(playerDecks, true)
