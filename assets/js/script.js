@@ -1,4 +1,3 @@
-
 /**
  * Adds event listeners for game initiating buttons and instructions button when the DOM content has loaded
  */
@@ -12,7 +11,6 @@ document.addEventListener("DOMContentLoaded", () => {
         startButton.addEventListener("click", prepareGame)
     }
 })
-
 
 /**
  * Recursive function render faux loading text to user on game initiation
