@@ -13,9 +13,9 @@ const renderDetectives = ()=>{
         </div>
         <div class="listing-middle">
             <div>${detective.name}</div>
-            <div>Created by: Some Author</div>
+            <div>Created by: ${detective.creator}</div>
         </div>
-        <div class="listing-right">A fake biography goes here. They have all these shows and have solved loads and loads of cases</div>
+        <div class="listing-right">${detective.biography}</div>
         </div>`
     })
     document.getElementById('detectives-listing').innerHTML = detectiveListing
