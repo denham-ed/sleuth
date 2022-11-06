@@ -218,7 +218,7 @@ Excellent scores were obtained via Lighthouse through Google Chrome DevTools.
 
 Sleuth is built with responsive design in mind and has been thoroughly tested using [Responsive Design Checker](https://responsivedesignchecker.com/) and the DevTools in Google Chrome.
 
-As the screenshots below demonstrate it works flexibly and efficiently on screens ranging from 1920x1200px to 320x480px. On Chrome, it has also been tested successfully down to a width of 270px.
+As the screenshots below demonstrate it works flexibly and efficiently on screens ranging from 1920x1200px to 320x480px. On Chrome, it has also been tested successfully down to a width of 280px.
 
 **Large Display**
 
