@@ -261,6 +261,20 @@ Warnings were displayed to highlight missing headings in sections; I will consid
 | _Proceeds from above action_ | Game Stats Modal is updated | Pass |
 | _Proceeds from above action_ | Text on Player Deck is updated | Pass |
 
+### Game Stats Modal
+
+| **User Action** | **Expected Result** | **Pass / Fail** |
+|---|---|---|
+| Player clicks on ? button in header | Opens Game Stats Modal with current scores | Pass |
+| Player clicks outside of modal | Game Stats Modal closes | Pass |
+| Player clicks on 'x' in modal | Gam Stats Modal closes | Pass |
+
+### Large Devices Only
+
+### Small Devices Only
+
+### Game End
+
 
 ### Fixed Bugs
 ### Unfixed Bugs
