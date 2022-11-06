@@ -284,15 +284,19 @@ Warnings were displayed to highlight missing headings in sections; I will consid
 
 ### Game End
 
+| **User Action** | **Expected Result** | **Pass / Fail** |
+|---|---|---|
+| Player has 0 cards remaining | Game container is cleared of ephemera and user loss message is displayed | Pass |
+| User clicks 'Try Again' button | Navigates to Landing Page | Pass |
+| Player has all cards | Game container is cleared of ephemera and user win message is displayed | Pass |
+| User clicks 'Play Again' button | Navigates to Landing Page | Pass |
 
-### Fixed Bugs
 ### Unfixed Bugs
 
 **Consecutive Draws**
 In the event of three consecutive draws, the draw-pile would effectively “overflow” causing the cards to spill over the central area used to convey messages to the user. However, with only sixteen cards and relatively narrow range of attributes, three consecutives draws is highly unlikely. It never occurred during testing or development, and I am satisfied that is currently acceptable edge-case.
 
 If more cards, or more attributes with a narrower range of values, were added to the game, this would need to be re-evaluated. One potential solution would be to limit the displayed draw pile as 4 cards and add text (eg. “+ 2 cards”).
-
 
 ## Deployment
 
