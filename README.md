@@ -102,21 +102,64 @@ Blurred text is used on both the opponent card and draw-pile card to prevent the
 
 ### Landing Page
 
+![Landing Page](assets/media/readme_assets/features/landing_page.png)
+The landing page guides the user to either:
+1. Initiate a new game by selecting the difficulty level 
+    OR
+2. Learn more about the game by clicking the How to Play or Detectives button
+### Header
+![Header](assets/media/readme_assets/features/header.png)
+
+The header shows the logo and main font throughout, as well as the blue, green and red stripes in a go-faster-racing style. Buttons that provide more information to the user appear here, such as the button to open the Game Stats modal.
+
+### Footer !!!!!!!!!!!!!
+
+### How to Play
+![How to Play](assets/media/readme_assets/features/instructions.png)
+The 'How to Play' instructions are rendered inside the same central messaging area without navigating to another page. Users can use the green Back button to refresh the page and see the buttons to initiate a new game
+
 ### Detective Listing
+![Detective Listings](assets/media/readme_assets/features/detective_listing.png)
+The listing is rendered dynamically and provides a snapshot of the image, name and biography of each detective featured in the game. It also credits the creator of each protagonist.
 
 ### Difficulty Level
+![Difficulty Level](assets/media/readme_assets/features/difficulty_buttons.png)
+
+The user can vary the difficulty level by clicking on the buttons in this section. The level sets the spread of probability that the opponent will choose their strongest attribute; on Easy, the opponent will often choose their weakest value, whereas on Hard they will consistently choose their best option.
+
+The user's choice is added to the DOM (in the Game Stats modal), where it can be retrieved.
+
+Choosing a difficulty level initiates a new game.
 
 ### Game Initiation
+![Game Intiation](assets/media/readme_assets/features/loading_page.png)
+After intiation, a series of tantalising messages are displayed to the user to create a 'loading' effect. This builds anticipation and helps to establish the language and world of the game.
 
-### Fact Selection and Comparison
+### Main Game Phase
+![Main Game Phase](assets/media/readme_assets/features/game_phase.png)
+In the main phase of the game, the user's card is rendered with image, name and attributes. The opponent's card is shown face down. For large devices, the player's deck will also be displayed. A prompt to the user (indicating whether it is their turn or not) is displayed in the central section.
 
+### Player Deck
+![Player Deck](assets/media/readme_assets/features/player_deck.png)
+
+Hovering over the player's deck will show how many cards they have in total.
+
+### Attribute Selection
+![Attribute Selection](assets/media/readme_assets/features/selected_fact.png)
+
+When the user selects an attribute, it is highlighted and the other options are locked to prevent the comparison being fired multiple times.
+
+### Opponent Card
+![Opponent Card](assets/media/readme_assets/features/opponent_card.png)
+After an attribute has been chosen, either by the user or the opponent, the opponent's card is revealed; the image and name is shown but the attributes are blurred to prevent the user from gaining an unfair advantage.
 
 ### Draw Handling
 
+### Game Stats Modal
 
 ### End Game Message
 
-### Game Stats Modal
+
 
 
 
