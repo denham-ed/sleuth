@@ -1,6 +1,6 @@
 # Sleuth.
 
-A Top Trumps style card game featuring the world’s greatest (fictional) detectives.
+A Top Trumps-style card game featuring the world’s greatest (fictional) detectives.
 
 > So assemble your team and use your wits…the game is afoot!
 
@@ -25,13 +25,13 @@ The design of the game should create an enjoyable response from the user but sho
 
 ### Game Player
 
-As a user I want to experience an enjoyable, easy-to-learn game featuring favourite characters from the world of crime fiction. The game should be challenging enough to be enjoyable but simple to learn. Any prompts from the game should be clear and unabiguos but also add to the 'world of the game' in tone.
+As a user, I want to experience an enjoyable, easy-to-learn game featuring favourite characters from the world of crime fiction. The game should be challenging enough to be enjoyable but simple to learn. Any prompts from the game should be clear and unambiguous but also add to the 'world of the game' in tone.
 
 
 ## Rules of the Game
 
 1. Select a difficulty mode to start
-2. When prompted, select an attribute for your detecive
+2. When prompted, select an attribute for your detective
     - If you have the highest number, you win your opponent's card and get to select an attribute for the next card. Both cards are placed at the bottom of your deck
     - If you have a lower number, your opponent wins your card and keeps their own. They then get to choose the next attribute
     - If there is a draw, the cards are placed in a separate pile and the player who selected the attribute chooses again for the next hand. The winner of the subsequent hands wins all the cards in the draw pile.
@@ -63,12 +63,12 @@ The most important information for the game is the information for each detectiv
             result: 2,
             relStrength: 0.8
         }],
-        biography: "Sherlock Holmes, the worlds first consulting detective, epitomises the fictional detective. Known for his powers of deduction and logical reasoning, first appeared in 1887. A century later there are over 25,000 stage adaptiions, films, television shows and publications featuring the occupant of 221B Baker Street",
+        biography: "Sherlock Holmes, the world's first consulting detective, epitomises the fictional detective. Known for his powers of deduction and logical reasoning, first appeared in 1887. A century later there are over 25,000 stage adaptations, films, television shows and publications featuring the occupant of 221B Baker Street",
         creator: "Arthur Conan Doyle"
     }
 ```
 
-The result of each stat was randomly calculated between set ranges for this game. The relStrength (relative strength) shows the absolute deviation from the mean each stat across all the cards. This is used to decide which stat the opponent will select.
+The result of each stat was randomly calculated between set ranges for this game. The relStrength (relative strength) shows the absolute deviation from the mean of each stat across all the cards. This is used to decide which stat the opponent will select.
 
 ## Design
 
@@ -78,21 +78,21 @@ Two fonts were used in the design of **Sleuth**; **Montserrat** and **Ultra**. B
 
 **Montserrat** is used for the main body of the website, for information for the user and for prompts and declarations.
 
-**Ultra** is used for headings (h1 & h2); its ultra-bold but clear style is perfect for providing semantic clarity and also double as logo-esque title in the header of the site.
+**Ultra** is used for headings (h1 & h2); its ultra-bold but clear style is perfect for providing semantic clarity and also doubles as a logo-esque title in the header of the site.
 
 ### Colour
 The design of **Sleuth** predominantly uses the colour palette, below.
 
 ![Sleuth colour palette](assets/media/readme_assets/sleuth-colours.png)
 
-The palette evokes a nostalgic 1970s theme; arguably the golden era of the TV detective with shows such as Hawaii Five-O, Charlie's Angels, Columbo, Kojak and more. It is also a nod the launch of the original Top Trumps card game in 1978.
+The palette evokes a nostalgic 1970s theme; arguably the golden era of the TV detective with shows such as Hawaii Five-O, Charlie's Angels, Columbo, Kojak and more. It is also a nod to the launch of the original Top Trumps card game in 1978.
 
 
 ### Artwork
 The overall design of the cards is, naturally, inspired by the iconic Top Trump card design. 
-For game play on smaller devices (max-width 905px) the card is rotated but all elements are maintained. For very small screens (max-width 400px) the card appears as a square but retains the artwork of the detective.
+For gameplay on smaller devices (max-width 905px) the card is rotated but all elements are maintained. For very small screens (max-width 400px) the card appears as a square but retains the artwork of the detective.
 
-As the original images of detectives were varied widely in style, they are rendered in the game in a single stylised version. This was achieved using [Fotor](https://www.fotor.com/), a free image editing software, and approximates the hand-drawn style of the original Top Trumps cards
+As the original images of detectives varied widely in style, they are rendered in the game in a single stylised version. This was achieved using [Fotor](https://www.fotor.com/), a free image editing software, and approximates the hand-drawn style of the original Top Trumps cards
 
 Blurred text is used on both the opponent card and draw-pile card to prevent the user from reading all the opponent card’s statistics, replicating the ‘in-person’ Top Trumps experience.
 
@@ -143,12 +143,12 @@ Choosing a difficulty level initiates a new game.
 ### Game Initiation
 ![Game Intiation](assets/media/readme_assets/features/loading_page.png)
 
-After intiation, a series of tantalising messages are displayed to the user to create a 'loading' effect. This builds anticipation and helps to establish the language and world of the game.
+After initiation, a series of tantalising messages are displayed to the user to create a 'loading' effect. This builds anticipation and helps to establish the language and world of the game.
 
 ### Main Game Phase
 ![Main Game Phase](assets/media/readme_assets/features/game_phase.png)
 
-In the main phase of the game, the user's card is rendered with image, name and attributes. The opponent's card is shown face down. For large devices, the player's deck will also be displayed. A prompt to the user (indicating whether it is their turn or not) is displayed in the central section.
+In the main phase of the game, the user's card is rendered with an image, name and attributes. The opponent's card is shown face down. For large devices, the player's deck will also be displayed. A prompt to the user (indicating whether it is their turn or not) is displayed in the central section.
 
 ### Player Deck
 ![Player Deck](assets/media/readme_assets/features/player_deck.png)
@@ -158,12 +158,12 @@ Hovering over the player's deck will show how many cards they have in total.
 ### Attribute Selection
 ![Attribute Selection](assets/media/readme_assets/features/selected_fact.png)
 
-When the user selects an attribute, it is highlighted and the other options are locked to prevent the comparison being fired multiple times.
+When the user selects an attribute, it is highlighted and the other options are locked to prevent the comparison from being fired multiple times.
 
 ### Opponent Card
 ![Opponent Card](assets/media/readme_assets/features/opponent_card.png)
 
-After an attribute has been chosen, either by the user or the opponent, the opponent's card is revealed; the image and name is shown but the attributes are blurred to prevent the user from gaining an unfair advantage.
+After an attribute has been chosen, either by the user or the opponent, the opponent's card is revealed; the image and name are shown but the attributes are blurred to prevent the user from gaining an unfair advantage.
 
 ### Draw Handling
 ![Draw Handling](assets/media/readme_assets/features/draw_pile.png)
@@ -197,8 +197,8 @@ If the player loses all of their cards, all the remaining cards are cleared and 
 
 ## Upcoming Features
 
-### Change Speed of Game
-A simple toggle in the header will allow the player to speed up and slow down the game play by setting a multiplier for the baseline interval for the messages during the card comparison phase of the game
+### Change the Speed of the Game
+A simple toggle in the header will allow the player to speed up and slow down the gameplay by setting a multiplier for the baseline interval for the messages during the card comparison phase of the game
 
 ### Hand Count
 Players will be able to see how many rounds they have played. This will add another metric to measuring success in the game; how quickly can the player defeat their opponent.
@@ -222,7 +222,7 @@ Excellent scores were obtained via Lighthouse through Google Chrome DevTools.
 - No errors were found when passing through the [official (Jigsaw) validator](https://jigsaw.w3.org/css-validator/validator?uri=https%3A%2F%2Fdenham-ed.github.io%2Fsleuth%2Findex.html&profile=css3svg&usermedium=all&warning=1&vextwarning=&lang=en)
 
 **HTML**
-- No errors were found when passing through the official (W3C) validtor for either:
+- No errors were found when passing through the official (W3C) validator for either:
     - [index.html](https://validator.w3.org/nu/?doc=https%3A%2F%2Fdenham-ed.github.io%2Fsleuth%2Findex.html) or
     - [detectives.html](https://validator.w3.org/nu/?doc=https%3A%2F%2Fdenham-ed.github.io%2Fsleuth%2Fdetectives.html)
 
@@ -239,8 +239,8 @@ Warnings were displayed to highlight missing headings in sections; I will consid
 
 | **User Action** | **Expected Result** | **Pass / Fail** |
 |---|---|---|
-| Enter URL into browser address bar | User is taken to Landing Page with buttons for intiaiting new game | Pass |
-| Click on title in header (Sleuth.) | Navigates to landing page | Pass |
+| Enter URL into browser address bar | User is taken to Landing Page with buttons for initiating new game | Pass |
+| Click on the title in the header (Sleuth.) | Navigates to the landing page | Pass |
 | Click on Detectives button | Navigates to Detectives Listing page | Pass |
 | Click on Arrow button in header | Navigates back to Landing Page | Pass |
 | Click on How to Play button | Renders instructions to central messaging area  | Pass |
@@ -255,8 +255,8 @@ Warnings were displayed to highlight missing headings in sections; I will consid
 | User hover's mouse over detective attributes | Text turns red | Pass |
 | User selects attribute with mouse click | Attribute turn's blue and triggers comparison | Pass |
 | _Proceeds from above action_ | User can no longer click on attributes | Pass |
-| _Proceeds from above action_ | Opponent's card (image and title) is reveled | Pass |
-| _Proceeds from above action_ | Attributes are compared and appropriate message is rendered in message area | Pass |
+| _Proceeds from above action_ | Opponent's card (image and title) is revealed | Pass |
+| _Proceeds from above action_ | Attributes are compared and an appropriate message is rendered in the message area | Pass |
 | _Proceeds from above action_ | Player and opponent decks are updated | Pass |
 | _Proceeds from above action_ | Player's next card is revealed | Pass |
 | _Proceeds from above action_ | Opponent's card is shown face down | Pass |
@@ -294,9 +294,9 @@ Warnings were displayed to highlight missing headings in sections; I will consid
 ### Unfixed Bugs
 
 **Consecutive Draws**
-In the event of three consecutive draws, the draw-pile would effectively “overflow” causing the cards to spill over the central area used to convey messages to the user. However, with only sixteen cards and relatively narrow range of attributes, three consecutives draws is highly unlikely. It never occurred during testing or development, and I am satisfied that is currently acceptable edge-case.
+In the event of three consecutive draws, the draw-pile would effectively “overflow” causing the cards to spill over the central area used to convey messages to the user. However, with only sixteen cards and a relatively narrow range of attributes, three consecutive draws are highly unlikely. It never occurred during testing or development, and I am satisfied that is currently an acceptable edge case.
 
-If more cards, or more attributes with a narrower range of values, were added to the game, this would need to be re-evaluated. One potential solution would be to limit the displayed draw pile as 4 cards and add text (eg. “+ 2 cards”).
+If more cards, or more attributes with a narrower range of values, were added to the game, this would need to be re-evaluated. One potential solution would be to limit the displayed draw pile to 4 cards and add text (eg. “+ 2 cards”).
 
 ## Deployment
 
@@ -309,7 +309,7 @@ If more cards, or more attributes with a narrower range of values, were added to
 ### Media
 
 ### Code - THIS IS BAD FINISH,
-- Code from users StackOverflow and w3schools is used occasionally throughtout this project. Credit and a link to the source can be found in the relevant js or css file.
+- Code from users StackOverflow and w3schools is used occasionally throughout this project. Credit and a link to the source can be found in the relevant js or CSS file.
 - CSS Anima
 
 ### Acknowledgements
