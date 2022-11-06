@@ -216,6 +216,23 @@ Excellent scores were obtained via Lighthouse through Google Chrome DevTools.
 
 ![Lighthouse Scores for Mobile](assets/media/readme_assets/desktop_lighthouse.png)
 
+### Responsiveness Testing
+
+Sleuth is built with responsive design in mind and has been thoroughly tested using [Responsive Design Checker](https://responsivedesignchecker.com/) and the DevTools in Google Chrome.
+
+As the screenshots below demonstrate it works flexibly and efficiently on screens ranging from 1920x1200px to 320x480px. On Chrome, it has also been tested successfully down to a width of 270px.
+
+**Large Display**
+![Large Display](/assets/media/readme_assets/computer-design.png)
+
+**Medium Display (iPads, tablets etc)**
+
+![Medium Display](/assets/media/readme_assets/ipad-design.png)
+
+**Small Display**
+
+![Small Display](/assets/media/readme_assets/phone-design.png)
+
 
 ### Validation Testing
 **CSS**
@@ -234,8 +251,7 @@ Warnings were displayed to highlight missing headings in sections; I will consid
 
 ### User Testing
 
-
-### Pre-Game - Landing, Instruction and Detectives Listing Pages
+**Pre-Game - Landing, Instruction and Detectives Listing Pages**
 
 | **User Action** | **Expected Result** | **Pass / Fail** |
 |---|---|---|
@@ -248,7 +264,8 @@ Warnings were displayed to highlight missing headings in sections; I will consid
 | Click on GitHub logo in footer | Opens new tab displaying the Sleuth repository on GitHub | Pass |
 | Click on LinkedIn logo in footer | Opens new tab displaying the developer's LinkedIn profile | Pass |
 
-### Main Game Phase
+
+**Main Game Phase**
 
 | **User Action** | **Expected Result** | **Pass / Fail** |
 |---|---|---|
@@ -263,7 +280,7 @@ Warnings were displayed to highlight missing headings in sections; I will consid
 | _Proceeds from above action_ | Game Stats Modal is updated | Pass |
 | _Proceeds from above action_ | Text on Player Deck is updated | Pass |
 
-### Game Stats Modal
+**Game Stats Modal**
 
 | **User Action** | **Expected Result** | **Pass / Fail** |
 |---|---|---|
@@ -271,7 +288,7 @@ Warnings were displayed to highlight missing headings in sections; I will consid
 | Player clicks outside of modal | Game Stats Modal closes | Pass |
 | Player clicks on 'x' in modal | Gam Stats Modal closes | Pass |
 
-### Large (>905px) Devices Only 
+**Large (>905px) Devices Only **
 
 | **User Action** | **Expected Result** | **Pass / Fail** |
 |---|---|---|
@@ -282,7 +299,7 @@ Warnings were displayed to highlight missing headings in sections; I will consid
 | User takes all but 1 cards | Last card warning appears in opponent area | Pass |
 | Both players have at least 2 cards | No warning are present | Pass |
 
-### Game End
+**Game End**
 
 | **User Action** | **Expected Result** | **Pass / Fail** |
 |---|---|---|
