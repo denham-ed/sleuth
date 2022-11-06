@@ -249,7 +249,7 @@ const detectives = [{
         relStrength: 1.2
     }],
     biography: "Private detective and war veteran Cormoran Strike appears in 6 novels by Robert Galbraith, a pseudonym for JK Rowling. Despite only appearing in 2013, Strike is already the star of six novels and four TV series, and Rowling has confirmed she has at least ten more books for the PI planned for the future.",
-    creator: "Robert Galbraith aka JK Rowling"
+    creator: "Robert Galbraith"
 },
 {
     name: "Alan Banks",
