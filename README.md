@@ -132,6 +132,14 @@ Players will be able to see how many rounds they have played. This will add anot
 The code is designed to make the addition of further detectives easy - the listing page is rendered dynamically from the array of detectives and the assignment of cards will function as long as the total number of cards remains even.
 
 ## Testing & Performance
+### Performance
+Excellent scores were obtained via Lighthouse through Google Chrome DevTools.
+- Mobile
+![Lighthouse Scores for Mobile](assets/media/readme_assets/mobile_lighthouse.png)
+- Desktop
+![Lighthouse Scores for Mobile](assets/media/readme_assets/desktop_lighthouse.png)
+
+
 ### Validation Testing
 **CSS**
 - No errors were found when passing through the [official (Jigsaw) validator](https://jigsaw.w3.org/css-validator/validator?uri=https%3A%2F%2Fdenham-ed.github.io%2Fsleuth%2Findex.html&profile=css3svg&usermedium=all&warning=1&vextwarning=&lang=en)
@@ -161,5 +169,21 @@ If more cards, or more attributes with a narrower range of values, were added to
 ## Deployment
 
 ## Credits
-### Technology
+
+### Content
+- All content was written by the developer.
+- Research for the detective's biographies was conducted via the relevant [Wikipedia](https://www.wikipedia.org/) pages.
+
+### Media
+
+### Code - THIS IS BAD FINISH,
+- Code from users StackOverflow and w3schools is used occasionally throughtout this project. Credit and a link to the source can be found in the relevant js or css file.
+- CSS Anima
+
+### Acknowledgements
+- The support of my mentor Spencer Barriball for his advice, guidance and directions to resources is gratefully acknowledged.
+- The Code Institute example read me was used as a template for this document. This includes the instructions for deployment on GitHub Pages which are used in full, above.
+
+
+
 ###
