@@ -161,17 +161,24 @@ When the user selects an attribute, it is highlighted and the other options are 
 After an attribute has been chosen, either by the user or the opponent, the opponent's card is revealed; the image and name is shown but the attributes are blurred to prevent the user from gaining an unfair advantage.
 
 ### Draw Handling
-![Draw Handliing](assets/media/readme_assets/features/draw_pile.png)
+![Draw Handling](assets/media/readme_assets/features/draw_pile.png)
 
 In the event of a draw, the two cards are put to one side; on large devices, this is rendered as a face-up draw pile, with the image clear but the name and attributes blurred.
 
 The pile is removed once a hand is won.
 
 ### Game Stats Modal
+![Game Stats Modal](assets/media/readme_assets/features/game_stats_modal.png)
+
+The user can view the stats of the game (Difficulty, Number of Cards in Hand, Number of Cards in Draw Pile) at any time by opening the Game Stats Modal. The modal appears over the rest of the game area and can be exited by clicking the 'x' or anywhere outside of the modal.
 
 ### Last Card Warning
+![Last Card Warning](assets/media/readme_assets/features/last_card_warning.png)
+
+If either the player or opponent has just a single card remaining, a red flashing warning will appear to the user. It is removed if the player with a card manages to win the next hand.
 
 ### End Game Message - Win
+
 
 ### End Game Message - Loss
 
@@ -214,6 +221,17 @@ Warnings were displayed to highlight missing headings in sections; I will consid
 - The variable 'detectives' is flagged as undefined as the array is stored in a separate file but this is managed satisfactorily, without errors, in the program.
 
 ### User Testing
+
+
+### Pre-Game - Landing, Instruction and Detectives Listing Pages
+
+| **User Action** | **Expected Result** | **Pass / Fail** |
+|---|---|---|
+| Enter URL into browser address bar | User is taken to Landing Page with buttons for intiaiting new game | Pass |
+| Click on title in header (Sleuth.) | Navigates to landing page | Not yet- takes you to index.html |
+| Click on Detectives button | Navigates to Detectives Listing page | Pass |
+| Click on How to Play button | Renders instructions to central messaging area  | Pass |
+| Click on Difficulty (Easy, Medium, Hard & Wild) buttons | Game initiates; game container is prepared, logo is removed; difficulty level is rendered into the game stats modal | Pass |
 
 ### Fixed Bugs
 ### Unfixed Bugs
