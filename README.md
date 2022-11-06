@@ -238,10 +238,12 @@ Warnings were displayed to highlight missing headings in sections; I will consid
 | **User Action** | **Expected Result** | **Pass / Fail** |
 |---|---|---|
 | Enter URL into browser address bar | User is taken to Landing Page with buttons for intiaiting new game | Pass |
-| Click on title in header (Sleuth.) | Navigates to landing page | Not yet- takes you to index.html |
+| Click on title in header (Sleuth.) | Navigates to landing page | FAIL |
 | Click on Detectives button | Navigates to Detectives Listing page | Pass |
 | Click on How to Play button | Renders instructions to central messaging area  | Pass |
 | Click on Difficulty (Easy, Medium, Hard & Wild) buttons | Game initiates; game container is prepared, logo is removed; difficulty level is rendered into the game stats modal | Pass |
+| Click on GitHub logo in footer | Opens new tab displaying the Sleuth repository on GitHub | FAIL |
+| Click on LinkedIn logo in footer | Opens new tab displaying the developer's LinkedIn profile | FAIL |
 
 ### Fixed Bugs
 ### Unfixed Bugs
