@@ -317,6 +317,26 @@ If more cards, or more attributes with a narrower range of values, were added to
 
 ## Deployment
 
+Git and GitHub were used throughout this project to assist with version control and deployment. 
+
+The following steps were followed:
+
+1. A new Git repository was created using *git init*
+2. Changes were added regularly using *git add .*
+3. Changes were commited using *git commit -m* with a clear, imperative message to describe the change
+4. Finally the local repository was uploaded to a remote repository (this one) using the command *git push*
+
+
+The site was deployed to GitHub pages. The steps to deploy are as follows:
+
+- In the GitHub repository, navigate to the Settings tab
+- From the source section drop-down menu, select the Master Branch
+- Once the master branch has been selected, the page will be automatically refreshed with a detailed ribbon display to indicate the successful deployment.
+
+The live link can be found here: https://denham-ed.github.io/sleuth
+
+
+
 ## Credits
 
 ### Content
@@ -332,7 +352,3 @@ If more cards, or more attributes with a narrower range of values, were added to
 ### Acknowledgements
 - The support of my mentor Spencer Barriball for his advice, guidance and directions to resources is gratefully acknowledged.
 - The Code Institute example read me was used as a template for this document. This includes the instructions for deployment on GitHub Pages which are used in full, above.
-
-
-
-###
