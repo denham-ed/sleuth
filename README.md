@@ -178,12 +178,17 @@ The user can view the stats of the game (Difficulty, Number of Cards in Hand, Nu
 If either the player or opponent has just a single card remaining, a red flashing warning will appear to the user. It is removed if the player with a card manages to win the next hand.
 
 ### End Game Message - Win
+![End Game Message - Win](assets/media/readme_assets/features/win_message.png)
 
+If the player wins (collects all 16 cards), all the remaining cards are cleared and a congratulatory message appears in the central message area. The player is invited to try the game again at a different difficulty setting.
+
+The Play Again button refreshes the page, taking the user back to the landing page.
 
 ### End Game Message - Loss
+![End Game Message - Loss](assets/media/readme_assets/features/lose_message.png)
 
 
-
+If the player loses all of their cards, all the remaining cards are cleared and a conciliatory message appears. It invites the player to try again; the Try Again button refreshes the page, taking the user back to the landing page.
 
 ## Upcoming Features
 
