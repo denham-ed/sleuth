@@ -103,10 +103,12 @@ Blurred text is used on both the opponent card and draw-pile card to prevent the
 ### Landing Page
 
 ![Landing Page](assets/media/readme_assets/features/landing_page.png)
+
 The landing page guides the user to either:
 1. Initiate a new game by selecting the difficulty level 
     OR
 2. Learn more about the game by clicking the How to Play or Detectives button
+
 ### Header
 ![Header](assets/media/readme_assets/features/header.png)
 
@@ -116,10 +118,12 @@ The header shows the logo and main font throughout, as well as the blue, green a
 
 ### How to Play
 ![How to Play](assets/media/readme_assets/features/instructions.png)
+
 The 'How to Play' instructions are rendered inside the same central messaging area without navigating to another page. Users can use the green Back button to refresh the page and see the buttons to initiate a new game
 
 ### Detective Listing
 ![Detective Listings](assets/media/readme_assets/features/detective_listing.png)
+
 The listing is rendered dynamically and provides a snapshot of the image, name and biography of each detective featured in the game. It also credits the creator of each protagonist.
 
 ### Difficulty Level
@@ -133,10 +137,12 @@ Choosing a difficulty level initiates a new game.
 
 ### Game Initiation
 ![Game Intiation](assets/media/readme_assets/features/loading_page.png)
+
 After intiation, a series of tantalising messages are displayed to the user to create a 'loading' effect. This builds anticipation and helps to establish the language and world of the game.
 
 ### Main Game Phase
 ![Main Game Phase](assets/media/readme_assets/features/game_phase.png)
+
 In the main phase of the game, the user's card is rendered with image, name and attributes. The opponent's card is shown face down. For large devices, the player's deck will also be displayed. A prompt to the user (indicating whether it is their turn or not) is displayed in the central section.
 
 ### Player Deck
@@ -151,14 +157,23 @@ When the user selects an attribute, it is highlighted and the other options are 
 
 ### Opponent Card
 ![Opponent Card](assets/media/readme_assets/features/opponent_card.png)
+
 After an attribute has been chosen, either by the user or the opponent, the opponent's card is revealed; the image and name is shown but the attributes are blurred to prevent the user from gaining an unfair advantage.
 
 ### Draw Handling
+![Draw Handliing](assets/media/readme_assets/features/draw_pile.png)
+
+In the event of a draw, the two cards are put to one side; on large devices, this is rendered as a face-up draw pile, with the image clear but the name and attributes blurred.
+
+The pile is removed once a hand is won.
 
 ### Game Stats Modal
 
-### End Game Message
+### Last Card Warning
 
+### End Game Message - Win
+
+### End Game Message - Loss
 
 
 
