@@ -96,8 +96,6 @@ As the original images of detectives varied widely in style, they are rendered i
 
 Blurred text is used on both the opponent card and draw-pile card to prevent the user from reading all the opponent card’s statistics, replicating the ‘in-person’ Top Trumps experience.
 
-
-
 ## Features
 
 ### Landing Page
@@ -346,6 +344,8 @@ To create a local copy of this project:
 ### Content
 - All content was written by the developer.
 - Research for the detective's biographies was conducted via the relevant [Wikipedia](https://www.wikipedia.org/) pages.
+- The magnifying glass, detective icon and left arrow are from [Font Awesome](https://fontawesome.com/)
+
 
 ### Media
 
