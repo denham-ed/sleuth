@@ -271,7 +271,7 @@ Warnings were displayed to highlight missing headings in sections; I will consid
 | Player clicks outside of modal | Game Stats Modal closes | Pass |
 | Player clicks on 'x' in modal | Gam Stats Modal closes | Pass |
 
-### Large Devices Only
+### Large (>905px) Devices Only 
 
 | **User Action** | **Expected Result** | **Pass / Fail** |
 |---|---|---|
@@ -281,8 +281,6 @@ Warnings were displayed to highlight missing headings in sections; I will consid
 | User has 1 card | Last card warning appears in user area | Pass |
 | User takes all but 1 cards | Last card warning appears in opponent area | Pass |
 | Both players have at least 2 cards | No warning are present | Pass |
-
-### Very Small (<400 px) Devices Only
 
 ### Game End
 
