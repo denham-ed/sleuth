@@ -210,8 +210,10 @@ The code is designed to make the addition of further detectives easy - the listi
 ### Performance
 Excellent scores were obtained via Lighthouse through Google Chrome DevTools.
 - Mobile
+
 ![Lighthouse Scores for Mobile](assets/media/readme_assets/mobile_lighthouse.png)
 - Desktop
+
 ![Lighthouse Scores for Mobile](assets/media/readme_assets/desktop_lighthouse.png)
 
 
