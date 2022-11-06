@@ -221,6 +221,7 @@ Sleuth is built with responsive design in mind and has been thoroughly tested us
 As the screenshots below demonstrate it works flexibly and efficiently on screens ranging from 1920x1200px to 320x480px. On Chrome, it has also been tested successfully down to a width of 270px.
 
 **Large Display**
+
 ![Large Display](/assets/media/readme_assets/computer-design.png)
 
 **Medium Display (iPads, tablets etc)**
@@ -286,7 +287,7 @@ Warnings were displayed to highlight missing headings in sections; I will consid
 | Player clicks outside of modal | Game Stats Modal closes | Pass |
 | Player clicks on 'x' in modal | Gam Stats Modal closes | Pass |
 
-**Large (>905px) Devices Only **
+**Large (>905px) Devices Only**
 
 | **User Action** | **Expected Result** | **Pass / Fail** |
 |---|---|---|
