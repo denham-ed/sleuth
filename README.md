@@ -133,7 +133,15 @@ The code is designed to make the addition of further detectives easy - the listi
 
 ## Testing & Performance
 ### Validation Testing
-CSS THE W3C Validation with no errors.
+**CSS**
+- No errors were found when passing through the [official (Jigsaw) validator](https://jigsaw.w3.org/css-validator/validator?uri=https%3A%2F%2Fdenham-ed.github.io%2Fsleuth%2Findex.html&profile=css3svg&usermedium=all&warning=1&vextwarning=&lang=en)
+
+**HTML**
+- No errors were found when passing through the official (W3C) validtor for either:
+    - [index.html](https://validator.w3.org/nu/?doc=https%3A%2F%2Fdenham-ed.github.io%2Fsleuth%2Findex.html) or
+    - [detectives.html](https://validator.w3.org/nu/?doc=https%3A%2F%2Fdenham-ed.github.io%2Fsleuth%2Fdetectives.html)
+
+Warnings were displayed to highlight missing headings in sections; I will consider this carefully for future projects.
 
 ### User Testing
 
