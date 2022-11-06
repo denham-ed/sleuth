@@ -72,7 +72,6 @@ The result of each stat was randomly calculated between set ranges for this game
 
 ## Design
 
-### Wireframes
 ### Fonts
 Two fonts were used in the design of **Sleuth**; **Montserrat** and **Ultra**. Both are from [Google Fonts](https://fonts.google.com/).
 
