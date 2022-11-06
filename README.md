@@ -335,7 +335,11 @@ The site was deployed to GitHub pages. The steps to deploy are as follows:
 
 The live link can be found here: https://denham-ed.github.io/sleuth
 
-
+## Create a Local Copy
+To create a local copy of this project:
+1. Create a folder where you want the cloned directory to be stored
+2. Open your terminal and navigate to this new directory
+3. In the terminal, run git clone https://github.com/denham-ed/sleuth.git
 
 ## Credits
 
