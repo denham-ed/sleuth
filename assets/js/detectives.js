@@ -202,7 +202,7 @@ const detectives = [{
         result: 1,
         relStrength: 0.4
     }],
-    biography: "Billing himself as a 'holistic detective', Dirk Gently's cases often involve a seemingly-paranormal twist, including a time-travel murder.",
+    biography: "Billing himself as a 'holistic detective', Dirk Gently's cases often involve a seemingly-paranormal twist, including a time-travel murder. Dirk Gently is not the character's real name; it was chosen by the sleuth as pseudonym for Svlad Cjelli.",
     creator: "Douglas Adams"
 },
 {
@@ -248,7 +248,7 @@ const detectives = [{
         result: 3,
         relStrength: 1.2
     }],
-    biography: "Private detective and war veteran Cormoran Strike appears in 6 novels by Robert Galbraith, a pseudonym for JK Rowling.",
+    biography: "Private detective and war veteran Cormoran Strike appears in 6 novels by Robert Galbraith, a pseudonym for JK Rowling. Despite only appearing in 2013, Strike is already the star of six novels and four TV series, and Rowling has confirmed she has at least ten more books for the PI planned for the future.",
     creator: "Robert Galbraith aka JK Rowling"
 },
 {
