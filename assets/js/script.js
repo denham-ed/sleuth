@@ -480,7 +480,7 @@ const handleDraw = (playerTurn, playerDecks) => {
 
 /**
  * Renders cards in drawpile on large devices, showing detective image
- * @param {*} drawPile 
+ * @param {Array} drawPile 
  */
 const renderDrawPile = (drawPile) => {
     let drawPileHTML = ""
