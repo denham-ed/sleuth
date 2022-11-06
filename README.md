@@ -114,7 +114,12 @@ The landing page guides the user to either:
 
 The header shows the logo and main font throughout, as well as the blue, green and red stripes in a go-faster-racing style. Buttons that provide more information to the user appear here, such as the button to open the Game Stats modal.
 
-### Footer !!!!!!!!!!!!!
+### Footer
+![Game Intiation](assets/media/readme_assets/features/footer.png)
+
+The footer sits at the bottom of the page. It contains two links:
+1. To the project's GitHub repository
+2. To the developer's LinkedIn profile
 
 ### How to Play
 ![How to Play](assets/media/readme_assets/features/instructions.png)
