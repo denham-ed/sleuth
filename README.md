@@ -349,9 +349,17 @@ To create a local copy of this project:
 
 ### Media
 
-### Code - THIS IS BAD FINISH,
-- Code from users StackOverflow and w3schools is used occasionally throughout this project. Credit and a link to the source can be found in the relevant js or CSS file.
-- CSS Anima
+### Code
+The following resources were used or adapted in this project. All sources are also credited as they appear in the source code.
+
+- [How to Randomize A Javascript Array](https://tinyurl.com/mr5vhup5): used to shuffle the initial array and game initiation.
+- [Box Shadow Generator](https://tinyurl.com/35rmd9s2): helped with the initial design of the shadow under the player card
+- [How to Create Blurry Text in CSS](https://tinyurl.com/yuprww3x): used to blur the attributes and names on non-player cards
+- [Make Flex Items Overlap](https://tinyurl.com/56m756s3): used in the draw pile for large devices
+- [How to Create a CSS / JS Modal](https://tinyurl.com/mpz8ctmt): used for the game stats modal
+- [CSS Animations Generator](https://tinyurl.com/bdf87sak): assisted with the code for the revolving image in the version for small devices.
+- [Favicon Generator](https://favicon.io/favicon-generator/): used to design and generate the favicon and manifest
+
 
 ### Acknowledgements
 - The support of my mentor Spencer Barriball for his advice, guidance and directions to resources is gratefully acknowledged.
