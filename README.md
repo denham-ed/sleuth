@@ -238,12 +238,29 @@ Warnings were displayed to highlight missing headings in sections; I will consid
 | **User Action** | **Expected Result** | **Pass / Fail** |
 |---|---|---|
 | Enter URL into browser address bar | User is taken to Landing Page with buttons for intiaiting new game | Pass |
-| Click on title in header (Sleuth.) | Navigates to landing page | FAIL |
+| Click on title in header (Sleuth.) | Navigates to landing page | Pass |
 | Click on Detectives button | Navigates to Detectives Listing page | Pass |
+| Click on Arrow button in header | Navigates back to Landing Page | Pass |
 | Click on How to Play button | Renders instructions to central messaging area  | Pass |
 | Click on Difficulty (Easy, Medium, Hard & Wild) buttons | Game initiates; game container is prepared, logo is removed; difficulty level is rendered into the game stats modal | Pass |
-| Click on GitHub logo in footer | Opens new tab displaying the Sleuth repository on GitHub | FAIL |
-| Click on LinkedIn logo in footer | Opens new tab displaying the developer's LinkedIn profile | FAIL |
+| Click on GitHub logo in footer | Opens new tab displaying the Sleuth repository on GitHub | Pass |
+| Click on LinkedIn logo in footer | Opens new tab displaying the developer's LinkedIn profile | Pass |
+
+### Main Game Phase
+
+| **User Action** | **Expected Result** | **Pass / Fail** |
+|---|---|---|
+| User hover's mouse over detective attributes | Text turns red | Pass |
+| User selects attribute with mouse click | Attribute turn's blue and triggers comparison | Pass |
+| _Proceeds from above action_ | User can no longer click on attributes | Pass |
+| _Proceeds from above action_ | Opponent's card (image and title) is reveled | Pass |
+| _Proceeds from above action_ | Attributes are compared and appropriate message is rendered in message area | Pass |
+| _Proceeds from above action_ | Player and opponent decks are updated | Pass |
+| _Proceeds from above action_ | Player's next card is revealed | Pass |
+| _Proceeds from above action_ | Opponent's card is shown face down | Pass |
+| _Proceeds from above action_ | Game Stats Modal is updated | Pass |
+| _Proceeds from above action_ | Text on Player Deck is updated | Pass |
+
 
 ### Fixed Bugs
 ### Unfixed Bugs
