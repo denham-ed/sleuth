@@ -342,13 +342,19 @@ To create a local copy of this project:
 
 ## Credits
 
+### General
+- The original game idea and mechanics are based upon the highly successful [Top Trumps series](https://toptrumps.com/home/)
+- The detectives are all characters whose creators are recognised in the Detectives Listing page.
+
 ### Content
 - All content was written by the developer.
 - Research for the detective's biographies was conducted via the relevant [Wikipedia](https://www.wikipedia.org/) pages.
+
+### Design
+
+- The design of the cards is inspired by the original Top Trumps series
+- The images of detectives are highly-stylised versions of images found through Google Images. Copyright of these images would need further investigation for any commercial purpose.
 - The magnifying glass, detective icon and left arrow are from [Font Awesome](https://fontawesome.com/)
-
-
-### Media
 
 ### Code
 The following resources were used or adapted in this project. All sources are also credited as they appear in the source code.
