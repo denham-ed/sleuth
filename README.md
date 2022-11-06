@@ -143,6 +143,10 @@ The code is designed to make the addition of further detectives easy - the listi
 
 Warnings were displayed to highlight missing headings in sections; I will consider this carefully for future projects.
 
+**JavaScript**
+- All JS scripts passed through [ESLint](https://eslint.org/play/) with no significant problems.
+- The variable 'detectives' is flagged as undefined as the array is stored in a separate file but this is managed satisfactorily, without errors, in the program.
+
 ### User Testing
 
 ### Fixed Bugs
