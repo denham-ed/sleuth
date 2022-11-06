@@ -273,7 +273,16 @@ Warnings were displayed to highlight missing headings in sections; I will consid
 
 ### Large Devices Only
 
-### Small Devices Only
+| **User Action** | **Expected Result** | **Pass / Fail** |
+|---|---|---|
+| User hovers over player deck | Displays current number of cards | Pass |
+| User triggers draw | Draw pile is rendered with name and stats obscured | Pass |
+| User wins or loses after draw | Draw pile is cleared from screen | Pass |
+| User has 1 card | Last card warning appears in user area | Pass |
+| User takes all but 1 cards | Last card warning appears in opponent area | Pass |
+| Both players have at least 2 cards | No warning are present | Pass |
+
+### Very Small (<400 px) Devices Only
 
 ### Game End
 
