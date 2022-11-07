@@ -511,7 +511,7 @@ const handleDraw = (playerTurn, playerDecks) => {
 
 /**
  * Renders cards in drawpile on large devices, showing detective image
- * @param {Array} drawPile
+ * @param {Array} drawPile - Array of detectives currently stored in the draw pile
  */
 const renderDrawPile = (drawPile) => {
   let drawPileHTML = "";
