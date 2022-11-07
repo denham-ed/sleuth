@@ -1,932 +1,921 @@
 /* Google Font Imports */
-@import url('https://fonts.googleapis.com/css2?family=Montserrat&family=Ultra&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Montserrat&family=Ultra&display=swap");
 
 /* General & Tags*/
 * {
-    padding: 0;
-    margin: 0;
-    font-family: 'Montserrat', sans-serif;
-    color: #0A122A;
-    font-size: 98%;
-    user-select: none;
+  padding: 0;
+  margin: 0;
+  font-family: "Montserrat", sans-serif;
+  color: #0a122a;
+  font-size: 98%;
+  user-select: none;
 }
 
 body {
-    background-color: #FBFAF8;
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
+  background-color: #fbfaf8;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
 }
 
 a {
-    text-decoration: none;
+  text-decoration: none;
 }
 
 h1,
 h2 {
-    font-family: 'Ultra', serif;
-    color: #0A122A;
+  font-family: "Ultra", serif;
+  color: #0a122a;
 }
 
 h1 {
-    font-size: 215%;
-
+  font-size: 215%;
 }
 
 ul,
 ol {
-    margin-left: 1rem;
+  margin-left: 1rem;
 }
 
 button {
-    border: 0.2rem solid #000;
-    border-radius: 2.6rem;
-    min-height: 2rem;
-    min-width: 6rem;
-    color: #E7DECD;
-    margin: 0 1rem;
+  border: 0.2rem solid #000;
+  border-radius: 2.6rem;
+  min-height: 2rem;
+  min-width: 6rem;
+  color: #e7decd;
+  margin: 0 1rem;
 }
 
 button:hover {
-    cursor: pointer;
+  cursor: pointer;
 }
 
 td {
-    border: inherit;
-    border-collapse: inherit;
-    background-color: inherit;
-    color: inherit;
-    padding: 0.2rem;
+  border: inherit;
+  border-collapse: inherit;
+  background-color: inherit;
+  color: inherit;
+  padding: 0.2rem;
 }
 
 /* Header */
 header {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    background-color: #E7DECD;
-    height: 6.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #e7decd;
+  height: 6.5rem;
 }
 
 header h1 {
-    margin-top: 0.5rem;
-    background-color: #E7DECD;
+  margin-top: 0.5rem;
+  background-color: #e7decd;
 }
 
 .header-buttons {
-    align-self: baseline;
-    width: 80%;
-    margin-bottom: 0.5rem;
-    height: 2rem;
-    padding-left: 1rem;
+  align-self: baseline;
+  width: 80%;
+  margin-bottom: 0.5rem;
+  height: 2rem;
+  padding-left: 1rem;
 }
 
 .stripe {
-    width: 100%;
-    height: 0.3rem;
+  width: 100%;
+  height: 0.3rem;
 }
 
 .stripe-red {
-    background-color: #8C2F39;
+  background-color: #8c2f39;
 }
 
 .stripe-blue {
-    background-color: #0A122A;
+  background-color: #0a122a;
 }
 
 .stripe-green {
-    background-color: #71816D;
+  background-color: #71816d;
 }
 
 #circle {
-    display: none;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    height: 2rem;
-    width: 2rem;
-    border-radius: 100%;
-    background-color: #0A122A;
-    color: #fff;
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 2rem;
+  width: 2rem;
+  border-radius: 100%;
+  background-color: #0a122a;
+  color: #fff;
 }
 
 #circle:hover {
-    cursor: pointer;
+  cursor: pointer;
 }
 
 #info {
-    color: #FBFAF8;
-    text-align: center;
+  color: #fbfaf8;
+  text-align: center;
 }
 
 .home-button {
-    display: none;
-    width: 3rem;
-    font-size: 140%;
+  display: none;
+  width: 3rem;
+  font-size: 140%;
 }
 
 /* Buttons */
 .difficulty-button {
-    border: 0.2rem solid #000;
-    border-radius: 2.6rem;
-    min-height: 2rem;
-    min-width: 6rem;
-    color: #E7DECD;
-    margin: 0 1rem;
+  border: 0.2rem solid #000;
+  border-radius: 2.6rem;
+  min-height: 2rem;
+  min-width: 6rem;
+  color: #e7decd;
+  margin: 0 1rem;
 }
 
 .difficulty-button::after {
-    content: attr(data-difficulty);
+  content: attr(data-difficulty);
 }
 
 .red-button {
-    background-color: #8C2F39;
+  background-color: #8c2f39;
 }
 
 .blue-button {
-    background-color: #0A122A;
+  background-color: #0a122a;
 }
 
 .green-button {
-    background-color: #71816D;
+  background-color: #71816d;
 }
 
 .wild-button {
-    color: #000;
+  color: #000;
 }
 
 .refresh-button {
-    background-color: #71816D;
-    margin-top: 2rem;
+  background-color: #71816d;
+  margin-top: 2rem;
 }
 
 .more-info-button {
-    background-color: #E7DECD;
-    color: #000;
+  background-color: #e7decd;
+  color: #000;
 }
 
 #start-button {
-    margin-top: 1rem;
+  margin-top: 1rem;
 }
 
 .button-container {
-    width: 80%;
-    margin-top: 1.5rem;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
+  width: 80%;
+  margin-top: 1.5rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
 }
-
-
 
 /* Game Containers */
 #game-container {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
 }
 
 /* Middle Section */
 .start-message {
-    width: 70%;
-    border: 0.4rem #000 solid;
-    border-radius: 1.6rem;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    padding: 0.5rem;
-    min-height: 12rem;
+  width: 70%;
+  border: 0.4rem #000 solid;
+  border-radius: 1.6rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 0.5rem;
+  min-height: 12rem;
 }
 
 .start-message p {
-    text-align: center;
+  text-align: center;
 }
 
 #middle-area {
-    min-width: 30rem;
+  min-width: 30rem;
 }
 
 #middle-area-text {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    background-color: inherit;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  background-color: inherit;
 }
 
 #middle-area-text p {
-    text-align: center;
-    background-color: inherit;
+  text-align: center;
+  background-color: inherit;
 }
 
 #middle-centre {
-    align-items: center;
-    justify-content: center;
-    display: flex;
-    flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  flex-direction: column;
 }
 
 #middle-left,
 #middle-right {
-    width: 10%;
+  width: 10%;
 }
 
 #instructions {
-    padding: 0 1rem;
-    line-height: 150%;
+  padding: 0 1rem;
+  line-height: 150%;
 }
 
 #instructions h2 {
-    text-align: center;
-    margin-top: 0.5rem;
+  text-align: center;
+  margin-top: 0.5rem;
 }
 
 .confirmation {
-    color: #FBFAF8;
-    background-color: #8C2F39;
+  color: #fbfaf8;
+  background-color: #8c2f39;
 }
 
 #middle-area-logo {
-    font-size: 400%;
+  font-size: 400%;
 }
 
 .logo {
-    height: 10rem;
-    margin: 25% 0;
+  height: 10rem;
+  margin: 25% 0;
 }
 
 .middle-area-main {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    margin-top: 1rem;
-    align-items: center;
-    min-height: 2rem;
-    min-width: 20rem;
-    border: 0.3rem #000 solid;
-    border-radius: 1.6rem;
-    animation: expandMiddle 4s ease 0s 1 normal forwards;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-top: 1rem;
+  align-items: center;
+  min-height: 2rem;
+  min-width: 20rem;
+  border: 0.3rem #000 solid;
+  border-radius: 1.6rem;
+  animation: expandMiddle 4s ease 0s 1 normal forwards;
 }
 
 @keyframes expandMiddle {
-    0% {
-        min-height: 16rem;
-        width: 50%;
-    }
+  0% {
+    min-height: 16rem;
+    width: 50%;
+  }
 
-    100% {
-        min-height: 3rem;
-        width: 90%;
-    }
+  100% {
+    min-height: 3rem;
+    width: 90%;
+  }
 }
 
 .highlight-message {
-    background-color: #8C2F39;
-    color: #E7DECD;
+  background-color: #8c2f39;
+  color: #e7decd;
 }
 
 /* Player Area */
 #player-area {
-    width: 100%;
-    display: flex;
-    flex-direction: row;
-    flex-wrap: nowrap;
-    justify-content: center;
-    align-content: stretch;
-    align-items: stretch;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: center;
+  align-content: stretch;
+  align-items: stretch;
 }
 
 .player-containers {
-    display: flex;
-    width: 20%;
-    height: 30rem;
-    flex: 1 1 auto;
-    flex-direction: column;
-    align-self: auto;
-    align-items: center;
+  display: flex;
+  width: 20%;
+  height: 30rem;
+  flex: 1 1 auto;
+  flex-direction: column;
+  align-self: auto;
+  align-items: center;
 }
 
 /* Player Card */
 #card {
-    z-index: 2;
-    background-color: #fff;
-    margin: auto;
-    margin-top: 1rem;
-    display: none;
-    width: 14rem;
-    height: 26rem;
-    border-radius: 2.6rem;
-    border: 0.4rem #000 solid;
-    flex-direction: column;
-    align-items: center;
-    box-shadow: 10px 10px 19px 2px rgba(0, 0, 0, 0.75);
-    /* Box Shadow - credit https://tinyurl.com/35rmd9s2  */
+  z-index: 2;
+  background-color: #fff;
+  margin: auto;
+  margin-top: 1rem;
+  display: none;
+  width: 14rem;
+  height: 26rem;
+  border-radius: 2.6rem;
+  border: 0.4rem #000 solid;
+  flex-direction: column;
+  align-items: center;
+  box-shadow: 10px 10px 19px 2px rgba(0, 0, 0, 0.75);
+  /* Box Shadow - credit https://tinyurl.com/35rmd9s2  */
 }
 
 #card-header {
-    font-family: 'Ultra', serif;
-    font-size: 110%;
-    background-color: #fff;
-    height: 2rem;
-    text-align: center;
-    margin-top: 0.2rem;
+  font-family: "Ultra", serif;
+  font-size: 110%;
+  background-color: #fff;
+  height: 2rem;
+  text-align: center;
+  margin-top: 0.2rem;
 }
 
 #card-header-container {
-    margin-top: 0.5rem;
-    width: 80%;
-    background-color: #fff;
+  margin-top: 0.5rem;
+  width: 80%;
+  background-color: #fff;
 }
 
 .card-body-container {
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 #card-image {
-    height: 12rem;
-    width: 12rem;
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center left;
-    border: #0A122A 0.2rem solid;
-    margin-bottom: 0.2rem;
+  height: 12rem;
+  width: 12rem;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center left;
+  border: #0a122a 0.2rem solid;
+  margin-bottom: 0.2rem;
 }
 
 #stat-table {
-    height: 8rem;
-    width: 12rem;
-    border-collapse: collapse;
+  height: 8rem;
+  width: 12rem;
+  border-collapse: collapse;
 }
 
 #card-stats {
-    background-color: #fff;
+  background-color: #fff;
 }
 
 .stat-row {
-    border-bottom: #0A122A 0.1rem solid;
-    border-collapse: collapse;
-    background-color: #fff;
+  border-bottom: #0a122a 0.1rem solid;
+  border-collapse: collapse;
+  background-color: #fff;
 }
 
 .active-row:hover {
-    cursor: pointer;
+  cursor: pointer;
 }
 
 .active-row:hover td {
-    color: #8C2F39;
+  color: #8c2f39;
 }
 
 .selected-row {
-    background-color: #0A122A;
-    color: #FBFAF8;
+  background-color: #0a122a;
+  color: #fbfaf8;
 }
 
 .locked {
-    pointer-events: none;
+  pointer-events: none;
 }
 
 /* Player Deck */
 #player-deck {
-    margin-left: 40%;
-    margin-top: 1rem;
-    display: none;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
+  margin-left: 40%;
+  margin-top: 1rem;
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
 #player-deck:hover #card-count-container {
-    display: flex;
+  display: flex;
 }
 
 #card-count-container {
-    background-color: transparent;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    display: none;
-    width: 80%;
+  background-color: transparent;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  display: none;
+  width: 80%;
 }
 
-#card-count-container>span {
-    text-align: center;
-    border-radius: 1.6rem;
-    background-color: rgba(0, 0, 0, 0.4);
-    color: #FBFAF8;
-    user-select: none;
+#card-count-container > span {
+  text-align: center;
+  border-radius: 1.6rem;
+  background-color: rgba(0, 0, 0, 0.4);
+  color: #fbfaf8;
+  user-select: none;
 }
 
 /* Opponent Area & Card */
 #opponent-area {
-    width: 100%;
-    height: 19.5rem;
-    display: flex;
-    flex-direction: row;
+  width: 100%;
+  height: 19.5rem;
+  display: flex;
+  flex-direction: row;
 }
 
 .small-reverse-card {
-    display: none;
-    margin-top: 1rem;
-    height: 18.5rem;
-    width: 10rem;
-    border-radius: 1.6rem;
-    border: 0.3rem #000 solid;
-    flex-direction: column;
-    align-items: center;
-    background-image: url('../media/logos/logo2.svg');
-    background-repeat: repeat;
-    background-size: 20.65%;
-    background-color: #8C2F39;
+  display: none;
+  margin-top: 1rem;
+  height: 18.5rem;
+  width: 10rem;
+  border-radius: 1.6rem;
+  border: 0.3rem #000 solid;
+  flex-direction: column;
+  align-items: center;
+  background-image: url("../media/logos/logo2.svg");
+  background-repeat: repeat;
+  background-size: 20.65%;
+  background-color: #8c2f39;
 }
 
 #opponent-header {
-    font-family: 'Ultra', serif;
-    margin-top: 0.6rem;
-    font-size: 95%;
+  font-family: "Ultra", serif;
+  margin-top: 0.6rem;
+  font-size: 95%;
 }
 
 #opponent-image {
-    display: none;
-    margin-top: 0.3rem;
-    margin-bottom: 0.5rem;
-    height: 8rem;
-    width: 8rem;
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center left;
-    border: #0A122A 0.2rem solid;
+  display: none;
+  margin-top: 0.3rem;
+  margin-bottom: 0.5rem;
+  height: 8rem;
+  width: 8rem;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center left;
+  border: #0a122a 0.2rem solid;
 }
 
 .divider {
-    margin-top: 0.3rem;
-    background-color: #fff;
-    display: none;
-    height: 1rem;
-    width: 85%;
-    border-bottom: 1px solid #000;
+  margin-top: 0.3rem;
+  background-color: #fff;
+  display: none;
+  height: 1rem;
+  width: 85%;
+  border-bottom: 1px solid #000;
 }
 
 /* Blur- Credit https://tinyurl.com/yuprww3x */
 .blur {
-    filter: blur(5px);
+  filter: blur(5px);
 }
-
 
 /* Warnings */
 .last-card-warning {
-    font-size: 120%;
-    display: none;
-    text-align: center;
-    animation: warningFadeIn 4s ease 0s 1 normal forwards;
-    margin-top: 4rem;
-    padding: 2rem 4rem;
-    border-radius: 1.6rem;
-    border: 0.3rem #000 solid;
-    background-color: #8C2F39;
-    color: #FBFAF8;
+  font-size: 120%;
+  display: none;
+  text-align: center;
+  animation: warningFadeIn 4s ease 0s 1 normal forwards;
+  margin-top: 4rem;
+  padding: 2rem 4rem;
+  border-radius: 1.6rem;
+  border: 0.3rem #000 solid;
+  background-color: #8c2f39;
+  color: #fbfaf8;
 }
 
 @keyframes warningFadeIn {
-    0% {
-        transform: scale(0);
-        opacity: 0.2;
-    }
+  0% {
+    transform: scale(0);
+    opacity: 0.2;
+  }
 
-    25% {
-        transform: scale(1);
-        opacity: 1;
-    }
+  25% {
+    transform: scale(1);
+    opacity: 1;
+  }
 
-    50% {
-        opacity: 0;
-    }
+  50% {
+    opacity: 0;
+  }
 
-    75% {
-        opacity: 1;
-    }
+  75% {
+    opacity: 1;
+  }
 
-    100% {
-        opacity: 1;
-    }
+  100% {
+    opacity: 1;
+  }
 }
 
 /* Fade Out */
 .deckFadeOut {
-    animation: deckFadeOut 2s ease-out 0s 1 normal forwards;
+  animation: deckFadeOut 2s ease-out 0s 1 normal forwards;
 }
 
 @keyframes deckFadeOut {
-    0% {
-        opacity: 1;
-    }
+  0% {
+    opacity: 1;
+  }
 
-    99% {
-        display: flex;
-    }
+  99% {
+    display: flex;
+  }
 
-    100% {
-        display: none;
-        opacity: 0;
-    }
+  100% {
+    display: none;
+    opacity: 0;
+  }
 }
-
 
 /* End Message */
 .end-message {
-    margin-bottom: 30%;
-    animation: endMessageExpand 2s ease 0s 1 normal forwards;
+  margin-bottom: 30%;
+  animation: endMessageExpand 2s ease 0s 1 normal forwards;
 }
 
 @keyframes endMessageExpand {
-    0% {
-        height: 3rem;
-        width: 90%;
-    }
+  0% {
+    height: 3rem;
+    width: 90%;
+  }
 
-    100% {
-        height: 16rem;
-        width: 50%;
-    }
+  100% {
+    height: 16rem;
+    width: 50%;
+  }
 }
 
 /* Draw Pile */
 /* Overlapping draw pile - credit https://tinyurl.com/56m756s3 */
 #draw-pile-container {
-    margin-top: 1rem;
-    width: 80%;
-    height: 16rem;
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(4rem, 4rem));
+  margin-top: 1rem;
+  width: 80%;
+  height: 16rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(4rem, 4rem));
 }
 
 .draw-pile-card {
-    height: 12rem;
-    width: 7rem;
-    border-radius: 1.6rem;
-    border: 0.3rem #000 solid;
-    transform: rotate(3deg);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    background-color: #fff;
-
+  height: 12rem;
+  width: 7rem;
+  border-radius: 1.6rem;
+  border: 0.3rem #000 solid;
+  transform: rotate(3deg);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #fff;
 }
 
 .draw-pile-card-picture {
-    margin-top: 0.3rem;
-    margin-bottom: 0.2rem;
-    height: 5rem;
-    width: 5rem;
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center left;
-    border: 0.2rem #000 solid;
+  margin-top: 0.3rem;
+  margin-bottom: 0.2rem;
+  height: 5rem;
+  width: 5rem;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center left;
+  border: 0.2rem #000 solid;
 }
 
 .draw-pile-card-header {
-    white-space: nowrap;
-    overflow: hidden;
-    width: 85%;
-    font-size: 85%;
-    text-align: center;
+  white-space: nowrap;
+  overflow: hidden;
+  width: 85%;
+  font-size: 85%;
+  text-align: center;
 }
 
 .tiny-stat {
-    width: 85%;
-    text-align: left;
-    font-size: 85%;
+  width: 85%;
+  text-align: left;
+  font-size: 85%;
 }
-
 
 /* Game Stats Modal */
 /* Credit - https://tinyurl.com/mpz8ctmt */
 #game-stats-modal {
-    display: none;
-    position: fixed;
-    z-index: 3;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    overflow: auto;
-    background-color: rgb(0, 0, 0);
-    background-color: rgba(0, 0, 0, 0.4);
+  display: none;
+  position: fixed;
+  z-index: 3;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgb(0, 0, 0);
+  background-color: rgba(0, 0, 0, 0.4);
 }
 
 .modal-content {
-    border: 0.4rem #000 solid;
-    border-radius: 1.6rem;
-    background-color: #fff;
-    margin: 20rem auto;
-    padding: 0.2rem 1rem 1rem 1rem;
-    width: 18rem;
+  border: 0.4rem #000 solid;
+  border-radius: 1.6rem;
+  background-color: #fff;
+  margin: 20rem auto;
+  padding: 0.2rem 1rem 1rem 1rem;
+  width: 18rem;
 }
 
 .game-stat {
-    padding: 0.4rem 0;
-    color: #8C2F39;
-    border-bottom: 1px solid #000;
+  padding: 0.4rem 0;
+  color: #8c2f39;
+  border-bottom: 1px solid #000;
 }
 
 .exit-modal {
-    text-align: right;
-    font-size: 150%;
+  text-align: right;
+  font-size: 150%;
 }
 
 .exit-modal:hover {
-    cursor: pointer;
+  cursor: pointer;
 }
 
 /* Footer */
 footer {
-    margin-top: auto;
-    width: 100%;
-    height: 6rem;
-    background-color: #0A122A;
-    color: #FBFAF8;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+  margin-top: auto;
+  width: 100%;
+  height: 6rem;
+  background-color: #0a122a;
+  color: #fbfaf8;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 footer div {
-    color: inherit;
+  color: inherit;
 }
 
 .footer-logo {
-    font-size: 170%;
-    margin: 1rem;
-    color: #FBFAF8;
+  font-size: 170%;
+  margin: 1rem;
+  color: #fbfaf8;
 }
-
 
 /* Detective Listing Page */
 .detective-listing {
-    display: flex;
-    min-height: 6rem;
-    flex-direction: row;
-    justify-content: space-around;
-    width: 75%;
-    border: 0.2rem solid #000;
-    padding: 0.5rem;
-    margin: 0.5rem 0 0.5rem 1rem;
-    border-radius: 1.6rem;
+  display: flex;
+  min-height: 6rem;
+  flex-direction: row;
+  justify-content: space-around;
+  width: 75%;
+  border: 0.2rem solid #000;
+  padding: 0.5rem;
+  margin: 0.5rem 0 0.5rem 1rem;
+  border-radius: 1.6rem;
 }
 
 .red {
-    color: #8C2F39;
+  color: #8c2f39;
 }
 
 .listing-left {
-    margin-left: 1rem;
+  margin-left: 1rem;
 }
 
 .listing-middle {
-    min-width: 16rem;
-    margin-left: 2rem;
+  min-width: 16rem;
+  margin-left: 2rem;
 }
 
 .listing-image {
-    height: 6rem;
-    aspect-ratio: 1 / 1;
-    border: 0.2rem solid #000;
-    box-sizing: border-box;
-    background-size: cover;
+  height: 6rem;
+  aspect-ratio: 1 / 1;
+  border: 0.2rem solid #000;
+  box-sizing: border-box;
+  background-size: cover;
 }
-
 
 /* Responsive Design */
 /* Break point at 905px */
 @media screen and (max-width: 905px) {
+  /* General */
+  #player-left,
+  #player-right,
+  #opponent-right,
+  #opponent-left {
+    display: none;
+  }
 
-    /* General */
-    #player-left,
-    #player-right,
-    #opponent-right,
-    #opponent-left {
-        display: none;
-    }
+  #opponent-area {
+    width: 100%;
+    height: unset;
+  }
 
-    #opponent-area {
-        width: 100%;
-        height: unset;
-    }
+  .player-containers {
+    height: 16rem;
+    justify-content: center;
+  }
 
-    .player-containers {
-        height: 16rem;
-        justify-content: center;
-    }
+  .more-info-button {
+    margin-top: 0.5rem;
+  }
 
-    .more-info-button {
-        margin-top: 0.5rem;
-    }
+  #card {
+    height: 14rem;
+    width: 24rem;
+    flex-direction: column;
+    justify-content: flex-start;
+  }
 
-    #card {
-        height: 14rem;
-        width: 24rem;
-        flex-direction: column;
-        justify-content: flex-start;
-    }
+  .card-stripes {
+    display: none;
+  }
 
-    .card-stripes {
-        display: none;
-    }
+  .card-body-container {
+    width: 100%;
+    margin-top: 1rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    background-color: #fff;
+  }
 
-    .card-body-container {
-        width: 100%;
-        margin-top: 1rem;
-        display: flex;
-        flex-direction: row;
-        justify-content: center;
-        background-color: #fff;
-    }
+  #card-image {
+    height: 8rem;
+    width: 8rem;
+    margin-right: 1rem;
+  }
 
-    #card-image {
-        height: 8rem;
-        width: 8rem;
-        margin-right: 1rem;
-    }
+  /* Opponent Card */
+  .small-reverse-card {
+    height: 10rem;
+    width: 17.5rem;
+    background-size: 10.5%;
+  }
 
-    /* Opponent Card */
-    .small-reverse-card {
-        height: 10rem;
-        width: 17.5rem;
-        background-size: 10.5%;
-    }
+  .dividers {
+    width: 60%;
+    background-color: #fff;
+  }
 
-    .dividers {
-        width: 60%;
-        background-color: #fff;
-    }
+  .opponent-body {
+    margin-top: 0.5rem;
+    display: flex;
+    flex-direction: row;
+    width: 80%;
+    justify-content: space-around;
+    background-color: #fff;
+  }
 
-    .opponent-body {
-        margin-top: 0.5rem;
-        display: flex;
-        flex-direction: row;
-        width: 80%;
-        justify-content: space-around;
-        background-color: #fff;
-    }
+  #opponent-image {
+    height: 5rem;
+    width: 5rem;
+  }
 
-    #opponent-image {
-        height: 5rem;
-        width: 5rem;
-    }
+  #middle-area {
+    min-width: unset;
+  }
 
-    #middle-area {
-        min-width: unset;
-    }
+  .button-container {
+    width: 80%;
+    margin-top: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+  }
 
-    .button-container {
-        width: 80%;
-        margin-top: 1.5rem;
-        display: flex;
-        flex-direction: column;
-        justify-content: space-around;
-    }
+  .difficulty-button {
+    margin: 0.5rem 0;
+  }
 
-    .difficulty-button {
-        margin: 0.5rem 0;
-    }
+  /* Listing Page */
+  .detective-listing {
+    flex-direction: column;
+    width: 85%;
+    min-height: 14rem;
+  }
 
-    /* Listing Page */
-    .detective-listing {
-        flex-direction: column;
-        width: 85%;
-        min-height: 14rem;
-    }
+  .detective-listing div {
+    margin-top: 0.5rem;
+  }
 
-    .detective-listing div {
-        margin-top: 0.5rem;
-    }
+  .listing-left {
+    display: flex;
+    flex-direction: row;
+    justify-content: end;
+  }
 
-    .listing-left {
-        display: flex;
-        flex-direction: row;
-        justify-content: end;
-    }
+  .listing-image {
+    margin-right: 1rem;
+  }
 
-    .listing-image {
-        margin-right: 1rem;
-    }
-
-    .listing-middle {
-        min-width: auto;
-        margin-left: 0;
-    }
+  .listing-middle {
+    min-width: auto;
+    margin-left: 0;
+  }
 }
 
 /* Break Point at 400px */
 @media screen and (max-width: 400px) {
+  /* Landing Screen */
+  #instructions {
+    padding: 0;
+    line-height: 150%;
+  }
 
-    /* Landing Screen */
-    #instructions {
-        padding: 0;
-        line-height: 150%;
+  /* Player Area and Card */
+  #card {
+    height: 14rem;
+    width: 14rem;
+    flex-direction: column;
+    justify-content: flex-start;
+  }
+
+  .card-body-container {
+    position: relative;
+    margin-top: 0;
+  }
+
+  #card-image {
+    display: block;
+    z-index: 300;
+    position: absolute;
+    top: 0;
+    left: 3rem;
+  }
+
+  /* Remove image - credit https://tinyurl.com/bdf87sak */
+  .image-fade-out {
+    backface-visibility: visible !important;
+    animation-name: flipOutY;
+    animation-duration: 0.75s;
+    animation-duration: 1s;
+    animation-fill-mode: both;
+  }
+
+  @keyframes flipOutY {
+    0% {
+      transform: perspective(400px);
     }
 
-    /* Player Area and Card */
-    #card {
-        height: 14rem;
-        width: 14rem;
-        flex-direction: column;
-        justify-content: flex-start;
+    30% {
+      transform: perspective(400px) rotate3d(0, 1, 0, -15deg);
+      opacity: 1;
     }
 
-    .card-body-container {
-        position: relative;
-        margin-top: 0;
+    100% {
+      transform: perspective(400px) rotate3d(0, 1, 0, 90deg);
+      opacity: 0;
     }
+  }
 
-    #card-image {
-        display: block;
-        z-index: 300;
-        position: absolute;
-        top: 0;
-        left: 3rem;
-    }
+  #card-stats {
+    z-index: 2;
+    position: absolute;
+    top: 0;
+    left: 3rem;
+    display: block;
+    margin: 0.2rem;
+  }
 
-    /* Remove image - credit https://tinyurl.com/bdf87sak */
-    .image-fade-out {
-        backface-visibility: visible !important;
-        animation-name: flipOutY;
-        animation-duration: .75s;
-        animation-duration: 1s;
-        animation-fill-mode: both;
-    }
+  #stat-table {
+    width: 8rem;
+  }
 
-    @keyframes flipOutY {
-        0% {
-            transform: perspective(400px);
-        }
+  /* Opponent Area and Card */
+  .small-reverse-card {
+    flex-direction: column;
+    display: none;
+    height: 12rem;
+    width: 12rem;
+    flex-direction: column;
+    justify-content: flex-start;
+  }
 
-        30% {
-            transform: perspective(400px) rotate3d(0, 1, 0, -15deg);
-            opacity: 1;
-        }
+  .opponent-body {
+    position: relative;
+  }
 
-        100% {
-            transform: perspective(400px) rotate3d(0, 1, 0, 90deg);
-            opacity: 0;
-        }
-    }
+  #opponent-image {
+    display: none;
+    z-index: 300;
+    height: 8rem;
+    width: 8rem;
+    position: absolute;
+    top: 0;
+    left: 0.5rem;
+  }
 
-    #card-stats {
-        z-index: 2;
-        position: absolute;
-        top: 0;
-        left: 3rem;
-        display: block;
-        margin: 0.2rem;
-    }
+  .dividers {
+    z-index: 2;
+    position: absolute;
+    top: 0;
+    left: 3rem;
+    display: block;
+    margin: 0.2rem;
+  }
 
-    #stat-table {
-        width: 8rem;
-    }
-
-    /* Opponent Area and Card */
-    .small-reverse-card {
-        flex-direction: column;
-        display: none;
-        height: 12rem;
-        width: 12rem;
-        flex-direction: column;
-        justify-content: flex-start;
-    }
-
-    .opponent-body {
-        position: relative;
-    }
-
-    #opponent-image {
-        display: none;
-        z-index: 300;
-        height: 8rem;
-        width: 8rem;
-        position: absolute;
-        top: 0;
-        left: 0.5rem;
-    }
-
-    .dividers {
-        z-index: 2;
-        position: absolute;
-        top: 0;
-        left: 3rem;
-        display: block;
-        margin: 0.2rem;
-    }
-
-    /* Modal */
-    .modal-content {
-        width: 13rem;
-    }
+  /* Modal */
+  .modal-content {
+    width: 13rem;
+  }
 }
