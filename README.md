@@ -244,8 +244,11 @@ As the screenshots below demonstrate it works flexibly and efficiently on screen
 Warnings were displayed to highlight missing headings in sections; I will consider this carefully for future projects.
 
 **JavaScript**
-- All JS scripts passed through [ESLint](https://eslint.org/play/) with no significant problems.
+- All JS scripts passed through [JSHint](https://jshint.com/) with no significant problems.
 - The variable 'detectives' is flagged as undefined as the array is stored in a separate file but this is managed satisfactorily, without errors, in the program.
+- There were two warnings:
+1. **Functions declared within loops referencing an outer scoped variable may lead to confusing semantics.** This loops functions during the game and is adequately described in the code to avoid confusion.
+2. **'object spread property' is only available in ES9 (use 'esversion: 9').** This may cause compatability issues but, according to [MDN web docs](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Spread_syntax), this syntax is now supported in all major browsers.
 
 ### User Testing
 
@@ -365,6 +368,7 @@ The following resources were used or adapted in this project. All sources are al
 - [How to Create a CSS / JS Modal](https://tinyurl.com/mpz8ctmt): used for the game stats modal
 - [CSS Animations Generator](https://tinyurl.com/bdf87sak): assisted with the code for the revolving image in the version for small devices.
 - [Favicon Generator](https://favicon.io/favicon-generator/): used to design and generate the favicon and manifest
+- The [Prettier extension](https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode) for GitPod was used to add missing semi-colons and to assist with the consistent presentation of the JS, CSS and HTML code.
 
 
 ### Acknowledgements
